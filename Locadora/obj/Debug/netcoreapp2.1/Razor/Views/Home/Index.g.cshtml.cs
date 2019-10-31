@@ -69,12 +69,12 @@ using Locadora.Models;
             WriteLiteral("<div class=\"login-form\">\r\n    ");
             EndContext();
             BeginContext(681, 792, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd6feb7084364a398e72edc752a09209", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b69516f996774e7f994f53552b031604", async() => {
                 BeginContext(740, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(750, 66, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6161689fd00a4b80a06b3aeafdd2dfb2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "de76cf38178841ec9764f1ab384dd821", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper>();
@@ -110,7 +110,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
         ");
                 EndContext();
                 BeginContext(1329, 41, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e44e71462e1b4b14929eb699776f1440", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ee360d24e08a438aa7705c9bef0cb68a", async() => {
                     BeginContext(1355, 11, true);
                     WriteLiteral("Cadastre-se");
                     EndContext();

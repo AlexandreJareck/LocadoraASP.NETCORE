@@ -63,7 +63,7 @@ using Locadora.Models;
             WriteLiteral("<!DOCTYPE html>\r\n\r\n<html>\r\n");
             EndContext();
             BeginContext(27, 479, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e698f77c518f45a3b066eef071d151f2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6cda5756c65e42d4b540111198e213f0", async() => {
                 BeginContext(33, 72, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>");
                 EndContext();
@@ -78,7 +78,7 @@ using Locadora.Models;
                 WriteLiteral("</title>\r\n    ");
                 EndContext();
                 BeginContext(133, 70, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "8400a9ed15cf49c39e792eeee20fed79", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f287a07470e4467eba935ad5e6163a3d", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -117,7 +117,7 @@ using Locadora.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(508, 2242, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a3c5922326941ae922ff0b76898f833", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e1a27b80e834de9b4f4e19c130e7265", async() => {
                 BeginContext(514, 428, true);
                 WriteLiteral(@"
     <nav class=""navbar navbar-expand-lg navbar-dark bg-dark"">
@@ -131,7 +131,7 @@ using Locadora.Models;
                     ");
                 EndContext();
                 BeginContext(942, 54, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9f68d02afb9457f86be97561f25e5f3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fffaa8389e84a968bd1ab144feca248", async() => {
                     BeginContext(984, 8, true);
                     WriteLiteral("Clientes");
                     EndContext();
@@ -159,7 +159,7 @@ using Locadora.Models;
                         ");
                 EndContext();
                 BeginContext(1441, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ca5b1e4c6bc48e6b409549c3e117c92", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "233ad91584ce4f92bc5c1cd8a1686275", async() => {
                     BeginContext(1486, 6, true);
                     WriteLiteral("Carros");
                     EndContext();
