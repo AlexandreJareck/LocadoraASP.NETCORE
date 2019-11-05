@@ -13,20 +13,19 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Bem Vindo, Administrador</a>
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" asp-controller="Administrador" asp-action="Index">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" asp-action="Clientes">Clientes</a>
+                    <a class="nav-link" asp-controller="AdmCliente" asp-action="Clientes">Clientes</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Veiculos</a>
                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-                        <a class="dropdown-item" asp-action="Carros">Carros</a>
-                        <a class="dropdown-item" href="#">Motos</a>
+                        <a class="dropdown-item" asp-controller="Carro" asp-action="Index">Carros</a>
+                        <a class="dropdown-item" asp-controller="Moto" asp-action="Index">Motos</a>
                     </div>
                 </li>
                 <li class="nav-item">

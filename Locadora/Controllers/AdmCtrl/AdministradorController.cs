@@ -45,10 +45,5 @@ namespace Locadora.Controllers
             _clienteDAO.EditarCliente(cliente);
             return RedirectToAction("Clientes");
         }
-
-        public IActionResult Carros()
-        {
-            return RedirectToAction("Index", "Carro");
-        }
     }
 }

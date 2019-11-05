@@ -6,11 +6,8 @@
     {
         Layout = "~/Views/Shared/_LayoutHome.cshtml";
     }
-    else if (controllerName.Equals("Administrador"))
-    {
-        Layout = "~/Views/Shared/_LayoutAdm.cshtml";
-    }
-    else if (controllerName.Equals("Carro"))
+    else if (controllerName.Equals("Administrador") || (controllerName.Equals("Carro"))
+        || (controllerName.Equals("Moto")) || (controllerName.Equals("AdmCliente")))
     {
         Layout = "~/Views/Shared/_LayoutAdm.cshtml";
     }
