@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Locadora.Controllers
 {
+    //teste
     public class AdministradorController : Controller
     {
         private readonly ClienteDAO _clienteDAO;
