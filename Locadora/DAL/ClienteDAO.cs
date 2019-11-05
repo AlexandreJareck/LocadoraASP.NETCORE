@@ -8,6 +8,7 @@ namespace Locadora.DAL
 {
     public class ClienteDAO
     {
+
         private readonly Context _context;
 
         public ClienteDAO(Context context)
