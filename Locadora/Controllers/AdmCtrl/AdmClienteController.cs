@@ -31,7 +31,8 @@ namespace Locadora.Controllers.AdmCtrl
 
         public IActionResult EditarCliente(int id)
         {
-            return View(_clienteDAO.Get(id));
+            var result = View(_clienteDAO.Get(id));
+            return result;
         }
 
         [HttpPost]
