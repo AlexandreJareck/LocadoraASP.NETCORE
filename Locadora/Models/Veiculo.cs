@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Locadora.Models
 {
-   public class Veiculo
+    public class Veiculo
     {
         public Veiculo()
         {
-           // Reserva = new List<Reserva>();
-           // Devolucao = new List<Devolucao>();
+            // Reserva = new List<Reserva>();
+            // Devolucao = new List<Devolucao>();
         }
         [Key]
         public int IdVeiculo { get; set; }
@@ -24,7 +24,8 @@ namespace Locadora.Models
         public double ValorPorDia { get; set; }
         public double ValorPorHora { get; set; }
         public string Status { get; set; }
-       // public List<Reserva> Reserva { get; set; }
-       // public List<Devolucao> Devolucao { get; set; }
+
+        // public List<Reserva> Reserva { get; set; }
+        // public List<Devolucao> Devolucao { get; set; }
     }
 }

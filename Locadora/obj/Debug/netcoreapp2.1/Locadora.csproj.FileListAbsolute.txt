@@ -34,3 +34,4 @@ C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreap
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\Clientes.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\EditarCliente.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\Index.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\Cadastrar.g.cshtml.cs

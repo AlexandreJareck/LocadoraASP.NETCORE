@@ -1,0 +1,54 @@
+﻿
+@model Carro
+
+<form asp-action="Cadastrar" method="post">
+    <a asp-action="Index" class="container-fluid">Voltar a Home</a>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container" style="margin-top:15px;margin-bottom:30px">
+        <h4 class="text-success">Cadastro de Carro</h4>
+
+
+        <div class="form-group" id="Nome">
+            <label class="text-info" for="Nome">Nome</label>
+            <input class="form-control col-md-4" placeholder="Nome do carro" asp-for="Nome" />
+        </div>
+        <div class="form-group" id="Marca">
+            <label class="text-info" for="Marca">Marca</label>
+            <input class="form-control col-md-4" placeholder="Marca" asp-for="Marca" />
+        </div>
+
+        <div class="form-group" id="Modelo">
+            <label class="text-info" for="Modelo">Modelo</label>
+            <input class="form-control col-md-4" placeholder="Modelo" asp-for="Modelo" />
+        </div>
+        <div class="form-group">
+            <div class="form-inline" id="Cor">
+                <label class="text-info" for="Cor">Cor</label>&nbsp;&nbsp;
+                <input type="color" class="form-control col-md-1" placeholder="Cor" asp-for="Cor" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <label class="text-info" for="Ano">Ano</label>&nbsp;&nbsp;
+                <input type="number" class="form-control col-md-2" placeholder="Ano do carro" asp-for="Ano" />
+            </div>
+        </div>
+        <div class="form-group" id="Placa">
+            <label class="text-info" for="Placa">Placa</label>
+            <input class="form-control col-md-4" placeholder="Placa" asp-for="Placa" />
+        </div>
+
+        <div class="form-group" id="ValorPorDia">
+            <label class="text-info" for="ValorPorDia">Valor por dia</label>
+            <input class="form-control col-md-4" placeholder="Valor por dia" asp-for="ValorPorDia" />
+        </div>
+
+        <div class="form-group" id="ValorPorHora">
+            <label class="text-info" for="ValorPorHora">Valor por hora</label>
+            <input class="form-control col-md-4" placeholder="Valor por hora" asp-for="ValorPorHora" />
+        </div>
+
+        <button class="btn btn-outline-success col-md-4" type="submit">Cadastrar</button>
+
+
+    </div>
+
+</form>
+
