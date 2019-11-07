@@ -36,6 +36,7 @@ namespace Locadora
 
             services.AddScoped<ClienteDAO>();
             services.AddScoped<CarroDAO>();
+            services.AddScoped<MotoDAO>();
             //services.AddScoped<ClienteDAO>();
 
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("LocadoraConnection")));

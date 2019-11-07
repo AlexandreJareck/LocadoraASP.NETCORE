@@ -15,11 +15,18 @@ namespace Locadora.Models
         }
         [Key]
         public int IdVeiculo { get; set; }
-        public string Nome { get; set; }
+        public int Id { get; set; }
+        public int Ano_Modelo { get; set; }
         public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public string Cor { get; set; }
-        public int Ano { get; set; }
+        public string Name { get; set; }
+        public string veiculo { get; set; }
+        public double Preco { get; set; }
+        public string Combustivel { get; set; }
+        public string Fipe_codigo { get; set; }
+      
+       /// ////////////////////////////////////////
+      
+        public string Cor { get; set; }       
         public string Placa { get; set; }
         public double ValorPorDia { get; set; }
         public double ValorPorHora { get; set; }

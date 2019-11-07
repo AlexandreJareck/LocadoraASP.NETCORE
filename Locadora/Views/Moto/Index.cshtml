@@ -1,55 +1,48 @@
-﻿@model Moto
+﻿@model List<Moto>
 
-<form asp-action="Cadastrar" method="post">
-    <a asp-action="Index" class="container-fluid">Voltar a Home</a>
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="container" style="margin-top:15px;margin-bottom:30px">
-        <h4 class="text-success">Cadastro de Moto</h4>
+<h2>Gerenciamento de Motos</h2>
+<div>
+    <a asp-controller="Moto" class="btn btn-outline-primary col-md-2" asp-action="Cadastrar">Cadastrar</a>
+</div>
+<table class="table table-hover table-striped">
+    <thead>
+        <tr class="table-primary">
+            <th>Nome</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Cor</th>
+            <th>Ano</th>
+            <th>Placa</th>
+            <th>ValorPorDia</th>
+            <th>ValorPorHora</th>
+            <th>Status</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Moto item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Marca</td>
+                <td>@item.veiculo</td>
+                <td>@item.Cor</td>
+                <td>@item.Ano_Modelo</td>
+                <td>@item.Placa</td>
+                <td>@item.ValorPorDia</td>
+                <td>@item.ValorPorHora</td>
+                <td>@item.Status</td>
+                <td>
+                    <a class="btn btn-danger" asp-controller="Moto" asp-action="RemoverMoto" asp-route-id="@item.IdVeiculo">Remover</a>
+                </td>
+                <td>
+                    <a class="btn btn-info" asp-controller="Moto" asp-action="EditarMoto" asp-route-id="@item.IdVeiculo">Alterar</a>
 
+                </td>
+            </tr>
+        }
+    </tbody>
 
-        <div class="form-group" id="Nome">
-            <label class="text-info" for="Nome">Nome</label>
-            <input class="form-control col-md-4" placeholder="Nome do carro" asp-for="Nome" />
-        </div>
-        <div class="form-group" id="Marca">
-            <label class="text-info" for="Marca">Marca</label>
-            <input class="form-control col-md-4" placeholder="Marca" asp-for="Marca" />
-        </div>
-
-        <div class="form-group" id="Modelo">
-            <label class="text-info" for="Modelo">Modelo</label>
-            <input class="form-control col-md-4" placeholder="Modelo" asp-for="Modelo" />
-        </div>
-
-        <div class="form-group" id="Cor">
-            <label class="text-info" for="Cor">Cor</label>
-            <input class="form-control col-md-4" placeholder="Cor" asp-for="Cor" />
-        </div>
-
-        <div class="form-group" id="Ano">
-            <label class="text-info" for="Ano">Ano</label>
-            <input class="form-control col-md-4" placeholder="Ano do carro" asp-for="Ano" />
-        </div>
-
-        <div class="form-group" id="Placa">
-            <label class="text-info" for="Placa">Placa</label>
-            <input class="form-control col-md-4" placeholder="Placa" asp-for="Placa" />
-        </div>
-
-        <div class="form-group" id="ValorPorDia">
-            <label class="text-info" for="ValorPorDia">Valor por dia</label>
-            <input class="form-control col-md-4" placeholder="Valor por dia" asp-for="ValorPorDia" />
-        </div>
-
-        <div class="form-group" id="ValorPorHora">
-            <label class="text-info" for="ValorPorHora">Valor por hora</label>
-            <input class="form-control col-md-4" placeholder="Valor por hora" asp-for="ValorPorHora" />
-        </div>
-
-        <button class="btn btn-outline-success col-md-4" type="submit">Cadastrar</button>
-
-
-    </div>
-
-</form>
+</table>
 
