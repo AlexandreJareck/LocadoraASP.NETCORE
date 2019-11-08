@@ -3,14 +3,16 @@ using Locadora.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191107224021_projetoatt2")]
+    partial class projetoatt2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,7 +26,7 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Ano_Modelo");
+                    b.Property<int>("Ano_Modelo");
 
                     b.Property<string>("Combustivel");
 
@@ -32,7 +34,7 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Fipe_codigo");
 
-                    b.Property<string>("Id");
+                    b.Property<int>("Id");
 
                     b.Property<string>("Marca");
 
@@ -40,7 +42,7 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Placa");
 
-                    b.Property<string>("Preco");
+                    b.Property<double>("Preco");
 
                     b.Property<string>("Status");
 
@@ -92,7 +94,7 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Ano_Modelo");
+                    b.Property<int>("Ano_Modelo");
 
                     b.Property<string>("Combustivel");
 
@@ -100,7 +102,7 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Fipe_codigo");
 
-                    b.Property<string>("Id");
+                    b.Property<int>("Id");
 
                     b.Property<string>("Marca");
 
@@ -108,7 +110,7 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Placa");
 
-                    b.Property<string>("Preco");
+                    b.Property<double>("Preco");
 
                     b.Property<string>("Status");
 

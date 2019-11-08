@@ -1,14 +1,13 @@
 ﻿
 @model Carro
 
-<form asp-action="Cadastrar" method="post">
+<form asp-action="BuscarCarros" method="post">
     <a asp-action="Index" class="container-fluid">Voltar a Home</a>
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="container" style="margin-top:15px;margin-bottom:30px">
         <h4 class="text-success">Cadastro de Carro</h4>
 
-
-        <div class="form-group" id="Nome">
+        @*<div class="form-group" id="Nome">
             <label class="text-info" for="Nome">Nome</label>
             <input class="form-control col-md-4" placeholder="Nome do carro" asp-for="Name" />
         </div>
@@ -45,8 +44,32 @@
             <input class="form-control col-md-4" placeholder="Valor por hora" asp-for="ValorPorHora" />
         </div>
 
-        <button class="btn btn-outline-success col-md-4" type="submit">Cadastrar</button>
-
+        <button class="btn btn-outline-success col-md-4" type="submit">Cadastrar</button>*@
+        <input type="submit" value="Buscar Marcas" class="btn btn-warning" asp-action="BuscarMarcas" asp-controller="Carro" />
+        <div class="form-group" id="Marca">
+            <label>Marcas:</label>
+            <select asp-items="ViewBag.Marca" class="form-control"
+                    name="drpMarcas">
+                <option> -- SELECIONE -- </option>
+            </select>
+        </div>
+        <input type="submit" value="Buscar Carros" class="btn btn-warning" asp-action="BuscarCarros" asp-controller="Carro" />
+        <div class="form-group" id="Carro">
+            <label>Carros:</label>
+            <select asp-items="ViewBag.Carro" class="form-control"
+                    name="drpCarro">
+                <option> -- SELECIONE -- </option>
+            </select>
+        </div>
+        <input type="submit" value="Buscar Modelos" class="btn btn-warning" asp-action="BuscarModelos" asp-controller="Carro" />
+        <div class="form-group" id="Modelo">
+            <label>Modelos:</label>
+            <select asp-items="ViewBag.Modelo" class="form-control"
+                    name="drpModelo">
+                <option> -- SELECIONE -- </option>
+            </select>
+            
+        </div>
 
     </div>
 

@@ -30,7 +30,7 @@ namespace Locadora
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
@@ -40,6 +40,9 @@ namespace Locadora
             //services.AddScoped<ClienteDAO>();
 
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("LocadoraConnection")));
+
+            services.AddSession();
+            services.AddDistributedMemoryCache();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -60,6 +63,7 @@ namespace Locadora
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
