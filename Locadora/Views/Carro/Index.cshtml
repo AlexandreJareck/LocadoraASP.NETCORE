@@ -5,44 +5,44 @@
 
     <a asp-controller="Carro" class="btn btn-outline-success col-md-2" asp-action="Cadastrar">Cadastrar</a>
 </div>
-<table class="table table-hover table-striped">
-    <thead>
-        <tr class="table-primary">
-            <th>Nome</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Cor</th>
-            <th>Ano</th>
-            <th>Placa</th>
-            <th>ValorPorDia</th>
-            <th>ValorPorHora</th>
-            <th>Status</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Carro item in Model)
-        {
-        <tr>
-            <td>@item.Name</td>
-            <td>@item.Marca</td>
-            <td>@item.veiculo</td>
-            <td>@item.Cor</td>
-            <td>@item.Ano_Modelo</td>
-            <td>@item.Placa</td>
-            <td>@item.ValorPorDia</td>
-            <td>@item.ValorPorHora</td>
-            <td>@item.Status</td>
-            <td>
-                <a class="btn btn-danger" asp-controller="Carro" asp-action="RemoverCarro" asp-route-id="@item.IdVeiculo">Remover</a>
-            </td>
-            <td>
-                <a class="btn btn-info" asp-controller="Carro" asp-action="EditarCarro" asp-route-id="@item.IdVeiculo">Alterar</a>
+<div class="table-responsive" style="margin-top:5px;">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Nome</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Ano</th>
+                <th scope="col">Placa</th>
+                <th scope="col">ValorPorDia</th>
+                <th scope="col">ValorPorHora</th>
+                <th scope="col">Status</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Carro item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Marca</td>
+                    <td>@item.Preco</td>
+                    <td>@item.Ano_Modelo</td>
+                    <td>@item.Placa</td>
+                    <td>@item.ValorPorDia</td>
+                    <td>@item.ValorPorHora</td>
+                    <td>@item.Status</td>
+                    <td>
+                        <a class="btn btn-danger" asp-controller="Carro" asp-action="RemoverCarro" asp-route-id="@item.IdVeiculo">Remover</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-info" asp-controller="Carro" asp-action="EditarCarro" asp-route-id="@item.IdVeiculo">Alterar</a>
 
-            </td>
-        </tr>
-        }
-    </tbody>
+                    </td>
+                </tr>
+            }
+        </tbody>
 
-</table>
+    </table>
+</div>

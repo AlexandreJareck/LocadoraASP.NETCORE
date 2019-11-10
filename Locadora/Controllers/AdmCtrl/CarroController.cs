@@ -5,6 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Locadora.DAL;
 using Locadora.Models;
+using Locadora.Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
@@ -13,9 +14,10 @@ namespace Locadora.Controllers
 {
     public class CarroController : Controller
     {
-        public static List<Carro> marca = new List<Carro>();
-        public static List<Carro> car = new List<Carro>();
-        public static List<Carro> modelo = new List<Carro>();
+        public static List<Carro> marcaList = new List<Carro>();
+        public static List<Carro> carList = new List<Carro>();
+        public static List<Carro> modeloList = new List<Carro>();
+        public static Carro c = new Carro();
 
         public static int result;
 
@@ -33,49 +35,85 @@ namespace Locadora.Controllers
 
         public IActionResult Cadastrar()
         {
-            if (marca.Any())
+            Carro carro = new Carro();
+            if (TempData["Carro"] != null)
             {
-                ViewBag.Marca = new SelectList(marca, "Id", "Name");
-                return View();
+                carro = JsonConvert.DeserializeObject<Carro>(TempData["Carro"].ToString());
             }
-            if (car.Any())
-            {
-                ViewBag.Carro = new SelectList(car, "Id", "Name");
-                return View();
-            }
-            if (modelo.Any())
-            {
-                ViewBag.Modelo = new SelectList(modelo, "Id", "Name");
-                return View();
-            }
-            return View();
+            //if (marcaList.Any())
+            //{
+            ViewBag.Marca = new SelectList(marcaList, "Id", "Name");
+            //    return View(carro);
+            //}
+            //if (carList.Any())
+            //{
+            ViewBag.Carro = new SelectList(carList, "Id", "Name");
+            //    return View(carro);
+            //}
+            //if (modeloList.Any())
+            //{
+            ViewBag.Modelo = new SelectList(modeloList, "Id", "Name");
+            //    return View(carro);
+            //}
+            return View(carro);
 
-        }
-
-        public IActionResult BuscarCarros(Carro carro, int drpMarcas)
-        {
-            string url = "http://fipeapi.appspot.com/api/1/carros/veiculos/" + drpMarcas + ".json";
-            WebClient client = new WebClient();
-            result = drpMarcas;
-            car = JsonConvert.DeserializeObject<List<Carro>>(client.DownloadString(url));
-            marca.Clear();
-            return RedirectToAction("Cadastrar");
         }
 
         public IActionResult BuscarMarcas()
         {
-            string url = "http://fipeapi.appspot.com/api/1/carros/marcas.json";
-            WebClient client = new WebClient();
-            marca = JsonConvert.DeserializeObject<List<Carro>>(client.DownloadString(url));
+            marcaList = FipeApiService.BuscarMarcas();
             return RedirectToAction("Cadastrar");
         }
 
-        public IActionResult BuscarModelos(Carro carro, int drpCarro)
+        public IActionResult BuscarCarros(Carro carro)
         {
-            string url = "http://fipeapi.appspot.com/api/1/carros/veiculo/" + result + "/" + drpCarro + ".json";
-            WebClient client = new WebClient();
-            modelo = JsonConvert.DeserializeObject<List<Carro>>(client.DownloadString(url));
-            car.Clear();
+            try
+            {
+                c.IdMarca = carro.IdMarca;
+                carList = FipeApiService.BuscarCarros(carro);
+                TempData["Carro"] = JsonConvert.SerializeObject(carro);
+                //marcaList.Clear();
+            }
+            catch (Exception)
+            {
+
+            }
+            return RedirectToAction("Cadastrar");
+        }
+
+        public IActionResult BuscarModelos(Carro carro)
+        {
+            try
+            {
+                c.IdentVeiculo = carro.IdentVeiculo;
+                carro.IdMarca = c.IdMarca;
+                modeloList = FipeApiService.BuscarModelos(carro);
+                TempData["Carro"] = JsonConvert.SerializeObject(carro);
+                //carList.Clear();
+            }
+            catch (Exception)
+            {
+
+            }
+            return RedirectToAction("Cadastrar");
+        }
+
+        public IActionResult BuscarDadosVeiculo(Carro carro)
+        {
+            try
+            {
+                carro.IdentVeiculo = c.IdentVeiculo;
+                carro.IdMarca = c.IdMarca;
+                carro = FipeApiService.BuscarDadosVeiculo(carro);
+                TempData["Carro"] = JsonConvert.SerializeObject(carro);
+                carList.Clear();
+                modeloList.Clear();
+
+            }
+            catch (Exception)
+            {
+
+            }
             return RedirectToAction("Cadastrar");
         }
 
@@ -99,8 +137,7 @@ namespace Locadora.Controllers
 
         public IActionResult EditarCarro(int id)
         {
-            var result = View(_carroDAO.Get(id));
-            return result;
+            return View(_carroDAO.Get(id));
         }
 
         [HttpPost]

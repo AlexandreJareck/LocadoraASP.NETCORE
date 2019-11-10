@@ -23,9 +23,9 @@ namespace Locadora.Models
         public string Preco { get; set; }
         public string Combustivel { get; set; }
         public string Fipe_codigo { get; set; }
-      
-       /// ////////////////////////////////////////
-      
+        public int IdMarca { get; set; }
+        public int IdModelo { get; set; }
+        public int IdentVeiculo { get; set; }
         public string Cor { get; set; }       
         public string Placa { get; set; }
         public double ValorPorDia { get; set; }
