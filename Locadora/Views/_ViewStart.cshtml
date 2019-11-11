@@ -11,4 +11,10 @@
     {
         Layout = "~/Views/Shared/_LayoutAdm.cshtml";
     }
+    else if (controllerName.Equals("Cliente") || (controllerName.Equals("Carro"))
+        || (controllerName.Equals("Moto")))
+    {
+        Layout = "~/Views/Shared/_LayoutCliente.cshtml";
+    }
+
 }

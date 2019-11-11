@@ -35,7 +35,7 @@ namespace Locadora.Controllers
             if (_clienteDAO.AutenticarLogin(cpf, senha))
             {
                 ModelState.AddModelError("", "Login OK!");
-                return View();
+                return RedirectToAction("Index", "Cliente"); ;
             }
             else if (cpf.ToUpper().Equals(adm.Login) && senha.ToUpper().Equals(adm.Senha))
             {
