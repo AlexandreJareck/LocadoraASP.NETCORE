@@ -143,7 +143,7 @@ using Locadora.Models;
             WriteLiteral("</td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(758, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1581ee6a24754cca8b8521d29afd501d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3d87fbc4899499ca4f419c771a3f8bf", async() => {
                 BeginContext(843, 7, true);
                 WriteLiteral("Remover");
                 EndContext();
@@ -179,7 +179,7 @@ using Locadora.Models;
             WriteLiteral("\r\n                </td>\r\n                <td>\r\n                    ");
             EndContext();
             BeginContext(921, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87b0bd4b31454edc8cd124dfd8a45709", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03ef7a712eea4643a96bc877bedf4c01", async() => {
                 BeginContext(1003, 7, true);
                 WriteLiteral("Alterar");
                 EndContext();
