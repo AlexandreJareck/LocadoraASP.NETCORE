@@ -2,7 +2,7 @@
 
 namespace Locadora.Migrations
 {
-    public partial class projetoaatttt : Migration
+    public partial class projetoadas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -10,77 +10,103 @@ namespace Locadora.Migrations
                 name: "Preco",
                 table: "MOTO",
                 nullable: true,
-                oldClrType: typeof(double));
+                oldClrType: typeof(string));
 
             migrationBuilder.AlterColumn<string>(
-                name: "Id",
+                name: "Name",
                 table: "MOTO",
                 nullable: true,
-                oldClrType: typeof(int));
+                oldClrType: typeof(string));
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Marca",
+                table: "MOTO",
+                nullable: true,
+                oldClrType: typeof(string));
 
             migrationBuilder.AlterColumn<string>(
                 name: "Ano_Modelo",
                 table: "MOTO",
                 nullable: true,
-                oldClrType: typeof(int));
+                oldClrType: typeof(string));
 
             migrationBuilder.AlterColumn<string>(
                 name: "Preco",
                 table: "CARRO",
                 nullable: true,
-                oldClrType: typeof(double));
+                oldClrType: typeof(string));
 
             migrationBuilder.AlterColumn<string>(
-                name: "Id",
+                name: "Name",
                 table: "CARRO",
                 nullable: true,
-                oldClrType: typeof(int));
+                oldClrType: typeof(string));
+
+            migrationBuilder.AlterColumn<string>(
+                name: "Marca",
+                table: "CARRO",
+                nullable: true,
+                oldClrType: typeof(string));
 
             migrationBuilder.AlterColumn<string>(
                 name: "Ano_Modelo",
                 table: "CARRO",
                 nullable: true,
-                oldClrType: typeof(int));
+                oldClrType: typeof(string));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<double>(
+            migrationBuilder.AlterColumn<string>(
                 name: "Preco",
                 table: "MOTO",
                 nullable: false,
                 oldClrType: typeof(string),
                 oldNullable: true);
 
-            migrationBuilder.AlterColumn<int>(
-                name: "Id",
+            migrationBuilder.AlterColumn<string>(
+                name: "Name",
                 table: "MOTO",
                 nullable: false,
                 oldClrType: typeof(string),
                 oldNullable: true);
 
-            migrationBuilder.AlterColumn<int>(
+            migrationBuilder.AlterColumn<string>(
+                name: "Marca",
+                table: "MOTO",
+                nullable: false,
+                oldClrType: typeof(string),
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
                 name: "Ano_Modelo",
                 table: "MOTO",
                 nullable: false,
                 oldClrType: typeof(string),
                 oldNullable: true);
 
-            migrationBuilder.AlterColumn<double>(
+            migrationBuilder.AlterColumn<string>(
                 name: "Preco",
                 table: "CARRO",
                 nullable: false,
                 oldClrType: typeof(string),
                 oldNullable: true);
 
-            migrationBuilder.AlterColumn<int>(
-                name: "Id",
+            migrationBuilder.AlterColumn<string>(
+                name: "Name",
                 table: "CARRO",
                 nullable: false,
                 oldClrType: typeof(string),
                 oldNullable: true);
 
-            migrationBuilder.AlterColumn<int>(
+            migrationBuilder.AlterColumn<string>(
+                name: "Marca",
+                table: "CARRO",
+                nullable: false,
+                oldClrType: typeof(string),
+                oldNullable: true);
+
+            migrationBuilder.AlterColumn<string>(
                 name: "Ano_Modelo",
                 table: "CARRO",
                 nullable: false,

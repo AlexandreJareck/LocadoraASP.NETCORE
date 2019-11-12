@@ -6,13 +6,12 @@
     {
         Layout = "~/Views/Shared/_LayoutHome.cshtml";
     }
-    else if (controllerName.Equals("Administrador") || (controllerName.Equals("Carro"))
-        || (controllerName.Equals("Moto")) || (controllerName.Equals("AdmCliente")))
+    else if (controllerName.Equals("AdmCliente") || (controllerName.Equals("Carro"))
+        || (controllerName.Equals("Moto")))
     {
         Layout = "~/Views/Shared/_LayoutAdm.cshtml";
     }
-    else if (controllerName.Equals("Cliente") || (controllerName.Equals("Carro"))
-        || (controllerName.Equals("Moto")))
+    else if (controllerName.Equals("Cliente"))
     {
         Layout = "~/Views/Shared/_LayoutCliente.cshtml";
     }

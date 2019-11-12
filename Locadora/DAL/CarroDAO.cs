@@ -47,6 +47,7 @@ namespace Locadora.DAL
 
         public void EditarCarro(Carro carro)
         {
+            carro.IdVeiculo = Convert.ToInt32(carro.id);
             _context.Carros.Update(carro);
             _context.SaveChanges();
         }

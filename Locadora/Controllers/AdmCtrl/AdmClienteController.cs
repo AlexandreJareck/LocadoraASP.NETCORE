@@ -17,6 +17,11 @@ namespace Locadora.Controllers.AdmCtrl
             _clienteDAO = clienteDAO;
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public IActionResult Clientes()
         {
             ViewBag.DataHora = DateTime.Now;

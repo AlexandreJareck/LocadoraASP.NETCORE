@@ -12539,23 +12539,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\xandy\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\LocadoraASP.NETCORE\\Locadora\\Locadora.csproj",
+      "projectUniqueName": "C:\\Users\\xandy\\Desktop\\LocadoraASP.NETCORE\\Locadora\\Locadora\\Locadora.csproj",
       "projectName": "Locadora",
-      "projectPath": "C:\\Users\\User\\LocadoraASP.NETCORE\\Locadora\\Locadora.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\LocadoraASP.NETCORE\\Locadora\\obj\\",
+      "projectPath": "C:\\Users\\xandy\\Desktop\\LocadoraASP.NETCORE\\Locadora\\Locadora\\Locadora.csproj",
+      "packagesPath": "C:\\Users\\xandy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\xandy\\Desktop\\LocadoraASP.NETCORE\\Locadora\\Locadora\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\xandy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

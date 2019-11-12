@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191107002856_projetoatt")]
-    partial class projetoatt
+    [Migration("20191112224619_RemovidoDataNottation")]
+    partial class RemovidoDataNottation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,23 +26,38 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Ano");
+                    b.Property<string>("Ano_Modelo");
+
+                    b.Property<string>("Combustivel");
 
                     b.Property<string>("Cor");
 
+                    b.Property<string>("Fipe_codigo");
+
+                    b.Property<int>("IdMarca");
+
+                    b.Property<int>("IdModelo");
+
+                    b.Property<int>("IdentVeiculo");
+
                     b.Property<string>("Marca");
 
-                    b.Property<string>("Modelo");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Placa")
+                        .IsRequired();
 
-                    b.Property<string>("Placa");
+                    b.Property<string>("Preco");
 
                     b.Property<string>("Status");
 
                     b.Property<double>("ValorPorDia");
 
                     b.Property<double>("ValorPorHora");
+
+                    b.Property<string>("id");
+
+                    b.Property<string>("veiculo");
 
                     b.HasKey("IdVeiculo");
 
@@ -86,23 +101,38 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Ano");
+                    b.Property<string>("Ano_Modelo");
+
+                    b.Property<string>("Combustivel");
 
                     b.Property<string>("Cor");
 
+                    b.Property<string>("Fipe_codigo");
+
+                    b.Property<int>("IdMarca");
+
+                    b.Property<int>("IdModelo");
+
+                    b.Property<int>("IdentVeiculo");
+
                     b.Property<string>("Marca");
 
-                    b.Property<string>("Modelo");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Nome");
+                    b.Property<string>("Placa")
+                        .IsRequired();
 
-                    b.Property<string>("Placa");
+                    b.Property<string>("Preco");
 
                     b.Property<string>("Status");
 
                     b.Property<double>("ValorPorDia");
 
                     b.Property<double>("ValorPorHora");
+
+                    b.Property<string>("id");
+
+                    b.Property<string>("veiculo");
 
                     b.HasKey("IdVeiculo");
 

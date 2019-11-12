@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191107224021_projetoatt2")]
-    partial class projetoatt2
+    [Migration("20191112224619_projetoadas")]
+    partial class projetoadas
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,7 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Ano_Modelo");
+                    b.Property<string>("Ano_Modelo");
 
                     b.Property<string>("Combustivel");
 
@@ -34,21 +34,28 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Fipe_codigo");
 
-                    b.Property<int>("Id");
+                    b.Property<int>("IdMarca");
+
+                    b.Property<int>("IdModelo");
+
+                    b.Property<int>("IdentVeiculo");
 
                     b.Property<string>("Marca");
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Placa");
+                    b.Property<string>("Placa")
+                        .IsRequired();
 
-                    b.Property<double>("Preco");
+                    b.Property<string>("Preco");
 
                     b.Property<string>("Status");
 
                     b.Property<double>("ValorPorDia");
 
                     b.Property<double>("ValorPorHora");
+
+                    b.Property<string>("id");
 
                     b.Property<string>("veiculo");
 
@@ -94,7 +101,7 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Ano_Modelo");
+                    b.Property<string>("Ano_Modelo");
 
                     b.Property<string>("Combustivel");
 
@@ -102,21 +109,28 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Fipe_codigo");
 
-                    b.Property<int>("Id");
+                    b.Property<int>("IdMarca");
+
+                    b.Property<int>("IdModelo");
+
+                    b.Property<int>("IdentVeiculo");
 
                     b.Property<string>("Marca");
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Placa");
+                    b.Property<string>("Placa")
+                        .IsRequired();
 
-                    b.Property<double>("Preco");
+                    b.Property<string>("Preco");
 
                     b.Property<string>("Status");
 
                     b.Property<double>("ValorPorDia");
 
                     b.Property<double>("ValorPorHora");
+
+                    b.Property<string>("id");
 
                     b.Property<string>("veiculo");
 

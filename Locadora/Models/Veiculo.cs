@@ -15,7 +15,6 @@ namespace Locadora.Models
         }
         [Key]
         public int IdVeiculo { get; set; }
-        public string Id { get; set; }
         public string Ano_Modelo { get; set; }
         public string Marca { get; set; }
         public string Name { get; set; }
@@ -26,11 +25,15 @@ namespace Locadora.Models
         public int IdMarca { get; set; }
         public int IdModelo { get; set; }
         public int IdentVeiculo { get; set; }
-        public string Cor { get; set; }       
+        public string Cor { get; set; }
+        [Required(ErrorMessage = "Campos obrigatórios!")]
         public string Placa { get; set; }
+        [Required]
         public double ValorPorDia { get; set; }
+        [Required]
         public double ValorPorHora { get; set; }
         public string Status { get; set; }
+        public string id { get; set; }
 
         // public List<Reserva> Reserva { get; set; }
         // public List<Devolucao> Devolucao { get; set; }

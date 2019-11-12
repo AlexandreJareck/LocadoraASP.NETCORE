@@ -9,21 +9,21 @@ namespace Locadora.Controllers.ClienteCtrl
 {
     public class ClienteController : Controller
     {
-        private readonly ClienteDAO _clienteDAO;
+        //private readonly ClienteDAO _clienteDAO;
 
-        public ClienteController(ClienteDAO clienteDAO)
-        {
-            _clienteDAO = clienteDAO;
-        }
+        //public ClienteController(ClienteDAO clienteDAO)
+        //{
+        //    _clienteDAO = clienteDAO;
+        //}
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult RemoverCliente(int id)
-        {
-            _clienteDAO.RemoverCliente(id);
-            return RedirectToAction("Index","Home");
-        }
+        //public IActionResult RemoverCliente(int id)
+        //{
+        //    _clienteDAO.RemoverCliente(id);
+        //    return RedirectToAction("Index","Home");
+        //}
     }
 }

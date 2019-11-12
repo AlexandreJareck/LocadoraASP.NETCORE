@@ -21,15 +21,22 @@
             <input type="password" class="form-control" placeholder="Senha" name="Senha" required="required">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn-outline-success col-lg-4"><i class="fas fa-sign-in-alt" style="font-size:30px"></i></button>
+            <button type="submit" class="btn-outline-success col-lg-4" name="btn-create"><i class="fas fa-sign-in-alt" style="font-size:30px"></i></button>
         </div>
         <a asp-action="Cadastrar">Cadastre-se</a>
         @*<a href="#" data-toggle="modal" data-target="#cadastroModal">Cadastre-se</a>*@
-        
+
     </form>
+
 </div>
 
 
+@*@if (ViewBag.Alerta == true)
+    {
+        <script type="text/javascript">
+                alert('Login inválido');
+        </script>
+    }*@
 @*<!-- The Modal -->
     <form asp-action="Cadastrar" method="post">
         <div class="modal" id="cadastroModal">

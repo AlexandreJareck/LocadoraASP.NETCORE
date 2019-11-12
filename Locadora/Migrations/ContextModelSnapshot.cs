@@ -32,8 +32,6 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Fipe_codigo");
 
-                    b.Property<string>("Id");
-
                     b.Property<int>("IdMarca");
 
                     b.Property<int>("IdModelo");
@@ -44,7 +42,8 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Placa");
+                    b.Property<string>("Placa")
+                        .IsRequired();
 
                     b.Property<string>("Preco");
 
@@ -53,6 +52,8 @@ namespace Locadora.Migrations
                     b.Property<double>("ValorPorDia");
 
                     b.Property<double>("ValorPorHora");
+
+                    b.Property<string>("id");
 
                     b.Property<string>("veiculo");
 
@@ -106,8 +107,6 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Fipe_codigo");
 
-                    b.Property<string>("Id");
-
                     b.Property<int>("IdMarca");
 
                     b.Property<int>("IdModelo");
@@ -118,7 +117,8 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("Placa");
+                    b.Property<string>("Placa")
+                        .IsRequired();
 
                     b.Property<string>("Preco");
 
@@ -127,6 +127,8 @@ namespace Locadora.Migrations
                     b.Property<double>("ValorPorDia");
 
                     b.Property<double>("ValorPorHora");
+
+                    b.Property<string>("id");
 
                     b.Property<string>("veiculo");
 

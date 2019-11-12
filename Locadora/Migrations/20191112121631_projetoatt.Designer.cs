@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191108122154_projetoaatttt")]
-    partial class projetoaatttt
+    [Migration("20191112121631_projetoatt")]
+    partial class projetoatt
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,8 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Ano_Modelo");
+                    b.Property<string>("Ano_Modelo")
+                        .IsRequired();
 
                     b.Property<string>("Combustivel");
 
@@ -34,21 +35,31 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Fipe_codigo");
 
-                    b.Property<string>("Id");
+                    b.Property<int>("IdMarca");
 
-                    b.Property<string>("Marca");
+                    b.Property<int>("IdModelo");
 
-                    b.Property<string>("Name");
+                    b.Property<int>("IdentVeiculo");
 
-                    b.Property<string>("Placa");
+                    b.Property<string>("Marca")
+                        .IsRequired();
 
-                    b.Property<string>("Preco");
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Placa")
+                        .IsRequired();
+
+                    b.Property<string>("Preco")
+                        .IsRequired();
 
                     b.Property<string>("Status");
 
                     b.Property<double>("ValorPorDia");
 
                     b.Property<double>("ValorPorHora");
+
+                    b.Property<string>("id");
 
                     b.Property<string>("veiculo");
 
@@ -94,7 +105,8 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Ano_Modelo");
+                    b.Property<string>("Ano_Modelo")
+                        .IsRequired();
 
                     b.Property<string>("Combustivel");
 
@@ -102,21 +114,31 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Fipe_codigo");
 
-                    b.Property<string>("Id");
+                    b.Property<int>("IdMarca");
 
-                    b.Property<string>("Marca");
+                    b.Property<int>("IdModelo");
 
-                    b.Property<string>("Name");
+                    b.Property<int>("IdentVeiculo");
 
-                    b.Property<string>("Placa");
+                    b.Property<string>("Marca")
+                        .IsRequired();
 
-                    b.Property<string>("Preco");
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<string>("Placa")
+                        .IsRequired();
+
+                    b.Property<string>("Preco")
+                        .IsRequired();
 
                     b.Property<string>("Status");
 
                     b.Property<double>("ValorPorDia");
 
                     b.Property<double>("ValorPorHora");
+
+                    b.Property<string>("id");
 
                     b.Property<string>("veiculo");
 

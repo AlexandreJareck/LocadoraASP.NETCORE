@@ -35,28 +35,16 @@ namespace Locadora.Controllers
 
         public IActionResult Cadastrar()
         {
+
             Carro carro = new Carro();
             if (TempData["Carro"] != null)
             {
                 carro = JsonConvert.DeserializeObject<Carro>(TempData["Carro"].ToString());
             }
-            //if (marcaList.Any())
-            //{
-            ViewBag.Marca = new SelectList(marcaList, "Id", "Name");
-            //    return View(carro);
-            //}
-            //if (carList.Any())
-            //{
-            ViewBag.Carro = new SelectList(carList, "Id", "Name");
-            //    return View(carro);
-            //}
-            //if (modeloList.Any())
-            //{
-            ViewBag.Modelo = new SelectList(modeloList, "Id", "Name");
-            //    return View(carro);
-            //}
+            ViewBag.Marca = new SelectList(marcaList, "id", "Name");
+            ViewBag.Carro = new SelectList(carList, "id", "Name");
+            ViewBag.Modelo = new SelectList(modeloList, "id", "Name");
             return View(carro);
-
         }
 
         public IActionResult BuscarMarcas()
@@ -72,7 +60,7 @@ namespace Locadora.Controllers
                 c.IdMarca = carro.IdMarca;
                 carList = FipeApiService.BuscarCarros(carro);
                 TempData["Carro"] = JsonConvert.SerializeObject(carro);
-                //marcaList.Clear();
+
             }
             catch (Exception)
             {
@@ -89,7 +77,6 @@ namespace Locadora.Controllers
                 carro.IdMarca = c.IdMarca;
                 modeloList = FipeApiService.BuscarModelos(carro);
                 TempData["Carro"] = JsonConvert.SerializeObject(carro);
-                //carList.Clear();
             }
             catch (Exception)
             {
@@ -120,13 +107,18 @@ namespace Locadora.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Carro carro)
         {
-            carro = _carroDAO.CadastrarCarro(carro);
-            if (carro == null)
+            if (ModelState.IsValid)
             {
-                ModelState.AddModelError("", "Carro já cadastrado!");
-                return View(carro);
+                carro = _carroDAO.CadastrarCarro(carro);
+                if (carro == null)
+                {
+                    ModelState.AddModelError("", "Carro já cadastrado!");
+                    return View(carro);
+                }
+                return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            ViewBag.s = "show";
+            return View(carro);
         }
 
         public IActionResult RemoverCarro(int id)

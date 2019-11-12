@@ -36,6 +36,9 @@ C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Locadora.View
 C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Locadora.dll
 C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Locadora.pdb
 C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Locadora.csproj.CopyComplete
+C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutCliente.g.cshtml.cs
+C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.g.cshtml.cs
+C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\ListCarro.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\bin\Debug\netcoreapp2.1\Locadora.deps.json
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\bin\Debug\netcoreapp2.1\Locadora.runtimeconfig.json
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\bin\Debug\netcoreapp2.1\Locadora.runtimeconfig.dev.json
@@ -55,16 +58,15 @@ C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreap
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\Clientes.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\EditarCliente.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\Index.g.cshtml.cs
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\Clientes.g.cshtml.cs
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\EditarCliente.g.cshtml.cs
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\Index.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\Cadastrar.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\Index.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cadastrar.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Moto\Cadastrar.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Moto\Index.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutAdm.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutCliente.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutHome.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
@@ -74,6 +76,4 @@ C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreap
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.dll
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.pdb
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.csproj.CopyComplete
-C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutCliente.g.cshtml.cs
-C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.g.cshtml.cs
-C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\ListCarro.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\EditarCarro.g.cshtml.cs

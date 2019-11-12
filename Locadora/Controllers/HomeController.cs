@@ -40,11 +40,12 @@ namespace Locadora.Controllers
             else if (cpf.ToUpper().Equals(adm.Login) && senha.ToUpper().Equals(adm.Senha))
             {
                 ModelState.AddModelError("", "Login Adm!");
-                return RedirectToAction("Index", "Administrador");
+                return RedirectToAction("Index", "AdmCliente");
             }
             else
             {
                 ModelState.AddModelError("", "Login Invalido!");
+                ViewBag.Alerta = true;
                 return View();
             }
         }

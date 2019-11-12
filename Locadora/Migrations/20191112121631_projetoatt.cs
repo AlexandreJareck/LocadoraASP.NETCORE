@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Locadora.Migrations
 {
-    public partial class teste : Migration
+    public partial class projetoatt : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,15 +13,22 @@ namespace Locadora.Migrations
                 {
                     IdVeiculo = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    Marca = table.Column<string>(nullable: true),
-                    Modelo = table.Column<string>(nullable: true),
+                    Ano_Modelo = table.Column<string>(nullable: false),
+                    Marca = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    veiculo = table.Column<string>(nullable: true),
+                    Preco = table.Column<string>(nullable: false),
+                    Combustivel = table.Column<string>(nullable: true),
+                    Fipe_codigo = table.Column<string>(nullable: true),
+                    IdMarca = table.Column<int>(nullable: false),
+                    IdModelo = table.Column<int>(nullable: false),
+                    IdentVeiculo = table.Column<int>(nullable: false),
                     Cor = table.Column<string>(nullable: true),
-                    Ano = table.Column<int>(nullable: false),
-                    Placa = table.Column<string>(nullable: true),
+                    Placa = table.Column<string>(nullable: false),
                     ValorPorDia = table.Column<double>(nullable: false),
                     ValorPorHora = table.Column<double>(nullable: false),
-                    Status = table.Column<string>(nullable: true)
+                    Status = table.Column<string>(nullable: true),
+                    id = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -56,15 +63,22 @@ namespace Locadora.Migrations
                 {
                     IdVeiculo = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    Marca = table.Column<string>(nullable: true),
-                    Modelo = table.Column<string>(nullable: true),
+                    Ano_Modelo = table.Column<string>(nullable: false),
+                    Marca = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    veiculo = table.Column<string>(nullable: true),
+                    Preco = table.Column<string>(nullable: false),
+                    Combustivel = table.Column<string>(nullable: true),
+                    Fipe_codigo = table.Column<string>(nullable: true),
+                    IdMarca = table.Column<int>(nullable: false),
+                    IdModelo = table.Column<int>(nullable: false),
+                    IdentVeiculo = table.Column<int>(nullable: false),
                     Cor = table.Column<string>(nullable: true),
-                    Ano = table.Column<int>(nullable: false),
-                    Placa = table.Column<string>(nullable: true),
+                    Placa = table.Column<string>(nullable: false),
                     ValorPorDia = table.Column<double>(nullable: false),
                     ValorPorHora = table.Column<double>(nullable: false),
-                    Status = table.Column<string>(nullable: true)
+                    Status = table.Column<string>(nullable: true),
+                    id = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
