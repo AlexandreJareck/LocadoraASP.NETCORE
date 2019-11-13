@@ -19,17 +19,22 @@
             <label class="text-info" for="Cpf">Cpf</label>
             <input class="form-control col-md-4" placeholder="CPF" asp-for="Cpf" />
         </div>
-        <div class="form-group" id="Quantidade">
+        <div class="form-group" id="Senha">
             <label class="text-info" for="Senha">Senha</label>
             <input type="password" class="form-control col-md-4" placeholder="Senha" asp-for="Senha" />
         </div>
-        <div class="form-group" id="Quantidade">
+        <div class="form-group" id="Cnh">
             <label class="text-info" for="Cnh">Cnh</label>
-            <input class="form-control col-md-4" placeholder="CPF" asp-for="Cnh" />
+            <input class="form-control col-md-4" placeholder="Cnh" asp-for="Cnh" />
         </div>
-        <div class="form-group" id="Quantidade">
+        <div class="form-group" id="Categoria">
             <label class="text-info" for="CategoriaCnh">Categoria Cnh</label>
-            <input class="form-control col-md-4" placeholder="Categoria Cnh" asp-for="CategoriaCnh" />
+            <select asp-for="CategoriaCnh" class="form-control col-md-4">
+                <option>Selecione sua categoria</option>
+                <option>A</option>
+                <option>B</option>
+                <option>AB</option>
+            </select>
         </div>
         <button class="btn btn-outline-success col-md-4" type="submit">Cadastrar</button>
 

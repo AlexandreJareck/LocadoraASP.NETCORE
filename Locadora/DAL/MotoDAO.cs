@@ -18,6 +18,10 @@ namespace Locadora.DAL
         {
             return _context.Motos.ToList();
         }
+        public List<Moto> ListarMotosDs()
+        {
+            return _context.Motos.Where(x => x.Status.Equals("DISPONIVEL")).ToList();
+        }
 
         public Moto Get(int id)
         {

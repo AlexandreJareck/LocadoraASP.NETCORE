@@ -1,4 +1,5 @@
 ﻿using Locadora.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace Locadora.DAL
         public List<Carro> ListarCarros()
         {
             return _context.Carros.ToList();
+        }
+        public List<Carro> ListarCarrosDs()
+        {
+            return _context.Carros.Where(x => x.Status.Equals("DISPONIVEL")).ToList();
         }
 
         public Carro Get(int id)

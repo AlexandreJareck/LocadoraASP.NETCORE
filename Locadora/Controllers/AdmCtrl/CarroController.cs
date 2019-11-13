@@ -28,10 +28,11 @@ namespace Locadora.Controllers
             _carroDAO = carroDAO;
         }
 
-        public IActionResult Index()
-        {
+       public IActionResult Index()
+       {
             return View(_carroDAO.ListarCarros());
-        }
+       }
+       
 
         public IActionResult Cadastrar()
         {

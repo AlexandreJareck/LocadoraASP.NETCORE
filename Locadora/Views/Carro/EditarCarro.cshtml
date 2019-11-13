@@ -7,7 +7,7 @@
 
         <div class="form-group" id="Modelo">
             <div class="form-group">
-                <div class="form-inline">                    
+                <div class="form-inline">
                     <input class="form-control col-md-1" style="margin-left:10px;" placeholder="Ano" asp-for="AnoModelo" title="Ano modelo" readonly="" />
                     <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Marca do veiculo" asp-for="Marca" title="Marca do Veiculo" readonly="" />
                     <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
@@ -25,10 +25,20 @@
 
             <div class="form-group">
                 <div class="form-inline">
-                    <input class="form-control col-md-2" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="Placa" title="Placa do veiculo" readonly=""/>
+                    <input class="form-control col-md-2" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="Placa" title="Placa do veiculo" readonly="" />
                     <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por hora do veiculo" asp-for="ValorPorHora" title="Valor por hora do veiculo" />
                     <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por dia do veiculo" asp-for="ValorPorDia" title="Valor por dia do veiculo" /><br />
 
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <select asp-for="Status" class="form-control" style="margin-left:10px;">
+                            <option>DISPONIVEL</option>
+                            <option>CANCELADO</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <button asp-controller="Carro" asp-action="EditarCarro" class="btn btn-outline-success col-md-6" type="submit">Alterar Dados</button>
