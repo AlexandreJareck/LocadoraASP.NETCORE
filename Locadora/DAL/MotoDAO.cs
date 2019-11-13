@@ -46,6 +46,7 @@ namespace Locadora.DAL
 
        public void EditarMoto(Moto moto)
         {
+            //moto.IdVeiculo = Convert.ToInt32(moto.id);
             _context.Motos.Update(moto);
             _context.SaveChanges();
         }  

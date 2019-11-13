@@ -32,10 +32,12 @@ namespace Locadora.DAL
                 carro = null;
                 return carro;
             }
-            carro.Status = "DISPONIVEL";
-            _context.Carros.Add(carro);
+            Carro c = new Carro();
+            c = carro;
+            c.Status = "DISPONIVEL";
+            _context.Carros.Add(c);
             _context.SaveChanges();
-            return carro;
+            return c;
         }
 
         public Carro Get(Carro carro)
@@ -47,7 +49,7 @@ namespace Locadora.DAL
 
         public void EditarCarro(Carro carro)
         {
-            carro.IdVeiculo = Convert.ToInt32(carro.id);
+            //carro.IdVeiculo = Convert.ToInt32(carro.id);
             _context.Carros.Update(carro);
             _context.SaveChanges();
         }

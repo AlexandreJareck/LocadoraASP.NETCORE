@@ -12,6 +12,8 @@ namespace Locadora.Controllers.AdmCtrl
     {
         private readonly ClienteDAO _clienteDAO;
 
+        public static List<Cliente> listClient = new List<Cliente>();
+
         public AdmClienteController(ClienteDAO clienteDAO)
         {
             _clienteDAO = clienteDAO;
@@ -25,7 +27,12 @@ namespace Locadora.Controllers.AdmCtrl
         public IActionResult Clientes()
         {
             ViewBag.DataHora = DateTime.Now;
-            return View(_clienteDAO.ListarClientes());
+            if (!listClient.Any())
+            {
+                return View(_clienteDAO.ListarClientes());
+            }
+            return View(listClient);
+            
         }
 
         public IActionResult RemoverCliente(int id)
@@ -44,6 +51,20 @@ namespace Locadora.Controllers.AdmCtrl
         public IActionResult EditarCliente(Cliente cliente)
         {
             _clienteDAO.EditarCliente(cliente);
+            return RedirectToAction("Clientes");
+        }
+        
+        public IActionResult BuscarCliente(string cpf)
+        {
+            if (string.IsNullOrWhiteSpace(cpf))
+            {
+                listClient = _clienteDAO.ListarClientes();
+            }
+            else
+            {
+                listClient = _clienteDAO.ListClientName(cpf);
+            }
+            
             return RedirectToAction("Clientes");
         }
     }

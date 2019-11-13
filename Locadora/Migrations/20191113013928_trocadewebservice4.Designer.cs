@@ -4,14 +4,16 @@ using Locadora.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191113013928_trocadewebservice4")]
+    partial class trocadewebservice4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,11 +37,11 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cor");
 
-                    b.Property<string>("IdMarca");
+                    b.Property<int>("IdMarca");
 
-                    b.Property<string>("IdModelo");
+                    b.Property<int>("IdModelo");
 
-                    b.Property<string>("IdentVeiculo");
+                    b.Property<int>("IdentVeiculo");
 
                     b.Property<string>("Marca");
 
@@ -137,11 +139,11 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cor");
 
-                    b.Property<string>("IdMarca");
+                    b.Property<int>("IdMarca");
 
-                    b.Property<string>("IdModelo");
+                    b.Property<int>("IdModelo");
 
-                    b.Property<string>("IdentVeiculo");
+                    b.Property<int>("IdentVeiculo");
 
                     b.Property<string>("Marca");
 

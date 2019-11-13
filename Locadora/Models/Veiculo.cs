@@ -8,23 +8,21 @@ namespace Locadora.Models
 {
     public class Veiculo
     {
-        public Veiculo()
-        {
-            // Reserva = new List<Reserva>();
-            // Devolucao = new List<Devolucao>();
-        }
         [Key]
         public int IdVeiculo { get; set; }
-        public string Ano_Modelo { get; set; }
+        public string Nome { get; set; }
+        public string Codigo { get; set; }
+        public string Valor { get; set; }
         public string Marca { get; set; }
-        public string Name { get; set; }
-        public string veiculo { get; set; }
-        public string Preco { get; set; }
+        public string Modelo { get; set; }
+        public int AnoModelo { get; set; }
         public string Combustivel { get; set; }
-        public string Fipe_codigo { get; set; }
-        public int IdMarca { get; set; }
-        public int IdModelo { get; set; }
-        public int IdentVeiculo { get; set; }
+        public string CodigoFipe { get; set; }
+        public string MesReferencia { get; set; }
+        public int TipoVeiculo { get; set; }
+        public string IdMarca { get; set; }
+        public string IdModelo { get; set; }
+        public string IdentVeiculo { get; set; }
         public string Cor { get; set; }
         [Required(ErrorMessage = "Campos obrigatórios!")]
         public string Placa { get; set; }
@@ -33,9 +31,15 @@ namespace Locadora.Models
         [Required]
         public double ValorPorHora { get; set; }
         public string Status { get; set; }
-        public string id { get; set; }
-
-        // public List<Reserva> Reserva { get; set; }
-        // public List<Devolucao> Devolucao { get; set; }
+        public List<Modelo> Modelos { get; set; } = new List<Modelo>();
     }
+
+    public class Modelo
+    {
+        [Key]
+        public int ModeloId { get; set; }
+        public string Codigo { get; set; }
+        public string Nome { get; set; }
+    }
+
 }

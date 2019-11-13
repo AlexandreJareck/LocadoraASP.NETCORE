@@ -29,7 +29,7 @@
         </div>
         <div class="form-group" id="Modelo">
             <div class="form-inline">
-                <select asp-items="ViewBag.Modelo" class="form-control col-md-6" asp-for="Fipe_codigo">
+                <select asp-items="ViewBag.Modelo" class="form-control col-md-6" asp-for="CodigoFipe">
                     <option> - Selecione Modelos- </option>
                 </select>
                 <button asp-controller="Carro" asp-action="BuscarModelos" style="margin-left:10px;" class="btn btn-outline-warning col-md-2" type="submit">
@@ -41,17 +41,18 @@
             </div>
             <div class="form-group">
                 <div class="form-inline">
-                    <input class="form-control col-md-1" style="margin-left:10px;" placeholder="Ano" asp-for="Ano_Modelo" title="Ano modelo" readonly="" />
+                    <input class="form-control col-md-1" style="margin-left:10px;" placeholder="Ano" asp-for="AnoModelo" title="Ano modelo" readonly="" />
                     <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Marca do veiculo" asp-for="Marca" title="Marca do Veiculo" readonly="" />
-                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Nome do veiculo" asp-for="Name" title="Nome do Veiculo" readonly="" />
+                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
 
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-inline">
-                    <input class="form-control col-md-1" type="color" style="margin-left:10px;" placeholder="Cor" asp-for="Cor" title="Cor do veiculo" />
-                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Preço do veiculo" asp-for="Preco" readonly="" title="Preço de acordo tabela Fipe" />
-                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Combustivel" asp-for="Combustivel" readonly="" title="Tipo de Combustivel" />
+                    <input class="form-control col-md-1" style="margin-left:5px;" placeholder="Id" asp-for="IdVeiculo" title="Id do veiculo" />
+                    <input class="form-control col-md-1" type="color" style="margin-left:5px;" placeholder="Cor" asp-for="Cor" title="Cor do veiculo" />
+                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" />
+                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Combustivel" asp-for="Combustivel" readonly="" title="Tipo de Combustivel" />
                 </div>
             </div>
 

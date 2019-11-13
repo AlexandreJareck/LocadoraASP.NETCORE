@@ -14,7 +14,7 @@ namespace Locadora.Controllers
     public class MotoController : Controller
     {
         public static List<Moto> marcaList = new List<Moto>();
-        public static List<Moto> motoList = new List<Moto>();
+        public static List<Modelo> motoList = new List<Modelo>();
         public static List<Moto> modeloList = new List<Moto>();
         public static Moto m = new Moto();
 
@@ -38,9 +38,9 @@ namespace Locadora.Controllers
             {
                 moto = JsonConvert.DeserializeObject<Moto>(TempData["Moto"].ToString());
             }
-            ViewBag.Marca = new SelectList(marcaList, "id", "Name");
-            ViewBag.Moto = new SelectList(motoList, "id", "Name");
-            ViewBag.Modelo = new SelectList(modeloList, "id", "Name");
+            ViewBag.Marca = new SelectList(marcaList, "Codigo", "Nome");
+            ViewBag.Moto = new SelectList(motoList, "Codigo", "Nome");
+            ViewBag.Modelo = new SelectList(modeloList, "Codigo", "Nome");
             return View(moto);
         }
 
@@ -104,6 +104,9 @@ namespace Locadora.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Moto moto)
         {
+            moto.IdentVeiculo = null;
+            moto.IdMarca = null;
+            moto.IdModelo = null;
             if (ModelState.IsValid)
             {
                 moto = _motoDAO.CadastrarMoto(moto);
@@ -135,5 +138,6 @@ namespace Locadora.Controllers
             _motoDAO.EditarMoto(moto);
             return RedirectToAction("Index");
         }
+
     }
 }

@@ -1,7 +1,14 @@
 ﻿@model List<Cliente>
 
 <h2>Gerenciamento de Clientes</h2>
-
+<form asp-action="BuscarCliente" method="post">
+    <div class="form-group">
+        <div class="form-inline">
+            <input type="text" placeholder="Pesquisar pelo cpf" name="cpf" />
+            <button class="btn btn-outline-info col-md-2" style="margin-left:10px;" asp-action="BuscarCliente">Buscar</button>
+        </div>
+    </div>
+</form>
 <table class="table table-hover table-striped">
     <thead>
         <tr class="table-primary">

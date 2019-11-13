@@ -15,7 +15,7 @@ namespace Locadora.Controllers
     public class CarroController : Controller
     {
         public static List<Carro> marcaList = new List<Carro>();
-        public static List<Carro> carList = new List<Carro>();
+        public static List<Modelo> carList = new List<Modelo>();
         public static List<Carro> modeloList = new List<Carro>();
         public static Carro c = new Carro();
 
@@ -41,9 +41,9 @@ namespace Locadora.Controllers
             {
                 carro = JsonConvert.DeserializeObject<Carro>(TempData["Carro"].ToString());
             }
-            ViewBag.Marca = new SelectList(marcaList, "id", "Name");
-            ViewBag.Carro = new SelectList(carList, "id", "Name");
-            ViewBag.Modelo = new SelectList(modeloList, "id", "Name");
+            ViewBag.Marca = new SelectList(marcaList, "Codigo", "Nome");
+            ViewBag.Carro = new SelectList(carList, "Codigo", "Nome");
+            ViewBag.Modelo = new SelectList(modeloList, "Codigo", "Nome");
             return View(carro);
         }
 
@@ -107,8 +107,8 @@ namespace Locadora.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Carro carro)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 carro = _carroDAO.CadastrarCarro(carro);
                 if (carro == null)
                 {
@@ -116,9 +116,9 @@ namespace Locadora.Controllers
                     return View(carro);
                 }
                 return RedirectToAction("Index");
-            }
-            ViewBag.s = "show";
-            return View(carro);
+            //}
+            //ViewBag.s = "show";
+            //return View(carro);
         }
 
         public IActionResult RemoverCarro(int id)

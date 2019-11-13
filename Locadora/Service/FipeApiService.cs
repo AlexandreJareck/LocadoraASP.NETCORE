@@ -14,60 +14,66 @@ namespace Locadora.Service
         #region WsCar
         public static List<Carro> BuscarMarcas()
         {
-            string url = "http://fipeapi.appspot.com/api/1/carros/marcas.json";
+            string url = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<List<Carro>>(client.DownloadString(url));
         }
 
-        public static List<Carro> BuscarCarros(Carro carro)
+        public static List<Modelo> BuscarCarros(Carro carro)
         {
-            string url = "http://fipeapi.appspot.com/api/1/carros/veiculos/" + carro.IdMarca + ".json";
+            string url = "https://parallelum.com.br/fipe/api/v1/carros/marcas/" + carro.IdMarca + "/modelos";
             WebClient client = new WebClient();
-            return JsonConvert.DeserializeObject<List<Carro>>(client.DownloadString(url));
+            var result = JsonConvert.DeserializeObject<Carro>(client.DownloadString(url));            
+
+            return result.Modelos;
         }
 
         public static List<Carro> BuscarModelos(Carro carro)
-        {
-            string url = "http://fipeapi.appspot.com/api/1/carros/veiculo/" + carro.IdMarca + "/" + carro.IdentVeiculo + ".json";
+        {        
+            string url = "https://parallelum.com.br/fipe/api/v1/carros/marcas/" + carro.IdMarca + "/modelos/" + carro.IdentVeiculo + "/anos";            
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<List<Carro>>(client.DownloadString(url));
         }
 
         public static Carro BuscarDadosVeiculo(Carro carro)
-        {
-            string url = "http://fipeapi.appspot.com/api/1/carros/veiculo/" + carro.IdMarca + "/" + carro.IdentVeiculo + "/" + carro.Fipe_codigo + ".json";
+        {        
+            string url = "https://parallelum.com.br/fipe/api/v1/carros/marcas/" + carro.IdMarca + "/modelos/" + carro.IdentVeiculo + "/anos/" + carro.CodigoFipe;            
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<Carro>(client.DownloadString(url));
         }
         #endregion
 
+        #region WsMoto
         public static List<Moto> BuscarMarcasMoto()
         {
-            string url = "http://fipeapi.appspot.com/api/1/motos/marcas.json";
+            string url = "https://parallelum.com.br/fipe/api/v1/motos/marcas";
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<List<Moto>>(client.DownloadString(url));
         }
 
-        public static List<Moto> BuscarMotos(Moto moto)
+        public static List<Modelo> BuscarMotos(Moto moto)
         {
-            string url = "http://fipeapi.appspot.com/api/1/motos/veiculos/" + moto.IdMarca + ".json";
+            string url = "https://parallelum.com.br/fipe/api/v1/motos/marcas/" + moto.IdMarca + "/modelos";
             WebClient client = new WebClient();
-            return JsonConvert.DeserializeObject<List<Moto>>(client.DownloadString(url));
+            var result = JsonConvert.DeserializeObject<Moto>(client.DownloadString(url));
+
+            return result.Modelos;
         }
 
         public static List<Moto> BuscarModelosMoto(Moto moto)
         {
-            string url = "http://fipeapi.appspot.com/api/1/motos/veiculo/" + moto.IdMarca + "/" + moto.IdentVeiculo + ".json";
+            string url = "https://parallelum.com.br/fipe/api/v1/motos/marcas/" + moto.IdMarca + "/modelos/" + moto.IdentVeiculo + "/anos";
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<List<Moto>>(client.DownloadString(url));
         }
 
         public static Moto BuscarDadosVeiculoMoto(Moto moto)
         {
-            string url = "http://fipeapi.appspot.com/api/1/motos/veiculo/" + moto.IdMarca + "/" + moto.IdentVeiculo + "/" + moto.Fipe_codigo + ".json";
+            string url = "https://parallelum.com.br/fipe/api/v1/motos/marcas/" + moto.IdMarca + "/modelos/" + moto.IdentVeiculo + "/anos/" + moto.CodigoFipe;
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<Moto>(client.DownloadString(url));
-        }
+        } 
+        #endregion
 
     }
 }

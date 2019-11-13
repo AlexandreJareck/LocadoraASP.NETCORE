@@ -4,14 +4,16 @@ using Locadora.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191113012602_trocadewebservice2")]
+    partial class trocadewebservice2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,11 +37,11 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cor");
 
-                    b.Property<string>("IdMarca");
+                    b.Property<int>("IdMarca");
 
-                    b.Property<string>("IdModelo");
+                    b.Property<int>("IdModelo");
 
-                    b.Property<string>("IdentVeiculo");
+                    b.Property<int>("IdentVeiculo");
 
                     b.Property<string>("Marca");
 
@@ -98,27 +100,64 @@ namespace Locadora.Migrations
                     b.ToTable("CLIENTE");
                 });
 
-            modelBuilder.Entity("Locadora.Models.Modelo", b =>
+            modelBuilder.Entity("Locadora.Models.Modelos", b =>
                 {
-                    b.Property<int>("ModeloId")
+                    b.Property<int>("IdVeiculo")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("AnoModelo");
 
                     b.Property<int?>("CarroIdVeiculo");
 
                     b.Property<string>("Codigo");
 
+                    b.Property<string>("CodigoFipe");
+
+                    b.Property<string>("Combustivel");
+
+                    b.Property<string>("Cor");
+
+                    b.Property<int>("IdMarca");
+
+                    b.Property<int>("IdModelo");
+
+                    b.Property<int>("IdentVeiculo");
+
+                    b.Property<string>("Marca");
+
+                    b.Property<string>("MesReferencia");
+
+                    b.Property<string>("Modelo");
+
+                    b.Property<int?>("ModelosIdVeiculo");
+
                     b.Property<int?>("MotoIdVeiculo");
 
                     b.Property<string>("Nome");
 
-                    b.HasKey("ModeloId");
+                    b.Property<string>("Placa")
+                        .IsRequired();
+
+                    b.Property<string>("Status");
+
+                    b.Property<int>("TipoVeiculo");
+
+                    b.Property<string>("Valor");
+
+                    b.Property<double>("ValorPorDia");
+
+                    b.Property<double>("ValorPorHora");
+
+                    b.HasKey("IdVeiculo");
 
                     b.HasIndex("CarroIdVeiculo");
 
+                    b.HasIndex("ModelosIdVeiculo");
+
                     b.HasIndex("MotoIdVeiculo");
 
-                    b.ToTable("Modelo");
+                    b.ToTable("Modelos");
                 });
 
             modelBuilder.Entity("Locadora.Models.Moto", b =>
@@ -137,11 +176,11 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cor");
 
-                    b.Property<string>("IdMarca");
+                    b.Property<int>("IdMarca");
 
-                    b.Property<string>("IdModelo");
+                    b.Property<int>("IdModelo");
 
-                    b.Property<string>("IdentVeiculo");
+                    b.Property<int>("IdentVeiculo");
 
                     b.Property<string>("Marca");
 
@@ -169,11 +208,15 @@ namespace Locadora.Migrations
                     b.ToTable("MOTO");
                 });
 
-            modelBuilder.Entity("Locadora.Models.Modelo", b =>
+            modelBuilder.Entity("Locadora.Models.Modelos", b =>
                 {
                     b.HasOne("Locadora.Models.Carro")
                         .WithMany("Modelos")
                         .HasForeignKey("CarroIdVeiculo");
+
+                    b.HasOne("Locadora.Models.Modelos")
+                        .WithMany("Modelos")
+                        .HasForeignKey("ModelosIdVeiculo");
 
                     b.HasOne("Locadora.Models.Moto")
                         .WithMany("Modelos")

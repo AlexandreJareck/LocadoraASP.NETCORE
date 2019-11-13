@@ -4,14 +4,16 @@ using Locadora.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191113013246_trocadewebservice3")]
+    partial class trocadewebservice3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,11 +37,11 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cor");
 
-                    b.Property<string>("IdMarca");
+                    b.Property<int>("IdMarca");
 
-                    b.Property<string>("IdModelo");
+                    b.Property<int>("IdModelo");
 
-                    b.Property<string>("IdentVeiculo");
+                    b.Property<int>("IdentVeiculo");
 
                     b.Property<string>("Marca");
 
@@ -98,9 +100,9 @@ namespace Locadora.Migrations
                     b.ToTable("CLIENTE");
                 });
 
-            modelBuilder.Entity("Locadora.Models.Modelo", b =>
+            modelBuilder.Entity("Locadora.Models.Modelos", b =>
                 {
-                    b.Property<int>("ModeloId")
+                    b.Property<int>("ModelosId")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -112,13 +114,13 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Nome");
 
-                    b.HasKey("ModeloId");
+                    b.HasKey("ModelosId");
 
                     b.HasIndex("CarroIdVeiculo");
 
                     b.HasIndex("MotoIdVeiculo");
 
-                    b.ToTable("Modelo");
+                    b.ToTable("Modelos");
                 });
 
             modelBuilder.Entity("Locadora.Models.Moto", b =>
@@ -137,11 +139,11 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cor");
 
-                    b.Property<string>("IdMarca");
+                    b.Property<int>("IdMarca");
 
-                    b.Property<string>("IdModelo");
+                    b.Property<int>("IdModelo");
 
-                    b.Property<string>("IdentVeiculo");
+                    b.Property<int>("IdentVeiculo");
 
                     b.Property<string>("Marca");
 
@@ -169,7 +171,7 @@ namespace Locadora.Migrations
                     b.ToTable("MOTO");
                 });
 
-            modelBuilder.Entity("Locadora.Models.Modelo", b =>
+            modelBuilder.Entity("Locadora.Models.Modelos", b =>
                 {
                     b.HasOne("Locadora.Models.Carro")
                         .WithMany("Modelos")

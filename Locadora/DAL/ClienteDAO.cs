@@ -21,6 +21,11 @@ namespace Locadora.DAL
             return _context.Clientes.ToList();
         }
 
+        public List<Cliente> ListClientName(string cpf)
+        {
+            return _context.Clientes.Where(x => x.Cpf.Equals(cpf)).ToList();
+        }
+
         public Cliente Get(int id)
         {
             return _context.Clientes.Find(id);
