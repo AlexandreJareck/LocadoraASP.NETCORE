@@ -17,9 +17,8 @@ namespace Locadora.Controllers
         public static List<Carro> marcaList = new List<Carro>();
         public static List<Modelo> carList = new List<Modelo>();
         public static List<Carro> modeloList = new List<Carro>();
-        public static Carro c = new Carro();
-
-        public static int result;
+        public static List<Carro> listCarPlaca = new List<Carro>();
+        public static Carro c = new Carro();        
 
         private readonly CarroDAO _carroDAO;
 
@@ -28,11 +27,31 @@ namespace Locadora.Controllers
             _carroDAO = carroDAO;
         }
 
-       public IActionResult Index()
-       {
-            return View(_carroDAO.ListarCarros());
-       }
-       
+        public IActionResult Index()
+        {
+            if (!listCarPlaca.Any())
+            {
+                return View(_carroDAO.ListarCarros());
+            }
+            return View(listCarPlaca);
+        }
+
+        public IActionResult BuscarCarroPlaca(string placa)
+        {
+            
+            if (string.IsNullOrWhiteSpace(placa))
+            {
+                listCarPlaca = _carroDAO.ListarCarros();
+            }
+            else
+            {
+                listCarPlaca = _carroDAO.ListCarPlaca(placa);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        #region  Crud
 
         public IActionResult Cadastrar()
         {
@@ -47,6 +66,45 @@ namespace Locadora.Controllers
             ViewBag.Modelo = new SelectList(modeloList, "Codigo", "Nome");
             return View(carro);
         }
+
+        [HttpPost]
+        public IActionResult Cadastrar(Carro carro)
+        {
+            if (ModelState.IsValid)
+            {
+                carro = _carroDAO.CadastrarCarro(carro);
+                if (carro == null)
+                {
+                    ModelState.AddModelError("", "Carro já cadastrado!");
+                    return View(carro);
+                }
+                return RedirectToAction("Index");
+            }
+            ViewBag.s = "show";
+            return View(carro);
+        }
+
+        public IActionResult EditarCarro(int id)
+        {
+            return View(_carroDAO.Get(id));
+        }
+
+        [HttpPost]
+        public IActionResult EditarCarro(Carro carro)
+        {
+            _carroDAO.EditarCarro(carro);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult RemoverCarro(int id)
+        {
+            _carroDAO.RemoverCarro(id);
+            return RedirectToAction("Index");
+        } 
+
+        #endregion
+
+        #region WebService
 
         public IActionResult BuscarMarcas()
         {
@@ -105,39 +163,6 @@ namespace Locadora.Controllers
             return RedirectToAction("Cadastrar");
         }
 
-        [HttpPost]
-        public IActionResult Cadastrar(Carro carro)
-        {
-            //if (ModelState.IsValid)
-            //{
-                carro = _carroDAO.CadastrarCarro(carro);
-                if (carro == null)
-                {
-                    ModelState.AddModelError("", "Carro já cadastrado!");
-                    return View(carro);
-                }
-                return RedirectToAction("Index");
-            //}
-            //ViewBag.s = "show";
-            //return View(carro);
-        }
-
-        public IActionResult RemoverCarro(int id)
-        {
-            _carroDAO.RemoverCarro(id);
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult EditarCarro(int id)
-        {
-            return View(_carroDAO.Get(id));
-        }
-
-        [HttpPost]
-        public IActionResult EditarCarro(Carro carro)
-        {
-            _carroDAO.EditarCarro(carro);
-            return RedirectToAction("Index");
-        }
+        #endregion
     }
 }

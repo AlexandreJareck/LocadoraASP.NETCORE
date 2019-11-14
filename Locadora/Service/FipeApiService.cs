@@ -12,6 +12,7 @@ namespace Locadora.Service
     {
 
         #region WsCar
+
         public static List<Carro> BuscarMarcas()
         {
             string url = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
@@ -41,9 +42,11 @@ namespace Locadora.Service
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<Carro>(client.DownloadString(url));
         }
+
         #endregion
 
         #region WsMoto
+
         public static List<Moto> BuscarMarcasMoto()
         {
             string url = "https://parallelum.com.br/fipe/api/v1/motos/marcas";
@@ -73,6 +76,7 @@ namespace Locadora.Service
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<Moto>(client.DownloadString(url));
         } 
+
         #endregion
 
     }

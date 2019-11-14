@@ -7,7 +7,5 @@ using System.Threading.Tasks;
 namespace Locadora.Models
 {
     [Table("MOTO")]
-    public class Moto : Veiculo
-    {
-    }
+    public class Moto : Veiculo { }
 }

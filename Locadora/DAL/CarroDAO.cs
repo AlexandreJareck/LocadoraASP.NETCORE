@@ -11,50 +11,34 @@ namespace Locadora.DAL
     {
         private readonly Context _context;
 
-        public CarroDAO(Context context)
-        {
-            _context = context;
-        }
+        #region Métodos de buscas e filtros
 
-        public List<Carro> ListarCarros()
-        {
-            return _context.Carros.ToList();
-        }
-        public List<Carro> ListarCarrosDs()
-        {
-            return _context.Carros.Where(x => x.Status.Equals("DISPONIVEL")).ToList();
-        }
+        public CarroDAO(Context context) { _context = context; }
+        public List<Carro> ListarCarros() { return _context.Carros.ToList(); }
+        public List<Carro> ListarCarrosDs() { return _context.Carros.Where(x => x.Status.Equals("DISPONIVEL")).ToList(); }
+        public Carro Get(int id) { return _context.Carros.Find(id); }
+        public Carro GetPlaca(Carro carro) { return _context.Carros.Where(x => x.Placa.Equals(carro.Placa)).FirstOrDefault(); }
+        public List<Carro> ListCarPlaca(string placa) { return _context.Carros.Where(x => x.Placa.Equals(placa)).ToList(); }
 
-        public Carro Get(int id)
-        {
-            return _context.Carros.Find(id);
-        }
+        #endregion
+
+        #region Crud
 
         public Carro CadastrarCarro(Carro carro)
         {
-            if (Get(carro) != null)
+            if (GetPlaca(carro) != null)
             {
                 carro = null;
                 return carro;
             }
-            Carro c = new Carro();
-            c = carro;
-            c.Status = "DISPONIVEL";
-            _context.Carros.Add(c);
+            carro.Status = "DISPONIVEL";
+            _context.Carros.Add(carro);
             _context.SaveChanges();
-            return c;
-        }
-
-        public Carro Get(Carro carro)
-        {
-            var result = _context.Carros.Where(x => x.Placa.Equals(carro.Placa)).FirstOrDefault();
-
-            return result;
+            return carro;
         }
 
         public void EditarCarro(Carro carro)
         {
-            //carro.IdVeiculo = Convert.ToInt32(carro.id);
             _context.Carros.Update(carro);
             _context.SaveChanges();
         }
@@ -64,6 +48,8 @@ namespace Locadora.DAL
             Carro carro = Get(id);
             carro.Status = "CANCELADO";
             EditarCarro(carro);
-        }
+        } 
+
+        #endregion
     }
 }

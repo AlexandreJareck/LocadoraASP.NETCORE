@@ -1,9 +1,17 @@
 ﻿@model List<Moto>
 
 <h2>Gerenciamento de Motos</h2>
-<div>
-    <a asp-controller="Moto" class="btn btn-outline-primary col-md-2" asp-action="Cadastrar">Cadastrar</a>
-</div>
+<form asp-action="BuscarMotoPlaca" method="post">
+    <a asp-controller="Moto" class="btn btn-outline-success col-md-2" asp-action="Cadastrar">Cadastrar</a>
+    <div style="float:right">
+        <div class="form-group">
+            <div class="form-inline">
+                <input class="form-control col-md-7" type="text" placeholder="Pesquisar pela placa" name="placa" />
+                <button class="btn btn-outline-info col-md-4" style="margin-left:10px;" asp-controller="Moto" asp-action="BuscarMotoPlaca">Buscar</button>
+            </div>
+        </div>
+    </div>
+</form>
 <table class="table table-hover table-striped">
     <thead>
         <tr class="table-primary">
@@ -34,10 +42,10 @@
                 <td>@item.ValorPorHora</td>
                 <td>@item.Status</td>
                 <td>
-                    <a class="btn btn-danger" asp-controller="Moto" asp-action="RemoverMoto" asp-route-id="@item.IdVeiculo">Remover</a>
+                    <a class="btn btn-outline-danger" asp-controller="Moto" asp-action="RemoverMoto" asp-route-id="@item.IdVeiculo">Remover</a>
                 </td>
                 <td>
-                    <a class="btn btn-info" asp-controller="Moto" asp-action="EditarMoto" asp-route-id="@item.IdVeiculo">Alterar</a>
+                    <a class="btn btn-outline-info" asp-controller="Moto" asp-action="EditarMoto" asp-route-id="@item.IdVeiculo">Alterar</a>
 
                 </td>
             </tr>

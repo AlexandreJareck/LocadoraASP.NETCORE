@@ -8,28 +8,29 @@ namespace Locadora.DAL
 {
     public class ClienteDAO
     {
-
         private readonly Context _context;
 
-        public ClienteDAO(Context context)
+        public bool AutenticarLogin(string cpf, string senha)
         {
-            _context = context;
+            var result = _context.Clientes.FirstOrDefault(x => x.Cpf.Equals(cpf) && x.Senha.Equals(senha));
+            if (result != null)
+            {
+                return true;
+            }
+            return false;
         }
 
-        public List<Cliente> ListarClientes()
-        {
-            return _context.Clientes.ToList();
-        }
+        #region Métodos de buscas e filtros
 
-        public List<Cliente> ListClientName(string cpf)
-        {
-            return _context.Clientes.Where(x => x.Cpf.Equals(cpf)).ToList();
-        }
+        public ClienteDAO(Context context) { _context = context; }
+        public List<Cliente> ListarClientes() { return _context.Clientes.ToList(); }
+        public List<Cliente> ListClientCpf(string cpf) { return _context.Clientes.Where(x => x.Cpf.Equals(cpf)).ToList(); }
+        public Cliente Get(int id) { return _context.Clientes.Find(id); }
+        public Cliente Get(Cliente cliente) { return _context.Clientes.Where(x => x.Cpf.Equals(cliente.Cpf)).FirstOrDefault(); }
 
-        public Cliente Get(int id)
-        {
-            return _context.Clientes.Find(id);
-        }
+        #endregion
+
+        #region Crud
 
         public Cliente CadastrarCliente(Cliente cliente)
         {
@@ -44,23 +45,6 @@ namespace Locadora.DAL
             return cliente;
         }
 
-        public Cliente Get(Cliente cliente)
-        {
-            var result = _context.Clientes.Where(x => x.Cpf.Equals(cliente.Cpf)).FirstOrDefault();
-
-            return result;
-        }
-
-        public bool AutenticarLogin(string cpf, string senha)
-        {
-            var result = _context.Clientes.FirstOrDefault(x => x.Cpf.Equals(cpf) && x.Senha.Equals(senha));
-            if (result != null)
-            {
-                return true;
-            }
-            return false;
-        }
-
         public void EditarCliente(Cliente cliente)
         {
             _context.Clientes.Update(cliente);
@@ -72,7 +56,9 @@ namespace Locadora.DAL
             Cliente cliente = Get(id);
             cliente.Status = "CANCELADO";
             EditarCliente(cliente);
-        }
+        } 
+
+        #endregion
     }
 }
 

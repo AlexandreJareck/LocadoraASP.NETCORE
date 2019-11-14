@@ -2,10 +2,12 @@
 
 <h2>Gerenciamento de Clientes</h2>
 <form asp-action="BuscarCliente" method="post">
-    <div class="form-group">
-        <div class="form-inline">
-            <input type="text" placeholder="Pesquisar pelo cpf" name="cpf" />
-            <button class="btn btn-outline-info col-md-2" style="margin-left:10px;" asp-action="BuscarCliente">Buscar</button>
+    <div style="float:right">
+        <div class="form-group">
+            <div class="form-inline">
+                <input class="form-control col-md-7" type="text" placeholder="Pesquisar pelo cpf" name="cpf" />
+                <button class="btn btn-outline-info col-md-4" style="margin-left:10px;" asp-controller="Carro" asp-action="BuscarCliente">Buscar</button>
+            </div>
         </div>
     </div>
 </form>
@@ -33,10 +35,10 @@
                 <td>@item.CategoriaCnh</td>
                 <td>@item.Status</td>
                 <td>
-                    <a class="btn btn-danger" asp-action="RemoverCliente" asp-route-id="@item.IdCliente">Remover</a>
+                    <a class="btn btn-outline-danger" asp-action="RemoverCliente" asp-route-id="@item.IdCliente">Remover</a>
                 </td>
                 <td>
-                    <a class="btn btn-info" asp-action="EditarCliente" asp-route-id="@item.IdCliente">Alterar</a>
+                    <a class="btn btn-outline-info" asp-action="EditarCliente" asp-route-id="@item.IdCliente">Alterar</a>
 
                 </td>
             </tr>

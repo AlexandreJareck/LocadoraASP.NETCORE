@@ -16,33 +16,101 @@ namespace Locadora.Controllers
         public static List<Moto> marcaList = new List<Moto>();
         public static List<Modelo> motoList = new List<Modelo>();
         public static List<Moto> modeloList = new List<Moto>();
+        public static List<Moto> listMotoPlaca = new List<Moto>();
         public static Moto m = new Moto();
 
         private readonly MotoDAO _motoDAO;
 
-        public MotoController(MotoDAO motoDAO)
-        {
-            _motoDAO = motoDAO;
-        }
+        public MotoController(MotoDAO motoDAO) { _motoDAO = motoDAO; }
 
         public IActionResult Index()
         {
-            return View(_motoDAO.ListarMotos());
+            if (!listMotoPlaca.Any())
+            {
+                return View(_motoDAO.ListarMotos());
+            }
+            return View(listMotoPlaca);
         }
+
+        public IActionResult BuscarMotoPlaca(string placa)
+        {
+
+            if (string.IsNullOrWhiteSpace(placa))
+            {
+                listMotoPlaca = _motoDAO.ListarMotos();
+            }
+            else
+            {
+                listMotoPlaca = _motoDAO.ListMotoPlaca(placa);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        #region Crud
 
         public IActionResult Cadastrar()
         {
-
             Moto moto = new Moto();
-            if (TempData["Moto"] != null)
+            try
             {
-                moto = JsonConvert.DeserializeObject<Moto>(TempData["Moto"].ToString());
+                if (TempData["Moto"] != null)
+                {
+                    moto = JsonConvert.DeserializeObject<Moto>(TempData["Moto"].ToString());
+                }
+                ViewBag.Marca = new SelectList(marcaList, "Codigo", "Nome");
+                ViewBag.Moto = new SelectList(motoList, "Codigo", "Nome");
+                ViewBag.Modelo = new SelectList(modeloList, "Codigo", "Nome");
             }
-            ViewBag.Marca = new SelectList(marcaList, "Codigo", "Nome");
-            ViewBag.Moto = new SelectList(motoList, "Codigo", "Nome");
-            ViewBag.Modelo = new SelectList(modeloList, "Codigo", "Nome");
+            catch (Exception) { }//tratar mensagem de retorno
             return View(moto);
         }
+
+        [HttpPost]
+        public IActionResult Cadastrar(Moto moto)
+        {
+            try
+            {
+                moto.IdentVeiculo = null;
+                moto.IdMarca = null;
+                moto.IdModelo = null;
+                if (ModelState.IsValid)
+                {
+                    moto = _motoDAO.CadastrarMoto(moto);
+                    if (moto == null)
+                    {
+                        ModelState.AddModelError("", "Moto já cadastrado!");
+                        return View(moto);
+                    }
+                    return RedirectToAction("Index");
+                }
+                ViewBag.s = "show";
+            }
+            catch (Exception){ }//tratar mensagem de retorno
+            return View(moto);
+        }
+
+        public IActionResult RemoverMoto(int id)
+        {
+            _motoDAO.RemoverMoto(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult EditarMoto(int id)
+        {
+            return View(_motoDAO.GetId(id));
+        }
+
+        [HttpPost]
+        public IActionResult EditarMoto(Moto moto)
+        {
+            _motoDAO.EditarMoto(moto);
+            return RedirectToAction("Index");
+        } 
+
+        #endregion
+
+        #region WebServices
 
         public IActionResult BuscarMarcas()
         {
@@ -101,43 +169,7 @@ namespace Locadora.Controllers
             return RedirectToAction("Cadastrar");
         }
 
-        [HttpPost]
-        public IActionResult Cadastrar(Moto moto)
-        {
-            moto.IdentVeiculo = null;
-            moto.IdMarca = null;
-            moto.IdModelo = null;
-            if (ModelState.IsValid)
-            {
-                moto = _motoDAO.CadastrarMoto(moto);
-                if (moto == null)
-                {
-                    ModelState.AddModelError("", "Moto já cadastrado!");
-                    return View(moto);
-                }
-                return RedirectToAction("Index");
-            }
-            ViewBag.s = "show";
-            return View(moto);
-        }
-
-        public IActionResult RemoverMoto(int id)
-        {
-            _motoDAO.RemoverMoto(id);
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult EditarMoto(int id)
-        {
-            return View(_motoDAO.Get(id));
-        }
-
-        [HttpPost]
-        public IActionResult EditarMoto(Moto moto)
-        {
-            _motoDAO.EditarMoto(moto);
-            return RedirectToAction("Index");
-        }
+        #endregion
 
     }
 }
