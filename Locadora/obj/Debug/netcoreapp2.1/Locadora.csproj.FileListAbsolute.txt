@@ -80,3 +80,5 @@ C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\C
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\ListCarro.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\ListMoto.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.csprojAssemblyReference.cache
+C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Catalogo.g.cshtml.cs
+C:\Users\User\LocadoraASP.NETCORE\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Detalhes.g.cshtml.cs

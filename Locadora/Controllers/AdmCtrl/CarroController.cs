@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Locadora.DAL;
 using Locadora.Models;
 using Locadora.Service;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
@@ -21,10 +24,12 @@ namespace Locadora.Controllers
         public static Carro c = new Carro();        
 
         private readonly CarroDAO _carroDAO;
+        private readonly IHostingEnvironment _hosting;
 
-        public CarroController(CarroDAO carroDAO)
+        public CarroController(CarroDAO carroDAO, IHostingEnvironment hosting)
         {
             _carroDAO = carroDAO;
+            _hosting = hosting;
         }
 
         public IActionResult Index()
@@ -68,10 +73,21 @@ namespace Locadora.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(Carro carro)
+        public IActionResult Cadastrar(Carro carro, IFormFile fupImagem)
         {
             if (ModelState.IsValid)
             {
+                if (fupImagem != null)
+                {
+                    string arquivo = Guid.NewGuid().ToString() + Path.GetExtension(fupImagem.FileName);
+                    string caminho = Path.Combine(_hosting.WebRootPath, "locadoraimagens", arquivo);
+                    fupImagem.CopyTo(new FileStream(caminho, FileMode.Create));
+                    carro.Imagem = arquivo;
+                }
+                else
+                {
+                    carro.Imagem = "SEM-IMAGEM-13.jpg";
+                }
                 carro = _carroDAO.CadastrarCarro(carro);
                 if (carro == null)
                 {

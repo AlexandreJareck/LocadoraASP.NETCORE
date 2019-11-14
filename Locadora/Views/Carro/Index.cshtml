@@ -31,23 +31,23 @@
         <tbody>
             @foreach (Carro item in Model)
             {
-                <tr>
-                    <td>@item.Modelo</td>
-                    <td>@item.Marca</td>
-                    <td>@item.Valor</td>
-                    <td>@item.AnoModelo</td>
-                    <td>@item.Placa</td>
-                    <td>@item.ValorPorDia</td>
-                    <td>@item.ValorPorHora</td>
-                    <td>@item.Status</td>
-                    <td>
-                        <a class="btn btn-outline-danger" asp-controller="Carro" asp-action="RemoverCarro" asp-route-id="@item.IdVeiculo">Remover</a>
-                    </td>
-                    <td>
-                        <a class="btn btn-outline-info" asp-controller="Carro" asp-action="EditarCarro" asp-route-id="@item.IdVeiculo">Alterar</a>
+            <tr>
+                <td>@item.Modelo</td>
+                <td>@item.Marca</td>
+                <td>@item.Valor</td>
+                <td>@item.AnoModelo</td>
+                <td>@item.Placa</td>
+                <td>@item.ValorPorDia</td>
+                <td>@item.ValorPorHora</td>
+                <td>@item.Status</td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-controller="Carro" asp-action="RemoverCarro" asp-route-id="@item.IdVeiculo">Remover</a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" asp-controller="Carro" asp-action="EditarCarro" asp-route-id="@item.IdVeiculo">Alterar</a>
 
-                    </td>
-                </tr>
+                </td>
+            </tr>
             }
         </tbody>
 
