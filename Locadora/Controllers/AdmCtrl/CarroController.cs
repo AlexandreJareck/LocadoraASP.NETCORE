@@ -102,7 +102,7 @@ namespace Locadora.Controllers
 
         public IActionResult EditarCarro(int id)
         {
-            return View(_carroDAO.Get(id));
+            return View(_carroDAO.GetId(id));
         }
 
         [HttpPost]

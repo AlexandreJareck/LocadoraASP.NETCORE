@@ -16,7 +16,7 @@ namespace Locadora.DAL
         public CarroDAO(Context context) { _context = context; }
         public List<Carro> ListarCarros() { return _context.Carros.ToList(); }
         public List<Carro> ListarCarrosDs() { return _context.Carros.Where(x => x.Status.Equals("DISPONIVEL")).ToList(); }
-        public Carro Get(int id) { return _context.Carros.Find(id); }
+        public Carro GetId(int id) { return _context.Carros.Find(id); }
         public Carro GetPlaca(Carro carro) { return _context.Carros.Where(x => x.Placa.Equals(carro.Placa)).FirstOrDefault(); }
         public List<Carro> ListCarPlaca(string placa) { return _context.Carros.Where(x => x.Placa.Equals(placa)).ToList(); }
 
@@ -45,7 +45,7 @@ namespace Locadora.DAL
 
         public void RemoverCarro(int id)
         {
-            Carro carro = Get(id);
+            Carro carro = GetId(id);
             carro.Status = "CANCELADO";
             EditarCarro(carro);
         } 

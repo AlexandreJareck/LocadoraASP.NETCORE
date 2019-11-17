@@ -8,9 +8,10 @@ namespace Locadora.DAL
 {
     public class MotoDAO
     {
+        private readonly Context _context;
+
         #region Métodos de busca e filtros
 
-        private readonly Context _context;
         public MotoDAO(Context context) { _context = context; }
         public List<Moto> ListarMotos() { return _context.Motos.ToList(); }
         public List<Moto> ListarMotosDs() { return _context.Motos.Where(x => x.Status.Equals("DISPONIVEL")).ToList(); }

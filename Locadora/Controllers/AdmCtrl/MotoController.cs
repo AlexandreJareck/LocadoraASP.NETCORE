@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Locadora.DAL;
 using Locadora.Models;
 using Locadora.Service;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
@@ -20,8 +23,14 @@ namespace Locadora.Controllers
         public static Moto m = new Moto();
 
         private readonly MotoDAO _motoDAO;
+        private readonly IHostingEnvironment _hosting;
 
-        public MotoController(MotoDAO motoDAO) { _motoDAO = motoDAO; }
+        public MotoController(MotoDAO motoDAO, IHostingEnvironment hosting)
+        {
+            _motoDAO = motoDAO;
+            _hosting = hosting;
+        }
+        
 
         public IActionResult Index()
         {
@@ -67,15 +76,26 @@ namespace Locadora.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(Moto moto)
+        public IActionResult Cadastrar(Moto moto, IFormFile fupImagem)
         {
             try
             {
-                moto.IdentVeiculo = null;
-                moto.IdMarca = null;
-                moto.IdModelo = null;
+                //moto.IdentVeiculo = null;
+                //moto.IdMarca = null;
+                //moto.IdModelo = null;
                 if (ModelState.IsValid)
                 {
+                    if (fupImagem != null)
+                    {
+                        string arquivo = Guid.NewGuid().ToString() + Path.GetExtension(fupImagem.FileName);
+                        string caminho = Path.Combine(_hosting.WebRootPath, "locadoraimagens", arquivo);
+                        fupImagem.CopyTo(new FileStream(caminho, FileMode.Create));
+                        moto.Imagem = arquivo;
+                    }
+                    else
+                    {
+                        moto.Imagem = "SEM-IMAGEM-13.jpg";
+                    }
                     moto = _motoDAO.CadastrarMoto(moto);
                     if (moto == null)
                     {

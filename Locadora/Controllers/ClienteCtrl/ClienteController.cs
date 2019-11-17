@@ -19,27 +19,39 @@ namespace Locadora.Controllers.ClienteCtrl
             _motoDAO = motoDAO;
             _carroDAO = carroDAO;
         }
+
         public IActionResult Index()
         {
             return View();
         }
+
         public IActionResult ListCarro()
         {
             return View(_carroDAO.ListarCarrosDs());
         }
+
         public IActionResult ListMoto()
         {
             return View(_motoDAO.ListarMotosDs());
         }
 
-        public IActionResult Catalogo()
+        public IActionResult CatalogoCarro()
         {
-
             return View(_carroDAO.ListarCarrosDs());
         }
-        public IActionResult Detalhes(int id)
+
+        public IActionResult DetalhesCarro(int id)
         {
-            return View(_carroDAO.Get(id));
+            return View(_carroDAO.GetId(id));
+        }
+
+        public IActionResult CatalogoMoto()
+        {
+            return View(_motoDAO.ListarMotosDs());
+        }
+        public IActionResult DetalhesMoto(int id)
+        {
+            return View(_motoDAO.GetId(id));
         }
 
         //public IActionResult RemoverCliente(int id)

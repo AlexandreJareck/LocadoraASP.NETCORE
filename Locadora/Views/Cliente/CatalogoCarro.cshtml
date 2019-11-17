@@ -1,0 +1,19 @@
+﻿@model List<Carro>
+
+<h4 class="text-info" style="margin-bottom:20px; margin-top:20px;">Catalogo de carros</h4>
+<div class="row" id="Carro">
+    @foreach (Carro item in Model)
+    {
+
+        <div class="col-md-3" style="text-align:center; margin-bottom:15px">
+            <a asp-action="DetalhesCarro" asp-controller="Cliente" asp-route-id="@item.IdVeiculo">
+                <img src="~/locadoraimagens/@item.Imagem" style="width:200px;height:180px" class="img-thumbnail" /><br />
+            </a>
+            <a asp-action="DetalhesCarro" asp-controller="Cliente" asp-route-id="@item.IdVeiculo"></a>
+            <b>Marca: </b><span class="text-info">@item.Marca</span><br />
+            <b>Modelo: </b> <span class="text-info">@item.Modelo</span><br />
+            <b>Preço por Hora: </b><span class="text-info">@item.ValorPorHora.ToString("C2")</span><br />
+            <b>Preço por Dia: </b> <span class="text-info">@item.ValorPorDia.ToString("C2")</span><br />
+        </div>
+    }
+</div>
