@@ -233,7 +233,7 @@ namespace Locadora.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Locadora.Models.Cliente", "Cliente")
-                        .WithMany()
+                        .WithMany("Reserva")
                         .HasForeignKey("ClienteId")
                         .OnDelete(DeleteBehavior.Cascade);
 

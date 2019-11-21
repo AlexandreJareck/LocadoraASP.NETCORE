@@ -62,7 +62,7 @@ using Locadora.Models;
             WriteLiteral("\r\n\r\n\r\n");
             EndContext();
             BeginContext(371, 202, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "819fb7ab18924c1d944acf8f801aa196", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d11e29d7f1774029bc56b6cdeb15a82c", async() => {
                 BeginContext(486, 81, true);
                 WriteLiteral("\r\n    <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>\r\n");
                 EndContext();
@@ -90,7 +90,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
             WriteLiteral("\r\n<div class=\"login-form\">\r\n    ");
             EndContext();
             BeginContext(605, 779, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "45a1d56c5118448c8fed1669baba4b3a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6339fd228a384898aa320027e4177124", async() => {
                 BeginContext(664, 576, true);
                 WriteLiteral(@"
         <h2 class=""text-center"">Log in</h2>
@@ -106,7 +106,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper.ValidationSumma
         ");
                 EndContext();
                 BeginContext(1240, 41, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd21c0bc4ac4401a9d6a4c8000b35e72", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d139f39b089341dc8a89c5815bc518f2", async() => {
                     BeginContext(1266, 11, true);
                     WriteLiteral("Cadastre-se");
                     EndContext();
