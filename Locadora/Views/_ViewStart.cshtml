@@ -7,11 +7,11 @@
         Layout = "~/Views/Shared/_LayoutHome.cshtml";
     }
     else if (controllerName.Equals("AdmCliente") || (controllerName.Equals("Carro"))
-        || (controllerName.Equals("Moto")))
+        || (controllerName.Equals("Moto")) || (controllerName.Equals("Administrador")))
     {
         Layout = "~/Views/Shared/_LayoutAdm.cshtml";
     }
-    else if (controllerName.Equals("Cliente"))
+    else if (controllerName.Equals("Cliente") || (controllerName.Equals("CatalogoCarro") || (controllerName.Equals("CatalogoMoto"))))
     {
         Layout = "~/Views/Shared/_LayoutCliente.cshtml";
     }

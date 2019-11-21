@@ -1,5 +1,5 @@
 ﻿@model Moto
-<a asp-action="CatalogoMoto" asp-controller="Cliente">Volta para o catalago</a>
+<a asp-action="Index" asp-controller="CatalogoMoto">Volta para o catalago</a>
 <table>
 
     <tr>
@@ -15,16 +15,17 @@
             <p>@Model.AnoModelo</p>
             <b>Placa:</b>
             <p>@Model.Placa</p>
+            <b>Preço do Veiculo:</b>
+            <p>@Model.Valor</p>
             <b>Valor por hora:</b>
             <p>@Model.ValorPorHora.ToString("C2")</p><br />
             <b>Valor por dia:</b>
             <p>@Model.ValorPorDia.ToString("C2")</p>
+            <b>Valor Mensal: </b>
+            <p>@Model.ValorMensal.ToString("C2")</p>
             <a asp-action="AlugarMoto" asp-controller="Clientes" class="btn btn-outline-info" asp-route-id="@Model.IdVeiculo">Alugar Hr/Dia</a>
             <a asp-action="AlugarMotoMensal" asp-controller="Clientes" style="margin-left:10px;" class="btn btn-outline-info" asp-route-id="@Model.IdVeiculo">Alugar Mensal</a>
         </td>
     </tr>
 </table>
-
-
-
 

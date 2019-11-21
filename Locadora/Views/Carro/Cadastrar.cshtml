@@ -57,9 +57,9 @@
 
             <div class="form-group">
                 <div class="form-inline">
-                    <input class="form-control col-md-2" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="Placa" title="Placa do veiculo" />
-                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por hora do veiculo" asp-for="ValorPorHora" title="Valor por hora do veiculo" />
-                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por dia do veiculo" asp-for="ValorPorDia" title="Valor por dia do veiculo" /><br />
+                    <input class="form-control col-md-2" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="Placa" title="Placa do veiculo" required=""/>
+                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por hora do veiculo" asp-for="ValorPorHora" title="Valor por hora do veiculo" required=""/>
+                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por dia do veiculo" asp-for="ValorPorDia" title="Valor por dia do veiculo" required=""/><br />
                     <div class="alert alert-danger alert-dismissible fade @ViewBag.s" style="margin-top:10px; margin-left:10px;">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
                         <span asp-validation-for="Placa"></span><br />

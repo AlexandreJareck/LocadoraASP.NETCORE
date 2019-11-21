@@ -58,14 +58,9 @@ C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreap
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.RazorCoreGenerate.cache
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\Clientes.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\EditarCliente.g.cshtml.cs
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AdmCliente\Index.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\Cadastrar.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\EditarCarro.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Carro\Index.g.cshtml.cs
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\CatalogoCarro.g.cshtml.cs
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\CatalogoMoto.g.cshtml.cs
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\DetalhesCarro.g.cshtml.cs
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\DetalhesMoto.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\Index.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Home\Cadastrar.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
@@ -83,3 +78,9 @@ C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreap
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.dll
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.pdb
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.csproj.CopyComplete
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.csprojAssemblyReference.cache
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\CatalogoMoto\Index.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\CatalogoCarro\Index.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\CatalogoCarro\InformacoesCarro.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\CatalogoMoto\InformacoesMoto.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\Index.g.cshtml.cs

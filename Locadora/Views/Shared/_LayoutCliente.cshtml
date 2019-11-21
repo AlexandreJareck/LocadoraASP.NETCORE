@@ -21,17 +21,15 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Veiculos</a>
                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-                        <a class="dropdown-item" asp-controller="Cliente" asp-action="CatalogoCarro">Carros</a>
-                        <a class="dropdown-item" asp-controller="Cliente" asp-action="CatalogoMoto">Motos</a>
+                        <a class="dropdown-item" asp-controller="CatalogoCarro" asp-action="Index">Carros</a>
+                        <a class="dropdown-item" asp-controller="CatalogoMoto" asp-action="Index">Motos</a>
                     </div>
                 </li>
               
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Opções</a>
                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-                        <a class="dropdown-item" href="#">Editar</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item"  href="#">Excluir conta</a>
+                        <a class="dropdown-item" href="#">Configurações da Conta</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" asp-controller="Home" asp-action="Index">Logout</a>
                     </div>

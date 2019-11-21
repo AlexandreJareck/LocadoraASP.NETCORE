@@ -2,12 +2,16 @@
 
 <h2>Gerenciamento de Carros</h2>
 <form asp-action="BuscarCarroPlaca" method="post">
-    <a asp-controller="Carro" class="btn btn-outline-success col-md-2" asp-action="Cadastrar">Cadastrar</a>
+    <a asp-controller="Carro" class="btn btn-outline-success col-md-1" asp-action="Cadastrar" data-toggle="tooltip" data-placement="top" title="Cadastrar Veiculo">
+        <i class="fas fa-car"></i>
+    </a>
     <div style="float:right">
         <div class="form-group">
             <div class="form-inline">
                 <input class="form-control col-md-7" type="text" placeholder="Pesquisar pela placa" name="placa" />
-                <button class="btn btn-outline-info col-md-4" style="margin-left:10px;" asp-controller="Carro" asp-action="BuscarCarroPlaca">Buscar</button>
+                <button class="btn btn-outline-info col-md-4" style="margin-left:10px;" asp-controller="Carro" asp-action="BuscarCarroPlaca" data-toggle="tooltip" data-placement="top" title="Pesquisar por Placa">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
         </div>
     </div>
@@ -41,14 +45,23 @@
                     <td>@item.ValorPorHora</td>
                     <td>@item.Status</td>
                     <td>
-                        <a class="btn btn-outline-danger" asp-controller="Carro" asp-action="RemoverCarro" asp-route-id="@item.IdVeiculo">Remover</a>
+                        <a class="btn btn-outline-danger" asp-controller="Carro" asp-action="RemoverCarro" asp-route-id="@item.IdVeiculo" data-toggle="tooltip" data-placement="top" title="Deletar">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
                     </td>
                     <td>
-                        <a class="btn btn-outline-info" asp-controller="Carro" asp-action="EditarCarro" asp-route-id="@item.IdVeiculo">Alterar</a>
+                        <a class="btn btn-outline-info" asp-controller="Carro" asp-action="EditarCarro" asp-route-id="@item.IdVeiculo" data-toggle="tooltip" data-placement="top" title="Alterar">
+                            <i class="far fa-edit"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
 
     </table>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </div>

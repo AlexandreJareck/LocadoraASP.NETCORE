@@ -6,43 +6,55 @@
         <div class="form-group">
             <div class="form-inline">
                 <input class="form-control col-md-7" type="text" placeholder="Pesquisar pelo cpf" name="cpf" />
-                <button class="btn btn-outline-info col-md-4" style="margin-left:10px;" asp-controller="Carro" asp-action="BuscarCliente">Buscar</button>
+                <button class="btn btn-outline-info col-md-4" style="margin-left:10px;" asp-controller="Carro" asp-action="BuscarCliente" data-toggle="tooltip" data-placement="top" title="Pesquisar por Cpf">
+                    <i class="fas fa-search"></i>
+                </button>
             </div>
         </div>
     </div>
 </form>
-<table class="table table-hover table-striped">
-    <thead>
-        <tr class="table-primary">
-            <th>Nome</th>
-            <th>Cpf</th>
-            <th>Rg</th>
-            <th>Cnh</th>
-            <th>Categoria Cnh</th>
-            <th>Status</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Cliente item in Model)
-        {
-            <tr>
-                <td>@item.Nome</td>
-                <td>@item.Cpf</td>
-                <td>@item.Rg</td>
-                <td>@item.Cnh</td>
-                <td>@item.CategoriaCnh</td>
-                <td>@item.Status</td>
-                <td>
-                    <a class="btn btn-outline-danger" asp-action="RemoverCliente" asp-route-id="@item.IdCliente">Remover</a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-info" asp-action="EditarCliente" asp-route-id="@item.IdCliente">Alterar</a>
-
-                </td>
+<div class="table-responsive" style="margin-top:5px;">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr class="table-primary">
+                <th>Nome</th>
+                <th>Cpf</th>
+                <th>Rg</th>
+                <th>Cnh</th>
+                <th>Categoria Cnh</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (Cliente item in Model)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Cpf</td>
+                    <td>@item.Rg</td>
+                    <td>@item.Cnh</td>
+                    <td>@item.CategoriaCnh</td>
+                    <td>@item.Status</td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-action="RemoverCliente" asp-route-id="@item.IdCliente" data-toggle="tooltip" data-placement="top" title="Deletar">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-info" asp-action="EditarCliente" asp-route-id="@item.IdCliente" data-toggle="tooltip" data-placement="top" title="Alterar">
+                            <i class="far fa-edit"></i>
+                        </a>
 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</div>

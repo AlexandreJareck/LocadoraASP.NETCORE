@@ -30,9 +30,11 @@ namespace Locadora.Models
         public double ValorPorDia { get; set; }
         [Required]
         public double ValorPorHora { get; set; }
-        public string Status { get; set; }
-        public List<Modelo> Modelos { get; set; } = new List<Modelo>();
+        public string Status { get; set; }        
         public string Imagem { get; set; }
+        public decimal ValorMensal { get; set; }
+        public decimal Preco { get; set; }
+        public List<Modelo> Modelos { get; set; } = new List<Modelo>();
     }
 
     public class Modelo

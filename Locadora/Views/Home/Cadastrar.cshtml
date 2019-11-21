@@ -9,28 +9,28 @@
 
         <div class="form-group" id="Nome">
             <label class="text-info" for="Nome">Nome</label>
-            <input class="form-control col-md-4" placeholder="Nome" asp-for="Nome" />
+            <input class="form-control col-md-4" placeholder="Nome" asp-for="Nome" required=""/>
         </div>
         <div class="form-group" id="Rg">
             <label class="text-info" for="Rg">Rg</label>
-            <input class="form-control col-md-4" placeholder="RG" asp-for="Rg" />
+            <input class="form-control col-md-4" placeholder="RG" asp-for="Rg" required=""/>
         </div>
         <div class="form-group" id="Cpf">
             <label class="text-info" for="Cpf">Cpf</label>
-            <input class="form-control col-md-4" placeholder="CPF" asp-for="Cpf" />
+            <input class="form-control col-md-4" placeholder="CPF" asp-for="Cpf" required=""/>
         </div>
         <div class="form-group" id="Senha">
             <label class="text-info" for="Senha">Senha</label>
-            <input type="password" class="form-control col-md-4" placeholder="Senha" asp-for="Senha" />
+            <input type="password" class="form-control col-md-4" placeholder="Senha" asp-for="Senha" required=""/>
         </div>
         <div class="form-group" id="Cnh">
             <label class="text-info" for="Cnh">Cnh</label>
-            <input class="form-control col-md-4" placeholder="Cnh" asp-for="Cnh" />
+            <input class="form-control col-md-4" placeholder="Cnh" asp-for="Cnh" required=""/>
         </div>
         <div class="form-group" id="Categoria">
             <label class="text-info" for="CategoriaCnh">Categoria Cnh</label>
-            <select asp-for="CategoriaCnh" class="form-control col-md-4">
-                <option>Selecione sua categoria</option>
+            <select  asp-for="CategoriaCnh" class="form-control col-md-4" required="">
+                <option></option>
                 <option>A</option>
                 <option>B</option>
                 <option>AB</option>

@@ -10,23 +10,27 @@
         <label>Cpf</label>
         <input type="text" class="form-control col-md-4" asp-for="Cpf" readonly="" />
     </div>
-    <div class="form-group" id="Id">
+    <div class="form-group" id="Rg">
         <label>Rg</label>
         <input type="text" class="form-control col-md-4" asp-for="Rg" readonly="" />
+    </div>
+    <div class="form-group" id="Senha">
+        <label>Senha</label>
+        <input type="password" class="form-control col-md-4" asp-for="Senha" readonly="" />
     </div>
     <div class="form-group">
         <label for="Nome">Nome</label>
         <span asp-validation-for="Nome"></span>
-        <input class="form-control col-md-4" asp-for="Nome" />
+        <input class="form-control col-md-4" asp-for="Nome" required="" />
     </div>
     <div class="form-group">
         <label for="Descricao">Categoria Cng</label>
         <span asp-validation-for="CategoriaCnh"></span>
-        <input class="form-control col-md-4" asp-for="CategoriaCnh" />
+        <input class="form-control col-md-4" asp-for="CategoriaCnh" required="" />
     </div>
     <div class="form-group">
         <label for="Cnh">Cnh</label>
-        <input class="form-control col-md-4" asp-for="Cnh" />
+        <input class="form-control col-md-4" asp-for="Cnh" required="" />
     </div>
     <div class="form-group">
         <label for="Status">Status</label>

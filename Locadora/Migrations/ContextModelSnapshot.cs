@@ -54,11 +54,15 @@ namespace Locadora.Migrations
                     b.Property<string>("Placa")
                         .IsRequired();
 
+                    b.Property<decimal>("Preco");
+
                     b.Property<string>("Status");
 
                     b.Property<int>("TipoVeiculo");
 
                     b.Property<string>("Valor");
+
+                    b.Property<decimal>("ValorMensal");
 
                     b.Property<double>("ValorPorDia");
 
@@ -158,11 +162,15 @@ namespace Locadora.Migrations
                     b.Property<string>("Placa")
                         .IsRequired();
 
+                    b.Property<decimal>("Preco");
+
                     b.Property<string>("Status");
 
                     b.Property<int>("TipoVeiculo");
 
                     b.Property<string>("Valor");
+
+                    b.Property<decimal>("ValorMensal");
 
                     b.Property<double>("ValorPorDia");
 
@@ -171,6 +179,39 @@ namespace Locadora.Migrations
                     b.HasKey("IdVeiculo");
 
                     b.ToTable("MOTO");
+                });
+
+            modelBuilder.Entity("Locadora.Models.Reserva", b =>
+                {
+                    b.Property<int>("IdReserva")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CarroId");
+
+                    b.Property<int>("ClienteId");
+
+                    b.Property<DateTime>("DataPrevisaoDevolucao");
+
+                    b.Property<DateTime>("DataReserva");
+
+                    b.Property<DateTime>("DataVeiculoDevolvido");
+
+                    b.Property<int>("MotoId");
+
+                    b.Property<string>("Status");
+
+                    b.Property<double>("ValorTotal");
+
+                    b.HasKey("IdReserva");
+
+                    b.HasIndex("CarroId");
+
+                    b.HasIndex("ClienteId");
+
+                    b.HasIndex("MotoId");
+
+                    b.ToTable("RESERVA");
                 });
 
             modelBuilder.Entity("Locadora.Models.Modelo", b =>
@@ -182,6 +223,24 @@ namespace Locadora.Migrations
                     b.HasOne("Locadora.Models.Moto")
                         .WithMany("Modelos")
                         .HasForeignKey("MotoIdVeiculo");
+                });
+
+            modelBuilder.Entity("Locadora.Models.Reserva", b =>
+                {
+                    b.HasOne("Locadora.Models.Carro", "Carro")
+                        .WithMany()
+                        .HasForeignKey("CarroId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Locadora.Models.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Locadora.Models.Moto", "Moto")
+                        .WithMany()
+                        .HasForeignKey("MotoId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

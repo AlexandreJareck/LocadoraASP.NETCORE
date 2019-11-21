@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Locadora.Models;
 using Locadora.DAL;
+using Microsoft.AspNetCore.Http;
 
 namespace Locadora.Controllers
 {
@@ -31,21 +32,23 @@ namespace Locadora.Controllers
         [HttpPost]
         public IActionResult Index(string cpf, string senha)
         {
+            Cliente c = new Cliente();
+            c = _clienteDAO.AutenticarLogin(cpf, senha);
             Adm adm = new Adm();
-            if (_clienteDAO.AutenticarLogin(cpf, senha))
+            if ( c != null)
             {
                 ModelState.AddModelError("", "Login OK!");
+                HttpContext.Session.SetString("IdCliente", c.IdCliente.ToString());
                 return RedirectToAction("Index", "Cliente"); ;
             }
             else if (cpf.ToUpper().Equals(adm.Login) && senha.ToUpper().Equals(adm.Senha))
             {
                 ModelState.AddModelError("", "Login Adm!");
-                return RedirectToAction("Index", "AdmCliente");
+                return RedirectToAction("Index", "Administrador");
             }
             else
             {
                 ModelState.AddModelError("", "Login Invalido!");
-                ViewBag.Alerta = true;
                 return View();
             }
         }

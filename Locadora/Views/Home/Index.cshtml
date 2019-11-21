@@ -9,10 +9,11 @@
 @*</head>
     <body>*@
 @*@model Cliente*@
+<div asp-validation-summary="ModelOnly" class="alert alert-dismissible alert-danger col-lg-3" style="float:right;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>
 <div class="login-form">
     <form class="text-center" asp-action="Index" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
         <h2 class="text-center">Log in</h2>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="CPF" name="Cpf" required="required">
@@ -25,10 +26,9 @@
         </div>
         <a asp-action="Cadastrar">Cadastre-se</a>
         @*<a href="#" data-toggle="modal" data-target="#cadastroModal">Cadastre-se</a>*@
-
     </form>
-
 </div>
+
 
 
 @*@if (ViewBag.Alerta == true)
