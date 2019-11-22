@@ -37,7 +37,11 @@ namespace Locadora.Controllers
             Adm adm = new Adm();
             if ( c != null)
             {
-                ModelState.AddModelError("", "Login OK!");
+                if (c.Status.Equals("CANCELADO"))
+                {
+                    ModelState.AddModelError("", "Sua conta está cancelada, contate o administrador!");
+                    return View();
+                }                
                 HttpContext.Session.SetString("IdCliente", c.IdCliente.ToString());
                 return RedirectToAction("Index", "Cliente"); ;
             }

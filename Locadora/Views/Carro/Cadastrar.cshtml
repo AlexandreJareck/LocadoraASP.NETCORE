@@ -41,23 +41,23 @@
             </div>
             <div class="form-group">
                 <div class="form-inline">
-                    <input class="form-control col-md-1" style="margin-left:10px;" placeholder="Ano" asp-for="AnoModelo" title="Ano modelo" readonly="" />
-                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Marca do veiculo" asp-for="Marca" title="Marca do Veiculo" readonly="" />
-                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
+                    <input class="form-control col-md-1" style="margin-left:10px;" placeholder="Ano" asp-for="AnoModelo" title="Ano modelo" readonly="" required=""/>
+                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Marca do veiculo" asp-for="Marca" title="Marca do Veiculo" readonly="" required=""/>
+                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" required=""/>
 
                 </div>
             </div>
             <div class="form-group">
                 <div class="form-inline">
-                    <input class="form-control col-md-1" type="color" style="margin-left:10px;" placeholder="Cor" asp-for="Cor" title="Cor do veiculo" />
-                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" />
-                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Combustivel" asp-for="Combustivel" readonly="" title="Tipo de Combustivel" />
+                    <input class="form-control col-md-1" type="color" style="margin-left:10px;" placeholder="Cor" asp-for="Cor" title="Cor do veiculo"/>
+                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" required=""/>
+                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Combustivel" asp-for="Combustivel" readonly="" title="Tipo de Combustivel" required=""/>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="form-inline">
-                    <input class="form-control col-md-2" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="Placa" title="Placa do veiculo" required=""/>
+                    <input class="form-control col-md-2" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="Placa" title="Placa do veiculo" />
                     <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por hora do veiculo" asp-for="ValorPorHora" title="Valor por hora do veiculo" required=""/>
                     <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por dia do veiculo" asp-for="ValorPorDia" title="Valor por dia do veiculo" required=""/><br />
                     <div class="alert alert-danger alert-dismissible fade @ViewBag.s" style="margin-top:10px; margin-left:10px;">

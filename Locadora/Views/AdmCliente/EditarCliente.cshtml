@@ -16,7 +16,7 @@
     </div>
     <div class="form-group" id="Senha">
         <label>Senha</label>
-        <input type="password" class="form-control col-md-4" asp-for="Senha" readonly="" />
+        <input type="text" class="form-control col-md-4" asp-for="Senha" readonly="" />
     </div>
     <div class="form-group">
         <label for="Nome">Nome</label>
@@ -25,8 +25,12 @@
     </div>
     <div class="form-group">
         <label for="Descricao">Categoria Cng</label>
-        <span asp-validation-for="CategoriaCnh"></span>
-        <input class="form-control col-md-4" asp-for="CategoriaCnh" required="" />
+        <select asp-for="CategoriaCnh" class="form-control col-md-4" required="">
+            <option></option>
+            <option>A</option>
+            <option>B</option>
+            <option>AB</option>
+        </select>
     </div>
     <div class="form-group">
         <label for="Cnh">Cnh</label>
@@ -34,7 +38,17 @@
     </div>
     <div class="form-group">
         <label for="Status">Status</label>
-        <input class="form-control col-md-4" asp-for="Status" />
+        <select asp-for="Status" class="form-control col-md-4">
+            <option>DISPONIVEL</option>
+            <option>CANCELADO</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="PossuiReserva">Possui Reserva</label>
+        <select asp-for="PossuiReserva" class="form-control col-md-4">
+            <option>SIM</option>
+            <option>NAO</option>
+        </select>
     </div>
     <button class="btn btn-outline-success col-md-4" type="submit">Salvar</button>
 </form>

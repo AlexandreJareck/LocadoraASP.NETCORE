@@ -23,6 +23,7 @@
                 <th>Cnh</th>
                 <th>Categoria Cnh</th>
                 <th>Status</th>
+                <th>Possui Reserva</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -30,25 +31,26 @@
         <tbody>
             @foreach (Cliente item in Model)
             {
-                <tr>
-                    <td>@item.Nome</td>
-                    <td>@item.Cpf</td>
-                    <td>@item.Rg</td>
-                    <td>@item.Cnh</td>
-                    <td>@item.CategoriaCnh</td>
-                    <td>@item.Status</td>
-                    <td>
-                        <a class="btn btn-outline-danger" asp-action="RemoverCliente" asp-route-id="@item.IdCliente" data-toggle="tooltip" data-placement="top" title="Deletar">
-                            <i class="far fa-trash-alt"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a class="btn btn-outline-info" asp-action="EditarCliente" asp-route-id="@item.IdCliente" data-toggle="tooltip" data-placement="top" title="Alterar">
-                            <i class="far fa-edit"></i>
-                        </a>
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Cpf</td>
+                <td>@item.Rg</td>
+                <td>@item.Cnh</td>
+                <td>@item.CategoriaCnh</td>
+                <td>@item.Status</td>
+                <td>@item.PossuiReserva</td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-action="RemoverCliente" asp-route-id="@item.IdCliente" data-toggle="tooltip" data-placement="top" title="Deletar">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="EditarCliente" asp-route-id="@item.IdCliente" data-toggle="tooltip" data-placement="top" title="Alterar">
+                        <i class="far fa-edit"></i>
+                    </a>
 
-                    </td>
-                </tr>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

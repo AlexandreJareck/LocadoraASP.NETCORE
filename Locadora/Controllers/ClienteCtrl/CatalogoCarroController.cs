@@ -24,6 +24,11 @@ namespace Locadora.Controllers.ClienteCtrl
         {
             var result = HttpContext.Session.GetString("IdCliente");
             Cliente c = _clienteDAO.Get(Convert.ToInt32(result));
+            if (c.PossuiReserva.Equals("SIM"))
+            {
+                ModelState.AddModelError("", "Você ja Possui uma reserva, faça a devoluação para alugar outro veiculo!");
+                return View(_carroDAO.ListarCarrosFake());
+            }
             if (c.CategoriaCnh.Equals("A"))
             {
                 ModelState.AddModelError("", "Somente Categorias B ou AB!");
