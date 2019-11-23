@@ -80,9 +80,21 @@ namespace Locadora.Controllers
         {
             try
             {
-                //moto.IdentVeiculo = null;
-                //moto.IdMarca = null;
-                //moto.IdModelo = null;
+                if ((moto.ValorPorDia == 0 || moto.ValorPorDia < 0))
+                {
+                    ModelState.AddModelError("", "Somente valores positivos em: Valor Dia!");
+                    return View(moto);
+                }
+                if ((moto.ValorPorHora == 0 || moto.ValorPorHora < 0))
+                {
+                    ModelState.AddModelError("", "Somente valores positivos em: Valor Hora!");
+                    return View(moto);
+                }
+                if (moto.Placa == null || moto.Modelo == null)
+                {
+                    ModelState.AddModelError("", "Campos com * são Obrigatório!");
+                    return View(moto);
+                }
                 if (ModelState.IsValid)
                 {
                     if (fupImagem != null)
@@ -126,7 +138,15 @@ namespace Locadora.Controllers
         {
             _motoDAO.EditarMoto(moto);
             return RedirectToAction("Index");
-        } 
+        }
+
+        public void SalvaImg(Moto moto, IFormFile fupImagem)
+        {
+            string arquivo = Guid.NewGuid().ToString() + Path.GetExtension(fupImagem.FileName);
+            string caminho = Path.Combine(_hosting.WebRootPath, "locadoraimagens", arquivo);
+            fupImagem.CopyTo(new FileStream(caminho, FileMode.Create));
+            moto.Imagem = arquivo;
+        }
 
         #endregion
 

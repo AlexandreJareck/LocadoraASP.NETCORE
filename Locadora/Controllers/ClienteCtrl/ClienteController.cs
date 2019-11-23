@@ -46,5 +46,18 @@ namespace Locadora.Controllers.ClienteCtrl
             HttpContext.Session.Remove("IdCliente");
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult ClientEdit(int id)
+        {
+            var result = View(_clienteDAO.Get(id));
+            return result;
+        }
+
+        [HttpPost]
+        public IActionResult ClientEdit(Cliente cliente)
+        {
+            _clienteDAO.EditarCliente(cliente);
+            return RedirectToAction("ConfigConta");
+        }
     }
 }

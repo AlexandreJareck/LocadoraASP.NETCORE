@@ -1,50 +1,90 @@
 ﻿@model Moto
+<div id="panel" class="panel panel-default no-padding">
+    <a asp-action="Index" style="float:right">Voltar para listagem</a>
 
-<form asp-action="EditarMoto" method="post">
-    <div class="container" style="margin-top:15px;margin-bottom:30px">
+    <h2 class="text-success" style="margin-bottom:30px; margin-top:30px;">Editar Moto</h2>
 
-        <a asp-action="Index" style="float:right">Voltar para listagem</a>
+    <div class="panel-body no-padding">
 
-        <h4 class="text-success" style="margin-bottom:30px; margin-top:30px;">Editar Moto</h4>
+        <div asp-validation-summary="ModelOnly" class="alert alert-dismissible alert-danger col-lg-3" style="float:right;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
 
-        <div class="form-group" id="Modelo">
-            <div class="form-group">
-                <div class="form-inline">
-                    <input class="form-control col-md-1" style="margin-left:10px;" placeholder="Ano" asp-for="AnoModelo" title="Ano modelo" readonly="" />
-                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Marca do veiculo" asp-for="Marca" title="Marca do Veiculo" readonly="" />
-                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
+        <form asp-action="EditarMoto" method="post" role="form" class="form-horizontal">
 
+            <div class="row">
+
+                <div id="colImg" class="col-md-2 col-sm-2 col-xs-12 col-img">
+                    <!-- Background image -->
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="form-inline">
-                    <input class="form-control col-md-1" style="margin-left:10px;" placeholder="Cor" asp-for="IdVeiculo" title="Cor do veiculo" readonly="" />
-                    <input class="form-control col-md-1" type="color" style="margin-left:5px;" placeholder="Cor" asp-for="Cor" title="Cor do veiculo" />
-                    <input class="form-control col-md-2" style="margin-left:5px;" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" />
-                    <input class="form-control col-md-4" style="margin-left:10px;" placeholder="Combustivel" asp-for="Combustivel" readonly="" title="Tipo de Combustivel" />
-                </div>
-            </div>
 
-            <div class="form-group">
-                <div class="form-inline">
-                    <input class="form-control col-md-2" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="Placa" title="Placa do veiculo" readonly="" required=""/>
-                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por hora do veiculo" asp-for="ValorPorHora" title="Valor por hora do veiculo" required=""/>
-                    <input class="form-control col-md-3" style="margin-left:10px;" placeholder="Valor por dia do veiculo" asp-for="ValorPorDia" title="Valor por dia do veiculo" required=""/><br />
-
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="form-inline">
-                    <div class="form-group">
-                        <select asp-for="Status" class="form-control" style="margin-left:10px;">
-                            <option>DISPONIVEL</option>
-                            <option>RESERVADO</option>
-                            <option>CANCELADO</option>
-                        </select>
+                <div class="col-md-5 col-sm-5 col-xs-12  padding border-right ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="IdVeiculo">Id</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Id" asp-for="IdVeiculo" title="Id do veiculo" readonly="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info">Marca</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Marca do veiculo" asp-for="Marca" title="Marca do Veiculo" readonly="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info">Modelo</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info">Ano Modelo:</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Ano" asp-for="AnoModelo" title="Ano modelo" readonly="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="Cor">Cor</label>
+                            <input class="form-control col-md-12" type="color" style="margin-left:5px;" placeholder="Cor" asp-for="Cor" title="Cor do veiculo" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="Status">Status</label>
+                            <select asp-for="Status" class="form-control" style="margin-left:10px;">
+                                <option>DISPONIVEL</option>
+                                <option>RESERVADO</option>
+                                <option>CANCELADO</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12  padding">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info">Preço do Veiculo</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="Combustivel">Combustivel</label>
+                            <input class="form-control col-md-12" style="margin-left:5px;" placeholder="Combustivel" asp-for="Combustivel" readonly="" title="Tipo de Combustivel" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="Placa">Placa</label>
+                            <input class="form-control col-md-12" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="Placa" title="Placa do veiculo" readonly="" required="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="ValorPorHora">Valor Aluguel Hora</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Valor por hora do veiculo" asp-for="ValorPorHora" title="Valor por hora do veiculo" required="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="ValorPorDia">Valor Aluguel Dia</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Valor por dia do veiculo" asp-for="ValorPorDia" title="Valor por dia do veiculo" required="" /><br />
+                        </div>
+                    </div>
+
+                    <button asp-controller="Moto" asp-action="EditarMoto" style="margin-left:10px" class="btn btn-outline-success col-md-12" type="submit">Alterar Dados</button>
+                </div>
             </div>
-            <button asp-controller="Moto" asp-action="EditarMoto" class="btn btn-outline-success col-md-6" type="submit">Alterar Dados</button>
-        </div>
+        </form>
     </div>
-</form>
+</div>
+
+<script>
+    var alturaFormulario = document.getElementById("panel").offsetHeight;
+
+    document.getElementById("colImg").style.height = alturaFormulario + "px";
+</script>

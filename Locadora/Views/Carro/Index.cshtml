@@ -41,8 +41,8 @@
                     <td>@item.Valor</td>
                     <td>@item.AnoModelo</td>
                     <td>@item.Placa</td>
-                    <td>@item.ValorPorDia</td>
-                    <td>@item.ValorPorHora</td>
+                    <td>@item.ValorPorDia.ToString("C2")</td>
+                    <td>@item.ValorPorHora.ToString("C2")</td>
                     <td>@item.Status</td>
                     <td>
                         <a class="btn btn-outline-danger" asp-controller="Carro" asp-action="RemoverCarro" asp-route-id="@item.IdVeiculo" data-toggle="tooltip" data-placement="top" title="Deletar">

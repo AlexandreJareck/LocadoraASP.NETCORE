@@ -1,46 +1,75 @@
 ﻿@model Cliente
 
-<form asp-action="Cadastrar" method="post">
-    <a asp-action="Index" class="container-fluid">Voltar a Home</a>
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-    <div class="container" style="margin-top:15px;margin-bottom:30px">
-        <h4 class="text-success">Cadastro de Cliente</h4>
+<a asp-action="Index" class="container-fluid">Voltar a Home</a>
+<div id="panel" class="panel panel-default no-padding">
+    <h2 class="text-info">Cadastro de Cliente</h2>
+    <div class="panel-body no-padding">
+        <div asp-validation-summary="ModelOnly" class="alert alert-dismissible alert-danger col-lg-3" style="float:right;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+        <form asp-action="Cadastrar" method="post" role="form" class="form-horizontal">
+            <div class="row">
+                <div id="colImg" class="col-md-2 col-sm-2 col-xs-12 col-img">
+                    <!-- Background image -->
+                </div>
 
+                <div class="col-md-5 col-sm-5 col-xs-12  padding border-right ">
 
-        <div class="form-group" id="Nome">
-            <label class="text-info" for="Nome">Nome</label>
-            <input class="form-control col-md-4" placeholder="Nome" asp-for="Nome" required=""/>
-        </div>
-        <div class="form-group" id="Rg">
-            <label class="text-info" for="Rg">Rg</label>
-            <input class="form-control col-md-4" placeholder="RG" asp-for="Rg" required=""/>
-        </div>
-        <div class="form-group" id="Cpf">
-            <label class="text-info" for="Cpf">Cpf</label>
-            <input class="form-control col-md-4" placeholder="CPF" asp-for="Cpf" required=""/>
-        </div>
-        <div class="form-group" id="Senha">
-            <label class="text-info" for="Senha">Senha</label>
-            <input type="password" class="form-control col-md-4" placeholder="Senha" asp-for="Senha" required=""/>
-        </div>
-        <div class="form-group" id="Cnh">
-            <label class="text-info" for="Cnh">Cnh</label>
-            <input class="form-control col-md-4" placeholder="Cnh" asp-for="Cnh" required=""/>
-        </div>
-        <div class="form-group" id="Categoria">
-            <label class="text-info" for="CategoriaCnh">Categoria Cnh</label>
-            <select  asp-for="CategoriaCnh" class="form-control col-md-4" required="">
-                <option></option>
-                <option>A</option>
-                <option>B</option>
-                <option>AB</option>
-            </select>
-        </div>
-     
-        <button class="btn btn-outline-success col-md-4" type="submit">Cadastrar</button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="Nome">Nome</label>
+                            <input class="form-control col-md-12" placeholder="Nome" asp-for="Nome" required="" />
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="Rg">Rg</label>
+                            <input class="form-control col-md-12" placeholder="RG" asp-for="Rg" required="" />
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="Cpf">Cpf</label>
+                            <input class="form-control col-md-12" placeholder="CPF" asp-for="Cpf" required="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12  padding">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="Senha">Senha</label>
+                            <input type="password" class="form-control col-md-12" placeholder="Senha" asp-for="Senha" required="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="Cnh">Cnh</label>
+                            <input class="form-control col-md-12" placeholder="Cnh" asp-for="Cnh" required="" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="CategoriaCnh">Categoria Cnh</label>
+                            <select asp-for="CategoriaCnh" class="form-control col-md-12" required="">
+                                <option></option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>AB</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline-success col-md-12" style="margin-top:10px;" type="submit">Cadastrar</button>
+                </div>
+                
+            </div>
+            
+        </form>
     </div>
+</div>
+<script>
+    var alturaFormulario = document.getElementById("panel").offsetHeight;
 
-</form>
-
+    document.getElementById("colImg").style.height = alturaFormulario + "px";
+</script>

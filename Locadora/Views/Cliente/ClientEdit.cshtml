@@ -1,5 +1,6 @@
 ﻿@model Cliente
 
+
 <div id="panel" class="panel panel-default no-padding">
     <a asp-action="ConfigConta" class="container-fluid">Voltar</a>
     <h2 class="text-primary">Editar Cliente</h2>
@@ -9,7 +10,7 @@
             <button type="button" class="close" data-dismiss="alert">&times;</button>
         </div>
 
-        <form asp-action="EditarCliente" method="post" role="form" class="form-horizontal">
+        <form asp-action="ClientEdit" method="post" role="form" class="form-horizontal">
 
             <input type="hidden" asp-for="IdCliente" />
 
@@ -35,14 +36,14 @@
                         </div>
                         <div class="col-md-12">
                             <label class="text-info" for="PossuiReserva">Possui Reserva</label>
-                            <select asp-for="PossuiReserva" class="form-control col-md-12" required="">
+                            <select asp-for="PossuiReserva" class="form-control col-md-12" readonly="" required="">
                                 <option>SIM</option>
                                 <option>NAO</option>
                             </select>
                         </div>
                         <div class="col-md-12">
                             <label class="text-info" for="Status">Status</label>
-                            <select asp-for="Status" class="form-control col-md-12" required="">
+                            <select asp-for="Status" class="form-control col-md-12" readonly="" required="">
                                 <option>DISPONIVEL</option>
                                 <option>CANCELADO</option>
                             </select>

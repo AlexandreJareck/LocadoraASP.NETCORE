@@ -21,7 +21,7 @@ namespace Locadora.Controllers
         public static List<Modelo> carList = new List<Modelo>();
         public static List<Carro> modeloList = new List<Carro>();
         public static List<Carro> listCarPlaca = new List<Carro>();
-        public static Carro c = new Carro();        
+        public static Carro c = new Carro();
 
         private readonly CarroDAO _carroDAO;
         private readonly IHostingEnvironment _hosting;
@@ -43,7 +43,7 @@ namespace Locadora.Controllers
 
         public IActionResult BuscarCarroPlaca(string placa)
         {
-            
+
             if (string.IsNullOrWhiteSpace(placa))
             {
                 listCarPlaca = _carroDAO.ListarCarros();
@@ -75,28 +75,40 @@ namespace Locadora.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Carro carro, IFormFile fupImagem)
         {
-            if (ModelState.IsValid)
+            try
             {
-                if (fupImagem != null)
+                if ((carro.ValorPorDia == 0 || carro.ValorPorDia < 0))
                 {
-                    string arquivo = Guid.NewGuid().ToString() + Path.GetExtension(fupImagem.FileName);
-                    string caminho = Path.Combine(_hosting.WebRootPath, "locadoraimagens", arquivo);
-                    fupImagem.CopyTo(new FileStream(caminho, FileMode.Create));
-                    carro.Imagem = arquivo;
-                }
-                else
-                {
-                    carro.Imagem = "SEM-IMAGEM-13.jpg";
-                }
-                carro = _carroDAO.CadastrarCarro(carro);
-                if (carro == null)
-                {
-                    ModelState.AddModelError("", "Carro já cadastrado!");
+                    ModelState.AddModelError("", "Somente valores positivos em: Valor Dia!");
                     return View(carro);
                 }
-                return RedirectToAction("Index");
+                if ((carro.ValorPorHora == 0 || carro.ValorPorHora < 0))
+                {
+                    ModelState.AddModelError("", "Somente valores positivos em: Valor Hora!");
+                    return View(carro);
+                }
+                if (carro.Placa == null || carro.Modelo == null)
+                {
+                    ModelState.AddModelError("", "Campos com * são Obrigatório!");
+                    return View(carro);
+                }
+
+                if (ModelState.IsValid)
+                {
+                    if (fupImagem != null) { SalvaImg(carro, fupImagem); }
+                    else { carro.Imagem = "SEM-IMAGEM-13.jpg"; }
+
+                    carro = _carroDAO.CadastrarCarro(carro);
+                    if (carro == null)
+                    {
+                        ModelState.AddModelError("", "Carro já cadastrado!");
+                        return View(carro);
+                    }
+                    return RedirectToAction("Index");
+                }
             }
-            ViewBag.s = "show";
+            catch (Exception) { }
+
             return View(carro);
         }
 
@@ -116,7 +128,15 @@ namespace Locadora.Controllers
         {
             _carroDAO.RemoverCarro(id);
             return RedirectToAction("Index");
-        } 
+        }
+
+        public void SalvaImg(Carro carro, IFormFile fupImagem)
+        {
+            string arquivo = Guid.NewGuid().ToString() + Path.GetExtension(fupImagem.FileName);
+            string caminho = Path.Combine(_hosting.WebRootPath, "locadoraimagens", arquivo);
+            fupImagem.CopyTo(new FileStream(caminho, FileMode.Create));
+            carro.Imagem = arquivo;
+        }
 
         #endregion
 
@@ -180,5 +200,6 @@ namespace Locadora.Controllers
         }
 
         #endregion
+
     }
 }

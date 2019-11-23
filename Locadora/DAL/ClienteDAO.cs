@@ -42,6 +42,7 @@ namespace Locadora.DAL
                 return cliente;
             }
             cliente.PossuiReserva = "NAO";
+            cliente.Status = "DISPONIVEL";
             _context.Clientes.Add(cliente);
             _context.SaveChanges();
             return cliente;
