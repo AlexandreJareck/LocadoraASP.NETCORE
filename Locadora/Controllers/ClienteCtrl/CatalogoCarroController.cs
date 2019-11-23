@@ -42,5 +42,6 @@ namespace Locadora.Controllers.ClienteCtrl
         {
             return View(_carroDAO.GetId(id));
         }
+
     }
 }

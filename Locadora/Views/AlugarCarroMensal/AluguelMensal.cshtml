@@ -1,0 +1,76 @@
+﻿
+
+@model Carro
+
+<div id="panel" class="panel panel-default no-padding">
+    <a asp-action="Index" style="float:right">Voltar para o catalogo</a>
+
+    <h2 class="text-success" style="margin-bottom:30px; margin-top:30px;">Alugar carro mensal</h2>
+
+    <div class="panel-body no-padding">
+
+        <div asp-validation-summary="ModelOnly" class="alert alert-dismissible alert-danger col-lg-3" style="float:right;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+
+        <div class="alert alert-dismissible alert-info col-lg-12" style="float:right;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <span>O valor do aluguel mensal é: 25% do valor do veiculo referente a tabela fipe. </span>
+        </div>
+
+        <form asp-action="AlugarCarroMensal" method="post" role="form" class="form-horizontal">
+
+            <div class="row">
+
+                <div id="colImg" class="col-md-2 col-sm-2 col-xs-12 col-img">
+                    <!-- Background image -->
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12  padding border-right ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="IdVeiculo">Id</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Id" asp-for="IdVeiculo" title="Id do veiculo" readonly="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info">Modelo</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info">Preço do Veiculo</label>
+                            <input class="form-control col-md-12" style="margin-left:10px;" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12  padding">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="Placa">Preço Aluguel Mensal</label>
+                            <input class="form-control col-md-12" type="text" style="margin-left:10px;" placeholder="Placa" asp-for="ValorMensal" title="Valor mensal" readonly="" required="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="dtAluguel">Data que deseja alugar o veiculo</label>
+                            <input type="date" class="form-control col-md-12" style="margin-left:5px;" placeholder="Data que deseja alugar o veiculo" name="dtAluguel" title="Data que deseja alugar o veiculo" required= />
+                        </div>
+
+                    </div>
+                    <button asp-controller="AlugarCarroMensal" asp-action="AluguelMensal" style="margin-bottom:5px; margin-top:5px;"  class="btn btn-outline-success col-md-12" type="submit">Alugar Veiculo</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var alturaFormulario = document.getElementById("panel").offsetHeight;
+
+    document.getElementById("colImg").style.height = alturaFormulario + "px";
+
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+</script>

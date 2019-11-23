@@ -31,12 +31,12 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Aprovar Reservas</a>
+                    <a class="nav-link" asp-controller="Administrador" asp-action="AprovarReserva">Aprovar Reservas</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Opções</a>
                     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 40px, 0px);">
-                        <a class="dropdown-item" href="#">Histórico de Reservas</a>
+                        <a class="dropdown-item" asp-controller="Administrador" asp-action="ReservasHistorico">Histórico de Reservas</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item"asp-controller="Home" asp-action="Index">Logout</a>
                     </div>

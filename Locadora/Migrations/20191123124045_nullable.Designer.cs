@@ -4,14 +4,16 @@ using Locadora.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20191123124045_nullable")]
+    partial class nullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,9 +189,9 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CarroId");
+                    b.Property<int>("CarroId");
 
-                    b.Property<int?>("ClienteId");
+                    b.Property<int>("ClienteId");
 
                     b.Property<DateTime?>("DataPrevisaoDevolucao");
 
@@ -197,11 +199,11 @@ namespace Locadora.Migrations
 
                     b.Property<DateTime?>("DataVeiculoDevolvido");
 
-                    b.Property<int?>("MotoId");
+                    b.Property<int>("MotoId");
 
                     b.Property<string>("Status");
 
-                    b.Property<decimal>("ValorTotal");
+                    b.Property<double>("ValorTotal");
 
                     b.HasKey("IdReserva");
 
@@ -229,15 +231,18 @@ namespace Locadora.Migrations
                 {
                     b.HasOne("Locadora.Models.Carro", "Carro")
                         .WithMany()
-                        .HasForeignKey("CarroId");
+                        .HasForeignKey("CarroId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Locadora.Models.Cliente", "Cliente")
                         .WithMany("Reserva")
-                        .HasForeignKey("ClienteId");
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Locadora.Models.Moto", "Moto")
                         .WithMany()
-                        .HasForeignKey("MotoId");
+                        .HasForeignKey("MotoId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

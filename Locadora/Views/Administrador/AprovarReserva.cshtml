@@ -1,0 +1,49 @@
+﻿@model List<Reserva>
+
+<h2>Aprovação de Reservas</h2>
+
+<div class="table-responsive" style="margin-top:5px;">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr class="table-primary">
+                <th>Data da Reserva</th>
+                <th>Data Prev Devolução</th>
+                <th>Id Cliente</th>
+                <th>Id Veic</th>
+                <th>Status</th>
+                <th>Valor Total</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Reserva item in Model)
+            {
+            <tr>
+                <td>@item.DataReserva</td>
+                <td>@item.DataPrevisaoDevolucao</td>
+                <td>@item.ClienteId</td>
+                <td>@item.CarroId</td>
+                <td>@item.Status</td>
+                <td>@item.ValorTotal.ToString("C2")</td>
+                <td>
+                    <a class="btn btn-outline-success" asp-action="ConfirmReserva" asp-route-id="@item.IdReserva" data-toggle="tooltip" data-placement="top" title="Aprovar">
+                        <i class="far fa-thumbs-up"></i>
+                    </a>
+                </td>
+                <td>
+                    <a class="btn btn-outline-danger" asp-action="CancelReserva" asp-route-id="@item.IdReserva" data-toggle="tooltip" data-placement="top" title="Cancelar">
+                        <i class="fas fa-ban"></i>
+                    </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</div>
+

@@ -43,3 +43,6 @@ C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreap
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.pdb
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.csproj.CopyComplete
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Cliente\ClientEdit.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AlugarCarroMensal\AluguelMensal.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\AprovarReserva.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\ReservasHistorico.g.cshtml.cs
