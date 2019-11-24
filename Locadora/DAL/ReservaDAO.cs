@@ -48,11 +48,11 @@ namespace Locadora.DAL
 
             reserva.ValorTotal = carro.ValorMensal;
             reserva.DataPrevisaoDevolucao = dtPrevisaoEntrega;
-            ReservaDetails(cliente, carro, reserva);
+            ReservaDetailsCar(cliente, carro, reserva);
             SaveReserva(reserva);
         }
 
-        public void ReservaDetails(Cliente cliente, Carro carro, Reserva reserva)
+        public void ReservaDetailsCar(Cliente cliente, Carro carro, Reserva reserva)
         {
             cliente.CarroId = carro.IdVeiculo;
             cliente.PossuiReserva = "SIM";
@@ -61,6 +61,37 @@ namespace Locadora.DAL
             reserva.Status = "PENDENTE";
             reserva.Cliente = cliente;
             reserva.CarroId = carro.IdVeiculo;
+            reserva.ClienteId = cliente.IdCliente;
+        }
+
+        public void ReservaMensalMoto(Moto moto, DateTime dtAluguel, string idCliente)
+        {
+            moto = _motoDAO.GetId(moto.IdVeiculo);
+            Reserva reserva = new Reserva();
+            Cliente cliente = new Cliente();
+            cliente = _clienteDAO.Get(Convert.ToInt32(idCliente));
+
+            reserva.DataReserva = dtAluguel;
+
+            DateTime dtAux;
+            dtAux = dtAluguel;
+            DateTime dtPrevisaoEntrega = dtAux.AddDays(30);
+
+            reserva.ValorTotal = moto.ValorMensal;
+            reserva.DataPrevisaoDevolucao = dtPrevisaoEntrega;
+            ReservaDetailsMoto(cliente, moto, reserva);
+            SaveReserva(reserva);
+        }
+
+        public void ReservaDetailsMoto(Cliente cliente, Moto moto, Reserva reserva)
+        {
+            cliente.MotoId = moto.IdVeiculo;
+            cliente.PossuiReserva = "SIM";
+            moto.Status = "RESERVADO";
+            reserva.Moto = moto;
+            reserva.Status = "PENDENTE";
+            reserva.Cliente = cliente;
+            reserva.MotoId = moto.IdVeiculo;
             reserva.ClienteId = cliente.IdCliente;
         }
 

@@ -5,7 +5,6 @@ C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\bin\Debug\netcoreap
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\bin\Debug\netcoreapp2.1\Locadora.pdb
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\bin\Debug\netcoreapp2.1\Locadora.Views.dll
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\bin\Debug\netcoreapp2.1\Locadora.Views.pdb
-C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.csprojAssemblyReference.cache
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.csproj.CoreCompileInputs.cache
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.RazorAssemblyInfo.cache
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.RazorAssemblyInfo.cs
@@ -46,3 +45,5 @@ C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreap
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AlugarCarroMensal\AluguelMensal.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\AprovarReserva.g.cshtml.cs
 C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\Administrador\ReservasHistorico.g.cshtml.cs
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Locadora.csprojAssemblyReference.cache
+C:\Users\xandy\Desktop\LocadoraASP.NETCORE\Locadora\Locadora\obj\Debug\netcoreapp2.1\Razor\Views\AlugarMotoMensal\AluguelMensal.g.cshtml.cs

@@ -21,9 +21,15 @@
                     <td>@item.DataReserva</td>
                     <td>@item.DataPrevisaoDevolucao</td>
                     <td>@item.ClienteId</td>
-                    <td>@item.CarroId</td>
+                    @if (item.CarroId == null)
+                    {
+                        <td>@item.MotoId</td> }
+                    else
+                    {
+                        <td>@item.CarroId</td>}
                     <td>@item.Status</td>
                     <td>@item.ValorTotal.ToString("C2")</td>
+                    <!--Pensar em colocar um Tipo Veiculo na classe reserva-->
                 </tr>
             }
         </tbody>

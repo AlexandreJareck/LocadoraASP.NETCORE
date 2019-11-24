@@ -60,7 +60,7 @@ using Locadora.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(13, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "45a9dc3382744f6ba9577cc00be0ef72", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78d20565c7784bf192d9e6586f193e4d", async() => {
                 BeginContext(65, 21, true);
                 WriteLiteral("Volta para o catalago");
                 EndContext();
@@ -84,7 +84,7 @@ using Locadora.Models;
             WriteLiteral("\r\n<table>\r\n\r\n    <tr>\r\n        <td>\r\n            ");
             EndContext();
             BeginContext(139, 94, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "fe20aa7c9d0843d4961e1f7d0034ba85", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "56666bd38b4749dea357c7ba359f3ca9", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -191,7 +191,7 @@ AddHtmlAttributeValue("", 167, Model.Imagem, 167, 13, false);
             WriteLiteral("</p>\r\n            ");
             EndContext();
             BeginContext(911, 131, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "57865bb725a1431eb5596c5c8d49ba02", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cc093603e704eb985971c57a7c761af", async() => {
                 BeginContext(1025, 13, true);
                 WriteLiteral("Alugar Hr/Dia");
                 EndContext();
@@ -229,7 +229,7 @@ AddHtmlAttributeValue("", 167, Model.Imagem, 167, 13, false);
             WriteLiteral("\r\n            ");
             EndContext();
             BeginContext(1056, 163, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c6695f0d7f454b049a34abdca91a5dad", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d272f8466594e388eb8d033d65cae17", async() => {
                 BeginContext(1202, 13, true);
                 WriteLiteral("Alugar Mensal");
                 EndContext();
