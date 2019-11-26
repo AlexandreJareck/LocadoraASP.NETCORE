@@ -19,25 +19,36 @@
         <tbody>
             @foreach (Reserva item in Model)
             {
-            <tr>
-                <td>@item.DataReserva</td>
-                <td>@item.DataPrevisaoDevolucao</td>
-                <td>@item.ClienteId</td>
-                @if(item.CarroId == null) {<td>@item.MotoId</td> }
-                else{ <td>@item.CarroId</td>}                
-                <td>@item.Status</td>
-                <td>@item.ValorTotal.ToString("C2")</td>
-                <td>
-                    <a class="btn btn-outline-success" asp-action="ConfirmReserva" asp-route-id="@item.IdReserva" data-toggle="tooltip" data-placement="top" title="Aprovar">
-                        <i class="far fa-thumbs-up"></i>
-                    </a>
-                </td>
-                <td>
-                    <a class="btn btn-outline-danger" asp-action="CancelReserva" asp-route-id="@item.IdReserva" data-toggle="tooltip" data-placement="top" title="Cancelar">
-                        <i class="fas fa-ban"></i>
-                    </a>
-                </td>
-            </tr>
+                <tr>
+                    <td>@item.DataReserva</td>
+                    <td>@item.DataPrevisaoDevolucao</td>
+                    <td>@item.ClienteId</td>
+                    @if (item.CarroId == null)
+                    {
+                        <td>@item.MotoId</td> }
+                    else
+                    {
+                        <td>@item.CarroId</td>}
+                    <td>@item.Status</td>
+                    @if (@item.ValorTotal.ToString("C2").Equals("R$0,00"))
+                    {
+                        <td>@item.ValorTotalDiaria.ToString("C2")</td>
+                    }
+                    else
+                    {
+                        <td>@item.ValorTotal.ToString("C2")</td>
+                    }
+                    <td>
+                        <a class="btn btn-outline-success" asp-action="ConfirmReserva" asp-route-id="@item.IdReserva" data-toggle="tooltip" data-placement="top" title="Aprovar">
+                            <i class="far fa-thumbs-up"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-danger" asp-action="CancelReserva" asp-route-id="@item.IdReserva" data-toggle="tooltip" data-placement="top" title="Cancelar">
+                            <i class="fas fa-ban"></i>
+                        </a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>

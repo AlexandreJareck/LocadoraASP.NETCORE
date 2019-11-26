@@ -34,7 +34,8 @@ namespace Locadora.Controllers.ClienteCtrl
         [HttpPost]
         public IActionResult AluguelMensal(Carro carro, DateTime dtAluguel)
         {
-            var idCliente = HttpContext.Session.GetString("IdCliente");
+            var idCliente = HttpContext.Session.GetString("IdCliente");            
+
             _reservaDAO.ReservaMensalCar(carro, dtAluguel, idCliente);
             return RedirectToAction("Index", "Cliente");
         }

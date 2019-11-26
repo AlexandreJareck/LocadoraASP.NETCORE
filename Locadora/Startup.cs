@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Locadora.DAL;
 using Locadora.Models;
+using Locadora.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

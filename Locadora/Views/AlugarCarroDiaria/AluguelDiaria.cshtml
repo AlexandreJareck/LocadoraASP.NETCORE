@@ -1,0 +1,170 @@
+﻿
+@model Carro
+@{
+    DateTime dataAluguel = DateTime.Now;
+    DateTime dataDevolucaoPrev = DateTime.Now;
+    if (ViewBag.DataAluguel != null)
+    {
+        dataAluguel = ViewBag.DataAluguel;
+    }
+    if (ViewBag.DataDevolucaoPrev != null)
+    {
+        dataDevolucaoPrev = ViewBag.DataDevolucaoPrev;
+    }
+
+}
+
+<div id="panel" class="panel panel-default no-padding">
+    <a asp-action="Index" style="float:right">Voltar para o catalogo</a>
+
+    <h2 class="text-success" style="margin-bottom:30px; margin-top:30px;">Alugar carro mensal</h2>
+
+    <div class="panel-body no-padding">
+
+        <div asp-validation-summary="ModelOnly" class="alert alert-dismissible alert-danger col-lg-3" style="float:right;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+
+        <form asp-action="AlugarCarroDiaria" method="post" role="form" class="form-horizontal">
+
+            <div class="row">
+
+                <div id="colImg" class="col-md-2 col-sm-2 col-xs-12 col-img">
+                    <!-- Background image -->
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12  padding border-right ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="IdVeiculo">Id</label>
+                            <input class="form-control col-md-12" placeholder="Id" asp-for="IdVeiculo" title="Id do veiculo" readonly="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info">Modelo</label>
+                            <input class="form-control col-md-12" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info">Preço do Veiculo</label>
+                            <input class="form-control col-md-12" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-sm-5 col-xs-12  padding">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="text-info" for="Placa">Preço Hora do aluguel</label>
+                            <input class="form-control col-md-12" type="text" asp-for="ValorPorHora" title="Valor hora aluguel" readonly="" required="" />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="text-info" for="Placa">Preço Dia do aluguel</label>
+                            <input class="form-control col-md-12" type="text" asp-for="ValorPorDia" title="Valor dia aluguel" readonly="" required="" />
+                        </div>
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="text-info" for="dtAluguel">Data que deseja alugar o veiculo</label>
+                            <input type="date" class="form-control col-md-12" asp-for="@dataAluguel" placeholder="Data que deseja alugar o veiculo" name="dtAluguel" title="Data que deseja alugar o veiculo" required="" />
+                        </div>
+                        <div class="col-md-4">
+                            <select name="txtHrAluguel" class="form-control col-md-12" asp-for="@(TempData["hrAluguel"])" style="margin-top:29px;" required="">
+                                <option></option>
+                                <option>01:00</option>
+                                <option>02:00</option>
+                                <option>03:00</option>
+                                <option>04:00</option>
+                                <option>05:00</option>
+                                <option>06:00</option>
+                                <option>07:00</option>
+                                <option>08:00</option>
+                                <option>09:00</option>
+                                <option>10:00</option>
+                                <option>11:00</option>
+                                <option>12:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>15:00</option>
+                                <option>16:00</option>
+                                <option>17:00</option>
+                                <option>18:00</option>
+                                <option>19:00</option>
+                                <option>20:00</option>
+                                <option>21:00</option>
+                                <option>22:00</option>
+                                <option>23:00</option>
+                                <option>00:00</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label class="text-info" for="dtReservaPrev">Data que deseja devolver o veiculo</label>
+                            <input type="date" asp-for="@dataDevolucaoPrev" class="form-control col-md-12" placeholder="Data que deseja devolvr o veiculo" name="dtDevolucaoPrev" title="Data que deseja devolver o veiculo" required="" />
+                        </div>
+                        <div class="col-md-4">
+                            <select asp-for="@(TempData["hrReservaPrev"])" name="txtHrReservaPrev" class="form-control col-md-12" style="margin-top:29px;" required="">
+                                <option></option>
+                                <option>01:00</option>
+                                <option>02:00</option>
+                                <option>03:00</option>
+                                <option>04:00</option>
+                                <option>05:00</option>
+                                <option>06:00</option>
+                                <option>07:00</option>
+                                <option>08:00</option>
+                                <option>09:00</option>
+                                <option>10:00</option>
+                                <option>11:00</option>
+                                <option>12:00</option>
+                                <option>13:00</option>
+                                <option>14:00</option>
+                                <option>15:00</option>
+                                <option>16:00</option>
+                                <option>17:00</option>
+                                <option>18:00</option>
+                                <option>19:00</option>
+                                <option>20:00</option>
+                                <option>21:00</option>
+                                <option>22:00</option>
+                                <option>23:00</option>
+                                <option>00:00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10">
+                            <label class="text-info" for="txtValorTotReserva">Valor Total da Reserva</label>
+                            <input class="form-control col-md-12" placeholder="Clique no icone ao lado ->" value="@(TempData["valorTotReserva"])" name="txtValorTotReserva" readonly="" required="" />
+                        </div>
+                        <div class="col-md-2">
+                            <button asp-controller="AlugarCarroDiaria" style="margin-top:29px;" asp-action="CalcularValorDaReserva" data-toggle="tooltip" data-placement="top" title="Calcular Valor da Reserva" class="btn btn-outline-success col-md-12" type="submit">
+                                <i class="fas fa-calculator"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button asp-controller="AlugarCarroDiaria" asp-action="AluguelDiaria" style="margin-bottom:5px; margin-top:5px;" class="btn btn-outline-success col-md-12" type="submit">Alugar Veiculo</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var alturaFormulario = document.getElementById("panel").offsetHeight;
+
+    document.getElementById("colImg").style.height = alturaFormulario + "px";
+
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+</script>
+

@@ -52,6 +52,33 @@ namespace Locadora.DAL
             SaveReserva(reserva);
         }
 
+        public void ReservaDiariaCar(Carro carro, DateTime dtAluguel, string txtHrAluguel, DateTime dtDevolucaoPrev, string txtHrReservaPrev, string idCliente, double txtValorTotReserva)
+        {
+            carro = _carroDAO.GetId(carro.IdVeiculo);
+            Reserva reserva = new Reserva();
+            Cliente cliente = new Cliente();
+            cliente = _clienteDAO.Get(Convert.ToInt32(idCliente));
+
+            int horaAluguel = Convert.ToInt32(txtHrAluguel.ToString().Replace(":00", ""));
+            int horaDevolucao = Convert.ToInt32(txtHrReservaPrev.ToString().Replace(":00", ""));
+
+            DateTime? dtAux;
+            dtAux = dtAluguel;
+            dtAluguel = Convert.ToDateTime(dtAux.Value.AddHours(horaAluguel));
+
+            DateTime? dtAux2;
+            dtAux2 = dtDevolucaoPrev;            
+            dtDevolucaoPrev = Convert.ToDateTime(dtAux2.Value.AddHours(horaDevolucao));
+
+            reserva.DataReserva = dtAluguel;
+            reserva.DataPrevisaoDevolucao = dtDevolucaoPrev;
+
+            reserva.ValorTotalDiaria = txtValorTotReserva;            
+            ReservaDetailsCar(cliente, carro, reserva);
+            SaveReserva(reserva);
+        }
+
+
         public void ReservaDetailsCar(Cliente cliente, Carro carro, Reserva reserva)
         {
             cliente.CarroId = carro.IdVeiculo;
@@ -100,6 +127,8 @@ namespace Locadora.DAL
             _context.Reservas.Update(reserva);
             _context.SaveChanges();
         }
+
+
 
     }
 }

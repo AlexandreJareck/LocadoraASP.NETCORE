@@ -16,6 +16,7 @@ namespace Locadora.Models
         public DateTime? DataPrevisaoDevolucao { get; set; }
         public DateTime? DataVeiculoDevolvido { get; set; }
         public decimal ValorTotal { get; set; }
+        public double ValorTotalDiaria { get; set; }
         public Cliente Cliente { get; set; }
         public Carro Carro { get; set; }
         public Moto Moto { get; set; }
