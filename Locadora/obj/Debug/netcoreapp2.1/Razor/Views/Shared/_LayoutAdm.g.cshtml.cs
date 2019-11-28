@@ -71,7 +71,7 @@ using Locadora.Models;
             WriteLiteral("<!DOCTYPE html>\r\n\r\n<html>\r\n");
             EndContext();
             BeginContext(27, 722, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f7d649b13a7b46f6929310eaf1df36d0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "40f132800a774bd7bc17bb46b26518a8", async() => {
                 BeginContext(33, 72, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>");
                 EndContext();
@@ -91,7 +91,7 @@ using Locadora.Models;
     ");
                 EndContext();
                 BeginContext(519, 70, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "1f14d3dc09224bac9c9c898117b460ae", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ed4d4949d2f1413c80e3b4ee9d4a5313", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -111,7 +111,7 @@ using Locadora.Models;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(595, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1e67b069ae354f0fb3dd04d4cc9113f6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7e9b91bff5d746f9b834b0bc260673ad", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -145,12 +145,12 @@ using Locadora.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(751, 2428, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "24a6a59654eb41379c9454affe9c0bfb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a2651a2e9ea4c8a903ec0af8a62a18a", async() => {
                 BeginContext(757, 236, true);
                 WriteLiteral("\r\n    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarColor02\">\r\n            <ul class=\"navbar-nav mr-auto\">\r\n                <li class=\"nav-item\">\r\n                    ");
                 EndContext();
                 BeginContext(993, 78, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dab361d5c17d4394a19aa3374958624a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "542b1f317b3a49e7a0b45817cbcee44e", async() => {
                     BeginContext(1063, 4, true);
                     WriteLiteral("Home");
                     EndContext();
@@ -175,7 +175,7 @@ using Locadora.Models;
                 WriteLiteral("\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    ");
                 EndContext();
                 BeginContext(1155, 82, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58488a165a4b4445aff24961300a67ee", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4c77c939c8ce4b89a33ca95272d424a7", async() => {
                     BeginContext(1225, 8, true);
                     WriteLiteral("Clientes");
                     EndContext();
@@ -205,7 +205,7 @@ using Locadora.Models;
                         ");
                 EndContext();
                 BeginContext(1682, 77, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "706a199504d5497eb7f3844825118ac9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8ba3c4e702f34f7cada5eeffb2319c68", async() => {
                     BeginContext(1749, 6, true);
                     WriteLiteral("Carros");
                     EndContext();
@@ -230,7 +230,7 @@ using Locadora.Models;
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(1785, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab828c48ec294665a608b4c8984117df", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb91a9ef56f1457bb042db4722f8617f", async() => {
                     BeginContext(1851, 5, true);
                     WriteLiteral("Motos");
                     EndContext();
@@ -255,7 +255,7 @@ using Locadora.Models;
                 WriteLiteral("\r\n                    </div>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    ");
                 EndContext();
                 BeginContext(1972, 99, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "44c1136bc7bd4d2eaec432ae0bcbc9a3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37fa5d2c7c4349458d934198b03232d6", async() => {
                     BeginContext(2051, 16, true);
                     WriteLiteral("Aprovar Reservas");
                     EndContext();
@@ -285,7 +285,7 @@ using Locadora.Models;
                         ");
                 EndContext();
                 BeginContext(2514, 112, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50afc46fe287463285f5dcaa8f5d1170", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d6d784925ed046018f9ef5eb306bca7d", async() => {
                     BeginContext(2601, 21, true);
                     WriteLiteral("Histórico de Reservas");
                     EndContext();
@@ -310,7 +310,7 @@ using Locadora.Models;
                 WriteLiteral("\r\n                        <div class=\"dropdown-divider\"></div>\r\n                        ");
                 EndContext();
                 BeginContext(2714, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "977bbd3f581f48b795ec69009db7fa00", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4043c440169a436dba7cbc2839f4299c", async() => {
                     BeginContext(2779, 6, true);
                     WriteLiteral("Logout");
                     EndContext();

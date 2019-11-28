@@ -15,6 +15,7 @@ namespace Locadora.Service
 
         public static List<Carro> BuscarMarcas()
         {
+            
             string url = "https://parallelum.com.br/fipe/api/v1/carros/marcas";
             WebClient client = new WebClient();
             return JsonConvert.DeserializeObject<List<Carro>>(client.DownloadString(url));

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Locadora.DAL;
 using Locadora.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Locadora.Controllers.ClienteCtrl
 {
+    [Authorize]
     public class CatalogoMotoController : Controller
     {
 

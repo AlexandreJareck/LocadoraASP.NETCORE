@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Locadora.DAL;
 using Locadora.Models;
 using Locadora.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Locadora.Controllers.ClienteCtrl
 {
+    [Authorize]
     public class AlugarCarroDiariaController : Controller
     {
         public static int Id;
@@ -45,7 +47,7 @@ namespace Locadora.Controllers.ClienteCtrl
         {
             double valorTotalReserva = 0;
 
-            valorTotalReserva = Calculos.DataReplace(dtAluguel, txtHrAluguel, dtDevolucaoPrev, txtHrReservaPrev, valorTotalReserva, carro); ;
+            valorTotalReserva = Calculos.DataReplaceCalc(dtAluguel, txtHrAluguel, dtDevolucaoPrev, txtHrReservaPrev, valorTotalReserva, carro); ;
 
             TempData["valorTotReserva"] = valorTotalReserva;
             TempData["hrAluguel"] = txtHrAluguel;

@@ -8,19 +8,11 @@ namespace Locadora.Service
 {
     public class Calculos
     {
-        public static double DataReplace(DateTime dtAluguel, string txtHrAluguel, DateTime dtDevolucaoPrev, string txtHrReservaPrev, double valorTotalReserva, Carro carro)
+        public static double DataReplaceCalc(DateTime dtAluguel, string txtHrAluguel, DateTime dtDevolucaoPrev, string txtHrReservaPrev, double valorTotalReserva, Carro carro)
         {
 
-            int horaAluguel = Convert.ToInt32(txtHrAluguel.ToString().Replace(":00", ""));
-            int horaDevolucao = Convert.ToInt32(txtHrReservaPrev.ToString().Replace(":00", ""));
-
-            DateTime? dtAux;
-            dtAux = dtAluguel;
-            dtAluguel = Convert.ToDateTime(dtAux.Value.AddHours(horaAluguel));
-
-            DateTime dtAux2;
-            dtAux2 = dtDevolucaoPrev;
-            dtDevolucaoPrev = dtAux2.AddHours(horaDevolucao);
+            dtAluguel = DataReplace(dtAluguel, txtHrAluguel);
+            dtDevolucaoPrev = DataReplace(dtDevolucaoPrev, txtHrReservaPrev);
 
             valorTotalReserva = CalculaValorReserva(dtAluguel, dtDevolucaoPrev, valorTotalReserva, carro);
 
@@ -45,5 +37,57 @@ namespace Locadora.Service
                 return valorTotalReserva = carro.ValorPorDia * Math.Ceiling(duration.TotalDays);
             }
         }
+
+        public static double DataReplaceCalc(DateTime dtAluguel, string txtHrAluguel, DateTime dtDevolucaoPrev, string txtHrReservaPrev, double valorTotalReserva, Moto moto)
+        {
+            dtAluguel = DataReplace(dtAluguel, txtHrAluguel);
+            dtDevolucaoPrev = DataReplace(dtDevolucaoPrev, txtHrReservaPrev);
+
+            valorTotalReserva = CalculaValorReservaMoto(dtAluguel, dtDevolucaoPrev, valorTotalReserva, moto);
+
+            return valorTotalReserva;
+        }
+
+        public static double CalculaValorReservaMoto(DateTime dtAluguel, DateTime dtDevolucaoPrev, double valorTotalReserva, Moto moto)
+        {
+            TimeSpan duration = dtAluguel.Subtract(dtDevolucaoPrev);
+
+            if (duration.Hours < 0 || duration.Days < 0)
+            {
+                duration = dtDevolucaoPrev.Subtract(dtAluguel);
+            }
+
+            if (duration.TotalHours <= 12.0)
+            {
+                return valorTotalReserva = moto.ValorPorHora * Math.Ceiling(duration.TotalHours);
+            }
+            else
+            {
+                return valorTotalReserva = moto.ValorPorDia * Math.Ceiling(duration.TotalDays);
+            }
+        }
+
+        public static DateTime DataReplace(DateTime data, string hora)
+        {
+            int horaAluguel = Convert.ToInt32(hora.ToString().Replace(":00", ""));
+            DateTime? dtAux;
+            dtAux = data;
+            return Convert.ToDateTime(dtAux.Value.AddHours(horaAluguel));
+        }
+
+        public static bool DateValidationReservaDiaria(DateTime data, string hora, DateTime data2, string hora2)
+        {
+            DateTime aux1 = DataReplace(data, hora);
+            DateTime aux2 = DataReplace(data2, hora2);
+            if (aux2.Day <= aux1.Day &&
+                aux2.Day <= aux1.Day &&
+                aux2.DayOfYear <= aux1.DayOfYear)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }

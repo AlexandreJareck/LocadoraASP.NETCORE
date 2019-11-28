@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -40,8 +41,17 @@ namespace Locadora
             services.AddScoped<MotoDAO>();
             services.AddScoped<ReservaDAO>();
             //services.AddScoped<ClienteDAO>();
+            services.AddHttpContextAccessor();
 
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("LocadoraConnection")));
+
+            services.AddIdentity<ClienteLogado, IdentityRole>().AddEntityFrameworkStores<Context>().AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Home/Index";
+                options.AccessDeniedPath = "/Home/AcessoNegado";
+            });
 
             services.AddSession();
             services.AddDistributedMemoryCache();
@@ -66,6 +76,7 @@ namespace Locadora
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

@@ -17,20 +17,27 @@
         <tbody>
             @foreach (Reserva item in Model)
             {
-                <tr>
-                    <td>@item.DataReserva</td>
-                    <td>@item.DataPrevisaoDevolucao</td>
-                    <td>@item.ClienteId</td>
-                    @if (item.CarroId == null)
-                    {
-                        <td>@item.MotoId</td> }
-                    else
-                    {
-                        <td>@item.CarroId</td>}
-                    <td>@item.Status</td>
+            <tr>
+                <td>@item.DataReserva</td>
+                <td>@item.DataPrevisaoDevolucao</td>
+                <td>@item.ClienteId</td>
+                @if (item.CarroId == null)
+                {
+                    <td>@item.MotoId</td> }
+                else
+                {
+                    <td>@item.CarroId</td>}
+                <td>@item.Status</td>
+                @if (@item.ValorTotal.ToString("C2").Equals("R$0,00"))
+                {
+                    <td>@item.ValorTotalDiaria.ToString("C2")</td>
+                }
+                else
+                {
                     <td>@item.ValorTotal.ToString("C2")</td>
-                    <!--Pensar em colocar um Tipo Veiculo na classe reserva-->
-                </tr>
+                }
+                <!--Pensar em colocar um Tipo Veiculo na classe reserva-->
+            </tr>
             }
         </tbody>
     </table>

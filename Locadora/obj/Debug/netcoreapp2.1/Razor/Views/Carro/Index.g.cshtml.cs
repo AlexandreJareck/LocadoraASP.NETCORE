@@ -73,12 +73,12 @@ using Locadora.Models;
             WriteLiteral("\r\n<h2>Gerenciamento de Carros</h2>\r\n");
             EndContext();
             BeginContext(56, 831, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7afd297e180544458bf37f14beff4419", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "000c252f51094221a6e948eabd11a3b7", async() => {
                 BeginContext(106, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(112, 205, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13e590b1c2894726aa0741fd0b3b960f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e8c578310a44d0693fd3a513a013ebc", async() => {
                     BeginContext(271, 42, true);
                     WriteLiteral("\r\n        <i class=\"fas fa-car\"></i>\r\n    ");
                     EndContext();
@@ -106,7 +106,7 @@ using Locadora.Models;
                 WriteLiteral("\r\n    <div style=\"float:right\">\r\n        <div class=\"form-group\">\r\n            <div class=\"form-inline\">\r\n                <input class=\"form-control col-md-7\" type=\"text\" placeholder=\"Pesquisar pela placa\" name=\"placa\" />\r\n                ");
                 EndContext();
                 BeginContext(556, 274, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cbba8b49f97249acb103f01a6665955b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b66f282e6a0e473c83721771d2db395b", async() => {
                     BeginContext(752, 69, true);
                     WriteLiteral("\r\n                    <i class=\"fas fa-search\"></i>\r\n                ");
                     EndContext();
@@ -263,7 +263,7 @@ using Locadora.Models;
             WriteLiteral("</td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(2066, 265, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "69f641052c5e457e92bbd3c1cf1ce84e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d18b77cbc1504b16947b256beceb6b39", async() => {
                 BeginContext(2239, 88, true);
                 WriteLiteral("\r\n                            <i class=\"far fa-trash-alt\"></i>\r\n                        ");
                 EndContext();
@@ -304,7 +304,7 @@ using Locadora.Models;
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(2410, 257, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3d0fd97e27f4273b1f41f2938c36825", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d52433c26c424b0b913f2878494e913a", async() => {
                 BeginContext(2580, 83, true);
                 WriteLiteral("\r\n                            <i class=\"far fa-edit\"></i>\r\n                        ");
                 EndContext();
