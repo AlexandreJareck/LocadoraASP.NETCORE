@@ -15,5 +15,6 @@ namespace Locadora.Models
         public DbSet<Carro> Carros { get; set; }
         public DbSet<Moto> Motos { get; set; }
         public DbSet<Reserva> Reservas { get; set; }
+        public DbSet<Pagamento> Pagamentos { get; set; }
     }
 }

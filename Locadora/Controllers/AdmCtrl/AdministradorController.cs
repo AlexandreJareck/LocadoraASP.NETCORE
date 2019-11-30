@@ -31,7 +31,10 @@ namespace Locadora.Controllers
         {
             Reserva reserva = new Reserva();
             reserva = _reservaDAO.Get(id);
-            reserva.Status = "APROVADO";
+            reserva.Cliente.Ident = reserva.IdReserva;
+            reserva.Cliente.Status = "PENDENTE";
+            reserva.Status = "APROVADO";    
+            
             _reservaDAO.UpdateReserva(reserva);
             return RedirectToAction("AprovarReserva");
         }
@@ -41,6 +44,7 @@ namespace Locadora.Controllers
             Reserva reserva = new Reserva();
             reserva = _reservaDAO.Get(id);
             reserva.Status = "CANCELADA";
+            reserva.Cliente.Ident = reserva.IdReserva;
             _reservaDAO.UpdateReserva(reserva);
             return RedirectToAction("AprovarReserva");
         }

@@ -12,7 +12,7 @@
 
     <div class="panel-body no-padding">
 
-        <form asp-action="BuscarCarros" method="post" role="form" class="form-horizontal">
+        <form asp-action="BuscarCarros" method="post" role="form" class="form-horizontal" enctype="multipart/form-data">
 
             <div class="row">
 
@@ -69,17 +69,17 @@
 
                         <div class="col-md-12">
                             <label class="text-info" for="Combustivel">Combustivel</label><span class="text-danger">*</span>
-                            <input class="form-control col-md-12" placeholder="Combustivel" asp-for="Combustivel" readonly="" title="Tipo de Combustivel" required="" />
+                            <input class="form-control col-md-12" placeholder="Combustivel" asp-for="Combustivel" style="background:lightgray" readonly="" title="Tipo de Combustivel" required="" />
                         </div>
 
                         <div class="col-md-12">
                             <label class="text-info" for="Valor">Preço do Veiculo</label><span class="text-danger">*</span>
-                            <input class="form-control col-md-12" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" required="" />
+                            <input class="form-control col-md-12" placeholder="Preço do veiculo" asp-for="Valor" style="background:lightgray" readonly="" title="Preço de acordo tabela Fipe" required="" />
                         </div>
 
                         <div class="col-md-12">
                             <label class="text-info">Ano Modelo</label><span class="text-danger">*</span>
-                            <input class="form-control col-md-12" placeholder="Ano" asp-for="AnoModelo" readonly="" required="" />
+                            <input class="form-control col-md-12" placeholder="Ano" asp-for="AnoModelo" style="background:lightgray" readonly="" required="" />
                         </div>
                         <div class="col-md-12">
                             <label>Imagem:</label>
@@ -93,11 +93,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label class="text-info" for="Placa">Nome do Veiculo</label><span class="text-danger">*</span>
-                            <input class="form-control col-md-12" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" required="" />
+                            <input class="form-control col-md-12" placeholder="Nome do veiculo" asp-for="Modelo" style="background:lightgray" title="Nome do Veiculo" readonly="" required="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info" for="Marca">Marca do Veiculo</label><span class="text-danger">*</span>
-                            <input class="form-control col-md-12" placeholder="Marca do veiculo" asp-for="Marca" title="Marca do Veiculo" readonly="" required="" />
+                            <input class="form-control col-md-12" placeholder="Marca do veiculo" asp-for="Marca" style="background:lightgray" title="Marca do Veiculo" readonly="" required="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info" for="Placa">Placa</label><span class="text-danger">*</span>

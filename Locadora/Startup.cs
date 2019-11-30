@@ -40,6 +40,7 @@ namespace Locadora
             services.AddScoped<CarroDAO>();
             services.AddScoped<MotoDAO>();
             services.AddScoped<ReservaDAO>();
+            services.AddScoped<PagamentoDAO>();
             //services.AddScoped<ClienteDAO>();
             services.AddHttpContextAccessor();
 
@@ -76,7 +77,7 @@ namespace Locadora
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseSession();
-            app.UseAuthentication();
+            app.UseAuthentication();            
 
             app.UseMvc(routes =>
             {

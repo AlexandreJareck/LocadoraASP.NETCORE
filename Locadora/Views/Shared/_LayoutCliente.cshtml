@@ -29,6 +29,9 @@
                         <a class="dropdown-item" asp-controller="CatalogoMoto" asp-action="Index">Motos</a>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Devolucao" asp-action="Pagamento">Devolução</a>
+                </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Opções</a>
@@ -48,7 +51,7 @@
 
     <hr />
     <footer>
-        <p style="text-align:center">
+        <p style="text-align:center; color:white">
             &copy; @DateTime.Now.Year - Locadora de Veiculo Asp.Net Core MVC
         </p>
     </footer>

@@ -21,7 +21,7 @@
 
     <a asp-action="Index" style="float:right">Voltar para o catalogo</a>
 
-    <h2 class="text-success" style="margin-bottom:30px; margin-top:30px;">Alugar moto diaria</h2>
+    <h2 class="text-success" style="margin-bottom:30px; margin-top:30px;">Alugar moto Dia/Hora</h2>
 
     <div class="panel-body no-padding">
 
@@ -41,15 +41,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label class="text-info" for="IdVeiculo">Id</label>
-                            <input class="form-control col-md-12" placeholder="Id" asp-for="IdVeiculo" title="Id do veiculo" readonly="" />
+                            <input class="form-control col-md-12" placeholder="Id" asp-for="IdVeiculo" title="Id do veiculo" style="background:lightgray" readonly="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info">Modelo</label>
-                            <input class="form-control col-md-12" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
+                            <input class="form-control col-md-12" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" style="background:lightgray" readonly="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info">Preço do Veiculo</label>
-                            <input class="form-control col-md-12" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" />
+                            <input class="form-control col-md-12" placeholder="Preço do veiculo" asp-for="Valor" style="background:lightgray" readonly="" title="Preço de acordo tabela Fipe" />
                         </div>
                         @if (TempData["Msg"] != null)
                         {
@@ -69,11 +69,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label class="text-info" for="Placa">Preço Hora do aluguel</label>
-                            <input class="form-control col-md-12" type="text" asp-for="ValorPorHora" title="Valor hora aluguel" readonly="" required="" />
+                            <input class="form-control col-md-12" type="text" asp-for="ValorPorHora" title="Valor hora aluguel" style="background:lightgray" readonly="" required="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info" for="Placa">Preço Dia do aluguel</label>
-                            <input class="form-control col-md-12" type="text" asp-for="ValorPorDia" title="Valor dia aluguel" readonly="" required="" />
+                            <input class="form-control col-md-12" type="text" asp-for="ValorPorDia" title="Valor dia aluguel" style="background:lightgray" readonly="" required="" />
                         </div>
                         <div class="col-md-12">
 
@@ -111,7 +111,6 @@
                                 <option>21:00</option>
                                 <option>22:00</option>
                                 <option>23:00</option>
-                                <option>00:00</option>
                             </select>
                         </div>
                     </div>
@@ -146,7 +145,6 @@
                                 <option>21:00</option>
                                 <option>22:00</option>
                                 <option>23:00</option>
-                                <option>00:00</option>
                             </select>
                         </div>
                     </div>
@@ -154,7 +152,7 @@
                     <div class="row">
                         <div class="col-md-10">
                             <label class="text-info" for="txtValorTotReserva">Valor Total da Reserva</label>
-                            <input class="form-control col-md-12" placeholder="Clique no icone ao lado ->" value="@(TempData["valorTotReserva"])" name="txtValorTotReserva" readonly="" required="" />
+                            <input class="form-control col-md-12" placeholder="Clique no icone ao lado ->" value="@(TempData["valorTotReserva"])" name="txtValorTotReserva" style="background:lightgray" readonly="" required="" />
                         </div>
                         <div class="col-md-2">
                             <button asp-controller="AlugarMotoDiaria" style="margin-top:29px;" asp-action="CalcularValorDaReserva" data-toggle="tooltip" data-placement="top" title="Calcular Valor da Reserva" class="btn btn-outline-success col-md-12" type="submit">

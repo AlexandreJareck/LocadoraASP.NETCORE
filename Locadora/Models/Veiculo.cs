@@ -17,11 +17,10 @@ namespace Locadora.Models
         public string Modelo { get; set; }
         public int AnoModelo { get; set; }
         public string Combustivel { get; set; }
-        public string CodigoFipe { get; set; }
-        public string MesReferencia { get; set; }
         public int TipoVeiculo { get; set; }
         public string IdMarca { get; set; }
         public string IdModelo { get; set; }
+        public string CodigoFipe { get; set; }
         public string IdentVeiculo { get; set; }
         public string Cor { get; set; }
         [Required(ErrorMessage = "Campos obrigatórios!")]

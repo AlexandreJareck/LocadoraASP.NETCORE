@@ -45,8 +45,6 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Marca");
 
-                    b.Property<string>("MesReferencia");
-
                     b.Property<string>("Modelo");
 
                     b.Property<string>("Nome");
@@ -79,7 +77,7 @@ namespace Locadora.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CarroId");
+                    b.Property<int?>("CarroId");
 
                     b.Property<string>("CategoriaCnh");
 
@@ -87,7 +85,9 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Cpf");
 
-                    b.Property<int>("MotoId");
+                    b.Property<int?>("Ident");
+
+                    b.Property<int?>("MotoId");
 
                     b.Property<string>("Nome");
 
@@ -204,8 +204,6 @@ namespace Locadora.Migrations
 
                     b.Property<string>("Marca");
 
-                    b.Property<string>("MesReferencia");
-
                     b.Property<string>("Modelo");
 
                     b.Property<string>("Nome");
@@ -230,6 +228,43 @@ namespace Locadora.Migrations
                     b.HasKey("IdVeiculo");
 
                     b.ToTable("MOTO");
+                });
+
+            modelBuilder.Entity("Locadora.Models.Pagamento", b =>
+                {
+                    b.Property<int>("IdPagamento")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ClienteIdCliente");
+
+                    b.Property<bool?>("Credito");
+
+                    b.Property<bool?>("Debito");
+
+                    b.Property<bool?>("Dinheiro");
+
+                    b.Property<DateTime>("DtVeicDevolvido");
+
+                    b.Property<string>("NroCartao");
+
+                    b.Property<int?>("ReservaIdReserva");
+
+                    b.Property<string>("Status");
+
+                    b.Property<double>("ValorPagamento");
+
+                    b.Property<double>("ValorTotalReserva");
+
+                    b.Property<double>("ValorTroco");
+
+                    b.HasKey("IdPagamento");
+
+                    b.HasIndex("ClienteIdCliente");
+
+                    b.HasIndex("ReservaIdReserva");
+
+                    b.ToTable("PAGAMENTO");
                 });
 
             modelBuilder.Entity("Locadora.Models.Reserva", b =>
@@ -386,6 +421,17 @@ namespace Locadora.Migrations
                     b.HasOne("Locadora.Models.Moto")
                         .WithMany("Modelos")
                         .HasForeignKey("MotoIdVeiculo");
+                });
+
+            modelBuilder.Entity("Locadora.Models.Pagamento", b =>
+                {
+                    b.HasOne("Locadora.Models.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteIdCliente");
+
+                    b.HasOne("Locadora.Models.Reserva", "Reserva")
+                        .WithMany()
+                        .HasForeignKey("ReservaIdReserva");
                 });
 
             modelBuilder.Entity("Locadora.Models.Reserva", b =>

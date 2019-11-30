@@ -79,15 +79,62 @@ namespace Locadora.Service
         {
             DateTime aux1 = DataReplace(data, hora);
             DateTime aux2 = DataReplace(data2, hora2);
-            if (aux2.Day <= aux1.Day &&
-                aux2.Day <= aux1.Day &&
-                aux2.DayOfYear <= aux1.DayOfYear)
-            {
+            if (aux2.Day <= aux1.Day && aux2.DayOfYear <= aux1.DayOfYear)
                 return false;
-            }
-
-            return true;
+            else
+                return true;
         }
 
+        public static double DefineReservaDiariaOuMensal(Reserva reserva, DateTime data)
+        {
+            if (reserva.ValorTotal == 0)
+                return CalcularValorDevolucaoDiaria(reserva, data);
+            else
+                return CalcularValorDevolucaoMensal(reserva, data);
+        }
+
+        public static double CalcularValorDevolucaoDiaria(Reserva reserva, DateTime devolvidoEm)
+        {
+
+            TimeSpan duration = devolvidoEm.Subtract((DateTime)reserva.DataPrevisaoDevolucao);
+
+            if (duration.TotalHours > 0.5 && duration.TotalHours <= 12.0)
+            {
+                double valorTotalPagamento = (reserva.ValorTotalDiaria * 0.20) + reserva.ValorTotalDiaria;
+                return valorTotalPagamento;
+
+            }
+            else
+            {
+                double valorTotalPagamento = (reserva.ValorTotalDiaria * 0.50) + reserva.ValorTotalDiaria;
+                return valorTotalPagamento;
+            }
+        }
+
+        public static double CalcularValorDevolucaoMensal(Reserva reserva, DateTime devolvidoEm)
+        {
+
+            TimeSpan duration = devolvidoEm.Subtract((DateTime)reserva.DataPrevisaoDevolucao);
+
+            if (duration.TotalHours > 0.5 && duration.TotalHours <= 12.0)
+            {
+                double valorTotalPagamento = ((double)reserva.ValorTotal * 0.20) + (double)reserva.ValorTotal;
+                return valorTotalPagamento;
+
+            }
+            else
+            {
+                double valorTotalPagamento = ((double)reserva.ValorTotal * 0.50) + (double)reserva.ValorTotal;
+                return valorTotalPagamento;
+            }
+        }
+
+        public static bool DateValidationDevolucao(DateTime dtPrevisao, DateTime dtDevolvidoEm)
+        {            
+            if (dtDevolvidoEm.Day <= dtPrevisao.Day &&  dtDevolvidoEm.Hour <= dtPrevisao.Hour && dtDevolvidoEm.DayOfYear <= dtPrevisao.DayOfYear && dtDevolvidoEm.Year <= dtPrevisao.Year)
+                return false;
+            else
+                return true;
+        }
     }
 }

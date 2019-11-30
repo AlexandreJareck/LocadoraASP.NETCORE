@@ -1,0 +1,279 @@
+﻿
+@model Reserva
+@{
+    DateTime dtVeicDevolvido = DateTime.Now;
+    if (ViewBag.dtVeicDevolvido != null)
+    {
+        dtVeicDevolvido = ViewBag.dtVeicDevolvido;
+    }
+
+}
+
+<div id="panel" class="panel panel-default no-padding">
+    <div asp-validation-summary="ModelOnly" class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    @if (Model != null)
+    {
+        <a asp-action="Index" asp-controller="Cliente" style="float:right">Voltar para home</a>
+
+        <h2 class="text-success" style="margin-bottom:30px; margin-top:30px;">Devolução de veiculo</h2>
+
+        <div class="panel-body no-padding">
+
+            <form asp-action="Pagamento" method="post" role="form" class="form-horizontal">
+
+                <div class="row">
+
+                    <div id="colImg" class="col-md-2 col-sm-2 col-xs-12 col-img">
+                        <!-- Background image -->
+                    </div>
+
+                    <div class="col-md-5 col-sm-5 col-xs-12  padding border-right ">
+                        <h4 style="margin-bottom:25px; color:papayawhip">Dados devolução</h4>
+
+                        <div class="row" id="dtAluguel">
+                            <div class="col-md-8">
+                                <label class="text-info" for="dtAluguel">Data aluguel do veiculo</label><span class="text-danger">*</span>
+                                <input class="form-control col-md-12" type="date" asp-for="DataReserva" style="background:lightgray" readonly="" title="Data aluguel do veiculo" />
+                            </div>
+                            <div class="col-md-4">
+                                <input name="txtHrAluguelVeic" class="form-control col-md-12" asp-for="@(TempData["hrAluguelVeic"])" style="margin-top:28px;background:lightgray" readonly="" />
+                            </div>
+                        </div>
+
+                        <div class="row" id="dtPrevVeic">
+                            <div class="col-md-8">
+                                <label class="text-info" for="Valor">Data Devolução prevista</label><span class="text-danger">*</span>
+                                <input class="form-control col-md-12" type="date" asp-for="DataPrevisaoDevolucao" style="background:lightgray" readonly="" title="Data Devolução prevista" />
+                            </div>
+                            <div class="col-md-4">
+                                <input name="txtHrPrevVeic" class="form-control col-md-12" asp-for="@(TempData["hrPrevVeic"])" style="margin-top:28px; background:lightgray" readonly="" />
+                            </div>
+                        </div>
+
+                        @if (Model.ValorTotalDiaria == 0)
+                        {
+                            <div class="row" id="dtPrevVeic">
+                                <div class="col-md-12">
+                                    <label class="text-info" for="Valor">Valor Total da reserva mensal</label><span class="text-danger">*</span>
+                                    <input class="form-control col-md-12" asp-for="ValorTotal" style="background:lightgray" readonly="" title="Valor Total da reserva mensal" required="" />
+                                </div>
+                            </div>
+
+                            <div class="row" id="dtDevolvidoVeic">
+                                @if (TempData["dtVeicDevolvido"] == null)
+                                {
+                                    <div class="col-md-12">
+                                        <label class="text-info" for="dtAluguel">Data veiculo devolvido</label><span class="text-danger">*</span>
+                                        <input type="date" class="form-control col-md-12" asp-for="DataVeiculoDevolvido" placeholder="Data veiculo devolvido" title="Data veiculo devolvido" required="" />
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-md-8">
+                                        <label class="text-info" for="dtAluguel">Data veiculo devolvido</label><span class="text-danger">*</span>
+                                        <input type="date" class="form-control col-md-12" asp-for="@dtVeicDevolvido" placeholder="Data veiculo devolvido" title="Data veiculo devolvido" required="" readonly="" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input name="txtHrAluguel" class="form-control col-md-12" asp-for="@(TempData["hrAluguel"])" style="margin-top:28px;" required="" readonly="" />
+                                    </div>
+                                }
+
+
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="row" id="dtPrevVeic">
+                                <div class="col-md-12">
+                                    <label class="text-info" for="Valor">Valor Total da reserva diaria</label><span class="text-danger">*</span>
+                                    <input class="form-control col-md-12" asp-for="ValorTotalDiaria" style="background:lightgray" readonly="" title="Valor Total da reserva diaria" required="" />
+                                </div>
+                            </div>
+                            <div class="row" id="dtDevolvidoVeic">
+                                @if (TempData["dtVeicDevolvido"] == null)
+                                {
+                                    <div class="col-md-8">
+                                        <label class="text-info" for="dtAluguel">Data veiculo devolvido</label><span class="text-danger">*</span>
+                                        <input type="date" class="form-control col-md-12" asp-for="DataVeiculoDevolvido" placeholder="Data veiculo devolvido" title="Data veiculo devolvido" required="" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select name="txtHrAluguel" class="form-control col-md-12" asp-for="@(TempData["hrAluguel"])" style="margin-top:28px;" required="">
+                                            <option></option>
+                                            <option>01:00</option>
+                                            <option>02:00</option>
+                                            <option>03:00</option>
+                                            <option>04:00</option>
+                                            <option>05:00</option>
+                                            <option>06:00</option>
+                                            <option>07:00</option>
+                                            <option>08:00</option>
+                                            <option>09:00</option>
+                                            <option>10:00</option>
+                                            <option>11:00</option>
+                                            <option>12:00</option>
+                                            <option>13:00</option>
+                                            <option>14:00</option>
+                                            <option>15:00</option>
+                                            <option>16:00</option>
+                                            <option>17:00</option>
+                                            <option>18:00</option>
+                                            <option>19:00</option>
+                                            <option>20:00</option>
+                                            <option>21:00</option>
+                                            <option>22:00</option>
+                                            <option>23:00</option>
+                                        </select>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="col-md-8">
+                                        <label class="text-info" for="dtAluguel">Data veiculo devolvido</label><span class="text-danger">*</span>
+                                        <input type="date" class="form-control col-md-12" asp-for="@dtVeicDevolvido" placeholder="Data veiculo devolvido" title="Data veiculo devolvido" required="" readonly="" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input name="txtHrAluguel" class="form-control col-md-12" asp-for="@(TempData["hrAluguel"])" style="margin-top:28px;" required="" readonly="" />
+                                    </div>
+                                }
+
+
+                            </div>
+                        }
+
+
+
+                        @if (TempData["Msg"] != null)
+                        {
+                            <div class="row" id="Msg">
+                                <div class="col-md-12">
+                                    <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                        Data de devolução não pode ser menor que a data de devolução prevista!
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div><br />
+                                </div>
+                            </div>
+                        }
+                        @if (TempData["ValorTotal"] != null)
+                        {
+                            <div class="row" id="calcPgto">
+                                <div class="col-md-10">
+                                    <label class="text-info" for="Valor Para pagamento">Valor Total para pagamento</label><span class="text-danger">*</span>
+                                    <input class="form-control col-md-12" placeholder="Valor Total para pagamento" name="valorTotalPagamento" asp-for="@(TempData["ValorTotal"])" title="Valor Total do aluguel" readonly="" />
+                                </div>
+                                <div class="col-md-2">
+                                    <button asp-controller="Devolucao" asp-action="CalcularPagamento" data-toggle="tooltip" style="margin-top:29px; color:greenyellow; font-size:x-large" data-placement="top" title="Calcular Pagamento" class="btn col-md-12" type="submit" disabled="">
+                                        <i class="fas fa-calculator"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="row" id="calcPgto">
+                                <div class="col-md-10">
+                                    <label class="text-info" for="Valor Para pagamento">Valor Total para pagamento</label><span class="text-danger">*</span>
+                                    <input class="form-control col-md-12" placeholder="Valor Total para pagamento" name="valorTotalPagamento" asp-for="@(TempData["ValorTotal"])" title="Valor Total do aluguel" />
+                                </div>
+                                <div class="col-md-2">
+                                    <button asp-controller="Devolucao" asp-action="CalcularPagamento" data-toggle="tooltip" style="margin-top:29px; color:greenyellow; font-size:x-large" data-placement="top" title="Calcular Pagamento" class="btn col-md-12" type="submit">
+                                        <i class="fas fa-calculator"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        }
+
+                        <div class="row" id="calcPgto">
+                            <div class="col-md-12">
+                                <button asp-controller="Devolucao" asp-action="Pagamento" data-toggle="tooltip" style="margin-top:29px; color:greenyellow; font-size:x-large" data-placement="top" title="Atualizar" class="btn btn-outline-default col-md-12" type="submit">
+                                    <i class="fas fa-redo-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-sm-5 col-xs-12  padding">
+
+                        <h4 style="margin-bottom:25px; color:papayawhip">Pagamento</h4>
+
+                        @if (TempData["MsgCartaoDebito"] != null)
+                        {
+                            <div class="row" id="Msg">
+                                <div class="col-md-12">
+                                    <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                        Preencha o número do cartão de débito
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div><br />
+                                </div>
+                            </div>
+                        }
+                        <div class="row" id="cartaoDebito">
+                            <div class="col-md-10">
+                                <label class="text-info">Cartão: Débito</label>
+                                <input class="form-control col-md-12" placeholder="Insira o número do cartão de débito" name="nroCartaoDebito" title="Cartão: Débito" />
+                            </div>
+                            <div class="col-md-2">
+                                <button asp-controller="Devolucao" asp-action="CartaoDebito" data-toggle="tooltip" style="margin-top:29px;" data-placement="top" title="Pagar no débito" class="btn btn-outline-warning col-md-12" type="submit">
+                                    <i class="far fa-credit-card"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        @if (TempData["MsgCartaoCredito"] != null)
+                        {
+                            <div class="row" id="Msg">
+                                <div class="col-md-12">
+                                    <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                        Preencha o número do cartão de crédito
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div><br />
+                                </div>
+                            </div>
+                        }
+                        <div class="row" id="cartaoCredito">
+                            <div class="col-md-10">
+                                <label class="text-info">Cartão: Créidto</label>
+                                <input class="form-control col-md-12" placeholder="Insira o número do cartão de crédito" name="nroCartaoCredito" title="Cartão: Crédito" />
+                            </div>
+                            <div class="col-md-2">
+                                <button asp-controller="Devolucao" asp-action="CartaoCredito" data-toggle="tooltip" style="margin-top:29px;" data-placement="top" title="Pagar no crédito" class="btn btn-outline-warning col-md-12" type="submit">
+                                    <i class="fas fa-credit-card"></i>
+                                </button>
+                            </div>
+                        </div>
+                        @if (TempData["MsgDinheiro"] != null)
+                        {
+                            <div class="row" id="Msg">
+                                <div class="col-md-12">
+                                    <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                        Preencha o valor do pagamento!
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div><br />
+                                </div>
+                            </div>
+                        }
+                        <div class="row" id="dinheiro">
+                            <div class="col-md-10">
+                                <label class="text-info">Dinheiro</label>
+                                <input class="form-control col-md-12" type="datetime" placeholder="Informe o valor do pagamento" name="valorPagamento" title="Informe o valor do pagamento" />
+                            </div>
+                            <div class="col-md-2">
+                                <button asp-controller="Devolucao" asp-action="Dinheiro" data-toggle="tooltip" style="margin-top:29px;" data-placement="top" title="Pagar no dinheiro" class="btn btn-outline-warning col-md-12" type="submit">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+</div>
+
+<script>
+    var alturaFormulario = document.getElementById("panel").offsetHeight;
+    document.getElementById("colImg").style.height = alturaFormulario + "px";
+    $(document).ready(function () { $('[data-toggle="tooltip"]').tooltip(); });
+</script>

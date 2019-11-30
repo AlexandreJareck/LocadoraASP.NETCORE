@@ -17,7 +17,7 @@
 <div id="panel" class="panel panel-default no-padding">
     <a asp-action="Index" style="float:right">Voltar para o catalogo</a>
 
-    <h2 class="text-success" style="margin-bottom:30px; margin-top:30px;">Alugar carro mensal</h2>
+    <h2 class="text-success" style="margin-bottom:30px; margin-top:30px;">Alugar carro Dia/Hora</h2>
 
     <div class="panel-body no-padding">
 
@@ -37,16 +37,26 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label class="text-info" for="IdVeiculo">Id</label>
-                            <input class="form-control col-md-12" placeholder="Id" asp-for="IdVeiculo" title="Id do veiculo" readonly="" />
+                            <input class="form-control col-md-12" placeholder="Id" asp-for="IdVeiculo" title="Id do veiculo" style="background:lightgray" readonly="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info">Modelo</label>
-                            <input class="form-control col-md-12" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" readonly="" />
+                            <input class="form-control col-md-12" placeholder="Nome do veiculo" asp-for="Modelo" title="Nome do Veiculo" style="background:lightgray" readonly="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info">Preço do Veiculo</label>
-                            <input class="form-control col-md-12" placeholder="Preço do veiculo" asp-for="Valor" readonly="" title="Preço de acordo tabela Fipe" />
+                            <input class="form-control col-md-12" placeholder="Preço do veiculo" asp-for="Valor" style="background:lightgray" readonly="" title="Preço de acordo tabela Fipe" />
                         </div>
+
+                        @if (TempData["Msg"] != null)
+                        {
+                            <div class="col-md-12">
+                                <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                    Data de reserva não pode ser menor que a data de devolução!
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                </div><br />
+                            </div>
+                        }
 
                     </div>
                 </div>
@@ -56,11 +66,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label class="text-info" for="Placa">Preço Hora do aluguel</label>
-                            <input class="form-control col-md-12" type="text" asp-for="ValorPorHora" title="Valor hora aluguel" readonly="" required="" />
+                            <input class="form-control col-md-12" type="text" asp-for="ValorPorHora" title="Valor hora aluguel" style="background:lightgray" readonly="" required="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info" for="Placa">Preço Dia do aluguel</label>
-                            <input class="form-control col-md-12" type="text" asp-for="ValorPorDia" title="Valor dia aluguel" readonly="" required="" />
+                            <input class="form-control col-md-12" type="text" asp-for="ValorPorDia" title="Valor dia aluguel" style="background:lightgray" readonly="" required="" />
                         </div>
                         <div class="col-md-12">
 
@@ -98,7 +108,6 @@
                                 <option>21:00</option>
                                 <option>22:00</option>
                                 <option>23:00</option>
-                                <option>00:00</option>
                             </select>
                         </div>
                     </div>
@@ -133,7 +142,6 @@
                                 <option>21:00</option>
                                 <option>22:00</option>
                                 <option>23:00</option>
-                                <option>00:00</option>
                             </select>
                         </div>
                     </div>

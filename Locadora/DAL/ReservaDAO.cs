@@ -25,7 +25,7 @@ namespace Locadora.DAL
 
         public List<Reserva> ListarReservasPendente() { return _context.Reservas.Where(x => x.Status.Equals("PENDENTE")).ToList(); }
 
-        public Reserva Get(int id) { return _context.Reservas.Find(id); }
+        public Reserva Get(int id) { return _context.Reservas.Where(w => w.IdReserva == id).Include(x=> x.Cliente).FirstOrDefault(); }
 
         public List<Reserva> ListarReservas() { return _context.Reservas.Include(i => i.Carro).Include(i => i.Moto).ToList(); }
 
@@ -72,7 +72,7 @@ namespace Locadora.DAL
         public void ReservaDetailsCar(Cliente cliente, Carro carro, Reserva reserva)
         {
             cliente.CarroId = carro.IdVeiculo;
-            cliente.PossuiReserva = "SIM";
+            cliente.PossuiReserva = "SIM";            
             carro.Status = "RESERVADO";
             reserva.Carro = carro;
             reserva.Status = "PENDENTE";
@@ -133,7 +133,11 @@ namespace Locadora.DAL
             _context.SaveChanges();
         }
 
-
+        public Reserva GetDevolucao(int id)
+        {
+            Cliente cliente = _clienteDAO.Get(id);
+            return _context.Reservas.Where(w => w.IdReserva == cliente.Ident).Include(x => x.Cliente).Where(w => w.Cliente.Status.Equals("PENDENTE")).FirstOrDefault();
+        }
 
     }
 }

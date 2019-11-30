@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Locadora.Controllers.ClienteCtrl
 {
+    //[Authorize(Roles = "ClienteLogado")]
     [Authorize]
     public class AlugarCarroDiariaController : Controller
     {
@@ -26,7 +27,6 @@ namespace Locadora.Controllers.ClienteCtrl
             _clienteDAO = clienteDAO;
             _reservaDAO = reservaDAO;
         }
-
         public IActionResult AluguelDiaria(int id)
         {
             Id = id;
@@ -45,6 +45,12 @@ namespace Locadora.Controllers.ClienteCtrl
         [HttpPost]
         public IActionResult CalcularValorDaReserva(Carro carro, DateTime dtAluguel, string txtHrAluguel, DateTime dtDevolucaoPrev, string txtHrReservaPrev)
         {
+            if (!Calculos.DateValidationReservaDiaria(dtAluguel, txtHrAluguel, dtDevolucaoPrev, txtHrReservaPrev))
+            {
+                TempData["Msg"] = "Data de reserva não pode ser menor que a data de devolução!";
+                return RedirectToAction("AluguelDiaria", new { id = carro.IdVeiculo });
+            }
+
             double valorTotalReserva = 0;
 
             valorTotalReserva = Calculos.DataReplaceCalc(dtAluguel, txtHrAluguel, dtDevolucaoPrev, txtHrReservaPrev, valorTotalReserva, carro); ;

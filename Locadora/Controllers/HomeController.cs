@@ -8,17 +8,22 @@ using Locadora.Models;
 using Locadora.DAL;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Locadora.Controllers
 {
+    [AllowAnonymous]
+    
     public class HomeController : Controller
     {
+       
         private readonly ClienteDAO _clienteDAO;
         private readonly UserManager<ClienteLogado> _userManager;
         private readonly SignInManager<ClienteLogado> _signInManager;
 
         public HomeController(ClienteDAO clienteDAO, UserManager<ClienteLogado> userManager, SignInManager<ClienteLogado> signInManager)
         {
+            
             _clienteDAO = clienteDAO;
             _userManager = userManager;
             _signInManager = signInManager;
@@ -26,6 +31,7 @@ namespace Locadora.Controllers
 
         public IActionResult Index()
         {
+            var r = RouteData.Values["controller"].ToString();
             return View();
         }
 
@@ -108,33 +114,5 @@ namespace Locadora.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
-        //[HttpPost]
-        //public IActionResult Index(string cpf, string senha)
-        //{
-        //    Cliente c = new Cliente();
-        //    c = _clienteDAO.AutenticarLogin(cpf, senha);
-        //    Adm adm = new Adm();
-        //    if (c != null)
-        //    {
-        //        if (c.Status.Equals("CANCELADO"))
-        //        {
-        //            ModelState.AddModelError("", "Sua conta está cancelada, contate o administrador!");
-        //            return View();
-        //        }
-        //        HttpContext.Session.SetString("IdCliente", c.IdCliente.ToString());
-        //        return RedirectToAction("Index", "Cliente"); ;
-        //    }
-        //    else if (cpf.ToUpper().Equals(adm.Login) && senha.ToUpper().Equals(adm.Senha))
-        //    {
-        //        ModelState.AddModelError("", "Login Adm!");
-        //        return RedirectToAction("Index", "Administrador");
-        //    }
-        //    else
-        //    {
-        //        ModelState.AddModelError("", "Login Invalido!");
-        //        return View();
-        //    }
-        //}
     }
 }

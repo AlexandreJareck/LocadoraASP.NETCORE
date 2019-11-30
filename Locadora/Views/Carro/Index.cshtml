@@ -1,6 +1,6 @@
 ﻿@model List<Carro>
 
-<h2>Gerenciamento de Carros</h2>
+<h2 class="text-success">Gerenciamento de Carros</h2>
 <form asp-action="BuscarCarroPlaca" method="post">
     <a asp-controller="Carro" class="btn btn-outline-success col-md-1" asp-action="Cadastrar" data-toggle="tooltip" data-placement="top" title="Cadastrar Veiculo">
         <i class="fas fa-car"></i>
@@ -17,7 +17,7 @@
     </div>
 </form>
 <div class="table-responsive" style="margin-top:5px;">
-    <table class="table table-hover table-striped">
+    <table class="table table" style="color:ghostwhite">
         <thead>
             <tr class="table-primary">
                 <th scope="col">Nome</th>

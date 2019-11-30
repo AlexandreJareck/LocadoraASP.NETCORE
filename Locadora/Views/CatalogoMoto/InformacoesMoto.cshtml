@@ -7,24 +7,24 @@
             <img src="~/locadoraimagens/@Model.Imagem" class="rounded" style="width:400px;height:300px" />
         </td>
         <td style="vertical-align:top;padding-left:10px">
-            <b>Marca:</b>
-            <p>@Model.Marca</p>
-            <b>Modelo:</b>
-            <p>@Model.Modelo</p>
-            <b>Ano:</b>
-            <p>@Model.AnoModelo</p>
-            <b>Placa:</b>
-            <p>@Model.Placa</p>
-            <b>Preço do Veiculo:</b>
-            <p>@Model.Valor</p>
-            <b>Valor por hora:</b>
-            <p>@Model.ValorPorHora.ToString("C2")</p><br />
-            <b>Valor por dia:</b>
-            <p>@Model.ValorPorDia.ToString("C2")</p>
-            <b>Valor Mensal: </b>
-            <p>@Model.ValorMensal.ToString("C2")</p>
-            <a asp-action="AluguelDiaria" asp-controller="AlugarMotoDiaria" class="btn btn-outline-info" asp-route-id="@Model.IdVeiculo">Alugar Hr/Dia</a>
-            <a asp-action="AluguelMensal" asp-controller="AlugarMotoMensal" style="margin-left:10px;" class="btn btn-outline-info" asp-route-id="@Model.IdVeiculo">Alugar Mensal</a>
+            <b style="color:whitesmoke">Marca:</b>
+            <p class="text-info">@Model.Marca</p>
+            <b style="color:whitesmoke">Modelo:</b>
+            <p class="text-info">@Model.Modelo</p>
+            <b style="color:whitesmoke">Ano:</b>
+            <p class="text-info">@Model.AnoModelo</p>
+            <b style="color:whitesmoke">Placa:</b>
+            <p class="text-info">@Model.Placa</p>
+            <b style="color:whitesmoke">Preço do Veiculo:</b>
+            <p class="text-info">@Model.Valor</p>
+            <b style="color:whitesmoke">Valor por hora:</b>
+            <p class="text-info">@Model.ValorPorHora.ToString("C2")</p><br />
+            <b style="color:whitesmoke">Valor por dia:</b>
+            <p class="text-info">@Model.ValorPorDia.ToString("C2")</p>
+            <b style="color:whitesmoke">Valor Mensal: </b>
+            <p class="text-info">@Model.ValorMensal.ToString("C2")</p>
+            <a asp-action="AluguelDiaria" asp-controller="AlugarMotoDiaria" class="btn btn-outline-warning" asp-route-id="@Model.IdVeiculo">Alugar Hr/Dia</a>
+            <a asp-action="AluguelMensal" asp-controller="AlugarMotoMensal" style="margin-left:10px;" class="btn btn-outline-warning" asp-route-id="@Model.IdVeiculo">Alugar Mensal</a>
         </td>
     </tr>
 </table>

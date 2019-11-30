@@ -1,8 +1,8 @@
 ﻿@model Cliente
 
 <div id="panel" class="panel panel-default no-padding">
-    <a asp-action="ConfigConta" class="container-fluid">Voltar</a>
-    <h2 class="text-primary">Editar Cliente</h2>
+    <a asp-action="Clientes" class="container-fluid">Voltar</a>
+    <h2 class="text-success">Editar Cliente</h2>
     <div class="panel-body no-padding">
 
         <div asp-validation-summary="ModelOnly" class="alert alert-dismissible alert-danger col-lg-3" style="float:right;">
@@ -23,15 +23,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label class="text-info">Id:</label>
-                            <input type="text" class="form-control col-md-12" asp-for="IdCliente" readonly="" />
+                            <input type="text" class="form-control col-md-12" asp-for="IdCliente" style="background:lightgray" readonly="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info">Cpf</label>
-                            <input type="text" class="form-control col-md-12" asp-for="Cpf" readonly="" />
+                            <input type="text" class="form-control col-md-12" asp-for="Cpf" style="background:lightgray" readonly="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info">Rg</label>
-                            <input type="text" class="form-control col-md-12" asp-for="Rg" readonly="" />
+                            <input type="text" class="form-control col-md-12" asp-for="Rg" style="background:lightgray" readonly="" />
                         </div>
                         <div class="col-md-12">
                             <label class="text-info" for="PossuiReserva">Possui Reserva</label>

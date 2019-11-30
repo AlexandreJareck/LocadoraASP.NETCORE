@@ -25,7 +25,8 @@ namespace Locadora.Models
         public List<Reserva> Reserva { get; set; }
         public string PossuiReserva { get; set; }
         public string Status { get; set; }
-        public int MotoId { get; set; }
-        public int CarroId { get; set; }
+        public int? Ident { get; set; }
+        public int? MotoId { get; set; }
+        public int? CarroId { get; set; }        
     }
 }
