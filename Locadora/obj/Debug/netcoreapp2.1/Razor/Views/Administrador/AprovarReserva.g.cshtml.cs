@@ -222,7 +222,7 @@ using Locadora.Models;
             WriteLiteral("                    <td>\r\n                        ");
             EndContext();
             BeginContext(1466, 245, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ef2539c1dc8482bb10004e1680d7381", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e38eaccd664e41b79950f4870091d9ed", async() => {
                 BeginContext(1619, 88, true);
                 WriteLiteral("\r\n                            <i class=\"far fa-thumbs-up\"></i>\r\n                        ");
                 EndContext();
@@ -261,7 +261,7 @@ using Locadora.Models;
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1790, 238, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5357f17601324bc88bcccb899b17f527", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "566d4f08373b4cfca02e8e7bbcfda28f", async() => {
                 BeginContext(1942, 82, true);
                 WriteLiteral("\r\n                            <i class=\"fas fa-ban\"></i>\r\n                        ");
                 EndContext();

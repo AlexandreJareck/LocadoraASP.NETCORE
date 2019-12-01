@@ -64,7 +64,8 @@ namespace Locadora.Controllers
                 }
                 return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+            AdicionarErros(result);
+            return View(cliente);
         }
 
         public void AdicionarErros(IdentityResult result)
@@ -112,6 +113,10 @@ namespace Locadora.Controllers
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
+            HttpContext.Session.Remove("IdCliente");
+            HttpContext.Session.Remove("MsgPagamentoOK");
+            HttpContext.Session.Remove("MsgAprovaReserva");
+            HttpContext.Session.Remove("MsgCancelaReserva");
             return RedirectToAction("Index", "Home");
         }
     }

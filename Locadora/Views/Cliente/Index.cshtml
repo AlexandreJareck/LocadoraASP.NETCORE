@@ -4,3 +4,43 @@
 @using Microsoft.AspNetCore.Http;
 Welcome @Context.Session.GetString("IdCliente")
 <h2>Index</h2>
+
+@if (Context.Session.GetString("MsgPagamentoOK") != null)
+{
+    <div class="row" id="Msg">
+        <div class="col-md-12">
+            <div class="alert alert-dismissible alert-info col-lg-12" style="float:right;">
+                @Context.Session.GetString("MsgPagamentoOK")
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div><br />
+        </div>
+    </div>
+    Context.Session.Remove("MsgPagamentoOK");
+}
+
+@if (Context.Session.GetString("MsgAprovaReserva") != null)
+{
+    <div class="row" id="Msg">
+        <div class="col-md-12">
+            <div class="alert alert-dismissible alert-info col-lg-12" style="float:right;">
+                @Context.Session.GetString("MsgAprovaReserva")
+
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div><br />
+        </div>
+    </div>
+    Context.Session.Remove("MsgAprovaReserva");
+}
+
+@if (Context.Session.GetString("MsgCancelaReserva") != null)
+{
+    <div class="row" id="Msg">
+        <div class="col-md-12">
+            <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                @Context.Session.GetString("MsgCancelaReserva")
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div><br />
+        </div>
+    </div>
+    Context.Session.Remove("MsgCancelaReserva");
+}

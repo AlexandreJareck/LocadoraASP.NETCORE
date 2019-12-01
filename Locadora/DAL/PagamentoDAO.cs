@@ -22,20 +22,21 @@ namespace Locadora.DAL
         }
 
         public void SalvarDevolucaoVeiculo(Reserva reserva, Pagamento pagamento)
-        {           
-            
+        {
+
             reserva.Cliente.PossuiReserva = "NAO";
             reserva.Cliente.Status = "DISPONIVEL";
-            pagamento.Status = "PAGO";         
+            pagamento.Status = "PAGO";
+            pagamento.DtVeicDevolvido = (DateTime)reserva.DataVeiculoDevolvido;
             if (reserva.Carro == null) { reserva.Moto.Status = "DISPONIVEL"; }
             if (reserva.Moto == null) { reserva.Carro.Status = "DISPONIVEL"; }
-            _context.Pagamentos.Add(pagamento);            
+            _context.Pagamentos.Add(pagamento);
             _context.SaveChanges();
         }
 
         public void PagamentoCartaoDebito(Reserva reserva, string nroCartaoDebito, Reserva r, string valorTotalPagamento)
         {
-            Pagamento pagamento = DetailsSavePagamento(reserva, r, nroCartaoDebito, valorTotalPagamento);
+            Pagamento pagamento = DetailsSavePagamento(reserva, r, nroCartaoDebito, valorTotalPagamento, null);
             pagamento.Status = "PAGO NO DÉBITO";
             pagamento.Debito = true;
             reserva = DetailsReserva(reserva, r);
@@ -66,10 +67,21 @@ namespace Locadora.DAL
 
         public void PagamentoCartaoCredito(Reserva reserva, string nroCartaoCredito, Reserva r, string valorTotalPagamento)
         {
-            Pagamento pagamento = DetailsSavePagamento(reserva, r, nroCartaoCredito, valorTotalPagamento);
+            Pagamento pagamento = DetailsSavePagamento(reserva, r, nroCartaoCredito, valorTotalPagamento, null);
             pagamento.Status = "PAGO NO CRÉDITO";
             pagamento.Credito = true;
 
+            reserva = DetailsReserva(reserva, r);
+
+            SalvarDevolucaoVeiculo(reserva, pagamento);
+        }
+
+        public void PagamentoDinheiro(Reserva reserva, string dinheiro, Reserva r, string valorTotalPagamento, double result)
+        {
+            Pagamento pagamento = DetailsSavePagamento(reserva, r, null, valorTotalPagamento, dinheiro);
+            pagamento.Status = "PAGO NO DINHEIRO";
+            pagamento.Dinheiro = true;
+            pagamento.ValorTroco = result;
             reserva = DetailsReserva(reserva, r);
 
             SalvarDevolucaoVeiculo(reserva, pagamento);
@@ -80,10 +92,13 @@ namespace Locadora.DAL
 
         }
 
-        public Pagamento DetailsSavePagamento(Reserva reserva, Reserva r, string nroCartao, string valorTotalPagamento)
+        public Pagamento DetailsSavePagamento(Reserva reserva, Reserva r, string nroCartao, string valorTotalPagamento, string dinheiro)
         {
             Pagamento pagamento = new Pagamento();
-            pagamento.NroCartao = nroCartao;            
+
+            if (nroCartao != null) pagamento.NroCartao = nroCartao;
+            else pagamento.ValorPagamento = Convert.ToDouble(dinheiro);
+
             pagamento.Cliente = r.Cliente;
             pagamento.Reserva = reserva;
             pagamento.ValorTotalReserva = Convert.ToDouble(valorTotalPagamento);

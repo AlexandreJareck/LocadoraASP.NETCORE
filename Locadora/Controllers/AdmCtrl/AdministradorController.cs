@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Locadora.DAL;
 using Locadora.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Locadora.Controllers
@@ -36,6 +37,7 @@ namespace Locadora.Controllers
             reserva.Status = "APROVADO";    
             
             _reservaDAO.UpdateReserva(reserva);
+            HttpContext.Session.SetString("MsgAprovaReserva", "Sua reserva foi aprovada!");
             return RedirectToAction("AprovarReserva");
         }
 
@@ -46,6 +48,7 @@ namespace Locadora.Controllers
             reserva.Status = "CANCELADA";
             reserva.Cliente.Ident = reserva.IdReserva;
             _reservaDAO.UpdateReserva(reserva);
+            HttpContext.Session.SetString("MsgCancelaReserva", "Sua reserva foi cancelada!");
             return RedirectToAction("AprovarReserva");
         }
 

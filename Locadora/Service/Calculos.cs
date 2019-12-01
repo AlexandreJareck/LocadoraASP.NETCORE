@@ -130,11 +130,41 @@ namespace Locadora.Service
         }
 
         public static bool DateValidationDevolucao(DateTime dtPrevisao, DateTime dtDevolvidoEm)
-        {            
-            if (dtDevolvidoEm.Day <= dtPrevisao.Day &&  dtDevolvidoEm.Hour <= dtPrevisao.Hour && dtDevolvidoEm.DayOfYear <= dtPrevisao.DayOfYear && dtDevolvidoEm.Year <= dtPrevisao.Year)
+        {
+
+            if (dtDevolvidoEm.Year < dtPrevisao.Year)
+            {
                 return false;
+            }
+            if (dtDevolvidoEm.DayOfYear < dtPrevisao.DayOfYear)
+            {
+                return false;
+            }
+            if (dtDevolvidoEm.DayOfYear == dtPrevisao.DayOfYear)
+            {
+                if (dtDevolvidoEm.Hour < dtPrevisao.Hour)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public static double Pagamento(string dinheiro, string valorTotalPagamento)
+        {
+            double money = Convert.ToDouble(dinheiro);
+            double total = Convert.ToDouble(valorTotalPagamento);
+            double result = 0;
+            if (money < total)
+            {
+                result = total - money;
+            }
             else
-                return true;
+            {
+                result = 0;
+            }
+            return result;
         }
     }
 }

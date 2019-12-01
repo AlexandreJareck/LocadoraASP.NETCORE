@@ -57,6 +57,11 @@ namespace Locadora.DAL
             carro.Preco = Convert.ToDecimal(precoVeiculo);
             carro.ValorMensal = (carro.Preco * 25)/100 ;
             carro.Status = "DISPONIVEL";
+            carro.Nome = carro.Modelo;
+            carro.IdMarca = null;
+            carro.CodigoFipe = null;
+            carro.IdModelo = null;
+            carro.IdentVeiculo = null;
         }
 
         #endregion

@@ -56,6 +56,11 @@ namespace Locadora.DAL
             moto.Preco = Convert.ToDecimal(precoVeiculo);
             moto.ValorMensal = (moto.Preco * 25) / 100;
             moto.Status = "DISPONIVEL";
+            moto.Nome = moto.Modelo;
+            moto.IdMarca = null;
+            moto.CodigoFipe = null;
+            moto.IdModelo = null;
+            moto.IdentVeiculo = null;
         }
 
         #endregion

@@ -174,7 +174,7 @@
                             <div class="row" id="calcPgto">
                                 <div class="col-md-10">
                                     <label class="text-info" for="Valor Para pagamento">Valor Total para pagamento</label><span class="text-danger">*</span>
-                                    <input class="form-control col-md-12" placeholder="Valor Total para pagamento" name="valorTotalPagamento" asp-for="@(TempData["ValorTotal"])" title="Valor Total do aluguel" />
+                                    <input class="form-control col-md-12" placeholder="Valor Total para pagamento" name="valorTotalPagamento" asp-for="@(TempData["ValorTotal"])" title="Valor Total do aluguel" readonly=""/>
                                 </div>
                                 <div class="col-md-2">
                                     <button asp-controller="Devolucao" asp-action="CalcularPagamento" data-toggle="tooltip" style="margin-top:29px; color:greenyellow; font-size:x-large" data-placement="top" title="Calcular Pagamento" class="btn col-md-12" type="submit">
@@ -253,10 +253,54 @@
                                 </div>
                             </div>
                         }
+                        @if (TempData["NumeroNegativo"] != null)
+                        {
+                            <div class="row" id="Msg">
+                                <div class="col-md-12">
+                                    <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                        Somente numeros positivos e inteiros!
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div><br />
+                                </div>
+                            </div>
+                        }
+                        @if (TempData["NumeroLetra"] != null)
+                        {
+                            <div class="row" id="Msg">
+                                <div class="col-md-12">
+                                    <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                        Não é permitido letra
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div><br />
+                                </div>
+                            </div>
+                        }
+                        @if (TempData["MsgDinheiroInsuficiente"] != null)
+                        {
+                            <div class="row" id="Msg">
+                                <div class="col-md-12">
+                                    <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                        dinheiro insuficiente!
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div><br />
+                                </div>
+                            </div>
+                        }
+                        @if (TempData["FaltaParaPagar"] != null)
+                        {
+                            <div class="row" id="Msg">
+                                <div class="col-md-12">
+                                    <div class="alert alert-dismissible alert-danger col-lg-12" style="float:right;">
+                                        Dinheiro insuficiente! Olhe o campo Valor total pagamento
+                                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    </div><br />
+                                </div>
+                            </div>
+                        }
                         <div class="row" id="dinheiro">
                             <div class="col-md-10">
                                 <label class="text-info">Dinheiro</label>
-                                <input class="form-control col-md-12" type="datetime" placeholder="Informe o valor do pagamento" name="valorPagamento" title="Informe o valor do pagamento" />
+                                <input class="form-control col-md-12" type="text" placeholder="Informe o valor do pagamento" name="dinheiro" title="Informe o valor do pagamento" />
                             </div>
                             <div class="col-md-2">
                                 <button asp-controller="Devolucao" asp-action="Dinheiro" data-toggle="tooltip" style="margin-top:29px;" data-placement="top" title="Pagar no dinheiro" class="btn btn-outline-warning col-md-12" type="submit">

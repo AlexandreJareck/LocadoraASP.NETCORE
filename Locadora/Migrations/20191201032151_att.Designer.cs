@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Locadora.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191129020131_AddAtbIdentTableClient")]
-    partial class AddAtbIdentTableClient
+    [Migration("20191201032151_att")]
+    partial class att
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
